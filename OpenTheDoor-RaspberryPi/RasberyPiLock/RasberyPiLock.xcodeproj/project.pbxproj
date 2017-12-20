@@ -1,0 +1,889 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		209234911FD9C9D5007C31D7 /* AddContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209234901FD9C9D5007C31D7 /* AddContactViewController.swift */; };
+		209234931FD9CCF8007C31D7 /* NSMutableDataExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209234921FD9CCF8007C31D7 /* NSMutableDataExtension.swift */; };
+		20B567361FA8F2D600051AFF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B567351FA8F2D600051AFF /* AppDelegate.swift */; };
+		20B5673B1FA8F2D600051AFF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20B567391FA8F2D600051AFF /* Main.storyboard */; };
+		20B5673D1FA8F2D600051AFF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20B5673C1FA8F2D600051AFF /* Assets.xcassets */; };
+		20B567401FA8F2D600051AFF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20B5673E1FA8F2D600051AFF /* LaunchScreen.storyboard */; };
+		20B5674B1FA8F2D600051AFF /* RasberyPiLockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B5674A1FA8F2D600051AFF /* RasberyPiLockTests.swift */; };
+		20B567561FA8F2D600051AFF /* RasberyPiLockUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B567551FA8F2D600051AFF /* RasberyPiLockUITests.swift */; };
+		90AA02201FC5243800474B5C /* IntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90AA021F1FC5243800474B5C /* IntentHandler.swift */; };
+		90AA02291FC5243800474B5C /* IntentsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90AA02281FC5243800474B5C /* IntentsUI.framework */; };
+		90AA022C1FC5243800474B5C /* IntentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90AA022B1FC5243800474B5C /* IntentViewController.swift */; };
+		90AA022F1FC5243800474B5C /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90AA022D1FC5243800474B5C /* MainInterface.storyboard */; };
+		90AA02331FC5243800474B5C /* Intent HandlerUI.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 90AA02261FC5243800474B5C /* Intent HandlerUI.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		90AA02361FC5243800474B5C /* Intent Handler.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 90AA021D1FC5243800474B5C /* Intent Handler.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		90DF4F411FC5491900BDBB0E /* LockDoorIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DF4F401FC5491900BDBB0E /* LockDoorIntent.swift */; };
+		90DF4F431FC5754E00BDBB0E /* AppIntentVocabulary.plist in Resources */ = {isa = PBXBuildFile; fileRef = 90DF4F421FC5754E00BDBB0E /* AppIntentVocabulary.plist */; };
+		D70D272A1FCF950700699C33 /* customtableview.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70D27291FCF950700699C33 /* customtableview.swift */; };
+		D70D272C1FCF97FC00699C33 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70D272B1FCF97FC00699C33 /* HistoryViewController.swift */; };
+		D70D272E1FCF980E00699C33 /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70D272D1FCF980E00699C33 /* ContactsViewController.swift */; };
+		D7D80B3F1FCFBC350004E973 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D80B3E1FCFBC350004E973 /* HomeViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		20B567471FA8F2D600051AFF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 20B5672A1FA8F2D600051AFF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 20B567311FA8F2D600051AFF;
+			remoteInfo = RasberyPiLock;
+		};
+		20B567521FA8F2D600051AFF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 20B5672A1FA8F2D600051AFF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 20B567311FA8F2D600051AFF;
+			remoteInfo = RasberyPiLock;
+		};
+		90AA02311FC5243800474B5C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 20B5672A1FA8F2D600051AFF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 90AA02251FC5243800474B5C;
+			remoteInfo = "Intent HandlerUI";
+		};
+		90AA02341FC5243800474B5C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 20B5672A1FA8F2D600051AFF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 90AA021C1FC5243800474B5C;
+			remoteInfo = "Intent Handler";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		90AA023D1FC5243800474B5C /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				90AA02361FC5243800474B5C /* Intent Handler.appex in Embed App Extensions */,
+				90AA02331FC5243800474B5C /* Intent HandlerUI.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		209234901FD9C9D5007C31D7 /* AddContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddContactViewController.swift; sourceTree = "<group>"; };
+		209234921FD9CCF8007C31D7 /* NSMutableDataExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSMutableDataExtension.swift; sourceTree = "<group>"; };
+		20B567321FA8F2D600051AFF /* RasberyPiLock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RasberyPiLock.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		20B567351FA8F2D600051AFF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		20B5673A1FA8F2D600051AFF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		20B5673C1FA8F2D600051AFF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		20B5673F1FA8F2D600051AFF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		20B567411FA8F2D600051AFF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		20B567461FA8F2D600051AFF /* RasberyPiLockTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RasberyPiLockTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		20B5674A1FA8F2D600051AFF /* RasberyPiLockTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RasberyPiLockTests.swift; sourceTree = "<group>"; };
+		20B5674C1FA8F2D600051AFF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		20B567511FA8F2D600051AFF /* RasberyPiLockUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RasberyPiLockUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		20B567551FA8F2D600051AFF /* RasberyPiLockUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RasberyPiLockUITests.swift; sourceTree = "<group>"; };
+		20B567571FA8F2D600051AFF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		276F9D5F1FDA8AC0001DB3CA /* Intent Handler.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Intent Handler.entitlements"; sourceTree = "<group>"; };
+		90AA02181FC522F600474B5C /* RasberyPiLock.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RasberyPiLock.entitlements; sourceTree = "<group>"; };
+		90AA021D1FC5243800474B5C /* Intent Handler.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Intent Handler.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		90AA021F1FC5243800474B5C /* IntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentHandler.swift; sourceTree = "<group>"; };
+		90AA02211FC5243800474B5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		90AA02261FC5243800474B5C /* Intent HandlerUI.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Intent HandlerUI.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		90AA02281FC5243800474B5C /* IntentsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IntentsUI.framework; path = System/Library/Frameworks/IntentsUI.framework; sourceTree = SDKROOT; };
+		90AA022B1FC5243800474B5C /* IntentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentViewController.swift; sourceTree = "<group>"; };
+		90AA022E1FC5243800474B5C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		90AA02301FC5243800474B5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		90DF4F401FC5491900BDBB0E /* LockDoorIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockDoorIntent.swift; sourceTree = "<group>"; };
+		90DF4F421FC5754E00BDBB0E /* AppIntentVocabulary.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = AppIntentVocabulary.plist; path = RasberyPiLock/AppIntentVocabulary.plist; sourceTree = "<group>"; };
+		D70D27291FCF950700699C33 /* customtableview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customtableview.swift; sourceTree = "<group>"; };
+		D70D272B1FCF97FC00699C33 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
+		D70D272D1FCF980E00699C33 /* ContactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
+		D7D80B3E1FCFBC350004E973 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		20B5672F1FA8F2D600051AFF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		20B567431FA8F2D600051AFF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		20B5674E1FA8F2D600051AFF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		90AA021A1FC5243800474B5C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		90AA02231FC5243800474B5C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				90AA02291FC5243800474B5C /* IntentsUI.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		20B567291FA8F2D600051AFF = {
+			isa = PBXGroup;
+			children = (
+				90DF4F421FC5754E00BDBB0E /* AppIntentVocabulary.plist */,
+				20B567341FA8F2D600051AFF /* RasberyPiLock */,
+				20B567491FA8F2D600051AFF /* RasberyPiLockTests */,
+				20B567541FA8F2D600051AFF /* RasberyPiLockUITests */,
+				90AA021E1FC5243800474B5C /* Intent Handler */,
+				90AA022A1FC5243800474B5C /* Intent HandlerUI */,
+				90AA02271FC5243800474B5C /* Frameworks */,
+				20B567331FA8F2D600051AFF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		20B567331FA8F2D600051AFF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				20B567321FA8F2D600051AFF /* RasberyPiLock.app */,
+				20B567461FA8F2D600051AFF /* RasberyPiLockTests.xctest */,
+				20B567511FA8F2D600051AFF /* RasberyPiLockUITests.xctest */,
+				90AA021D1FC5243800474B5C /* Intent Handler.appex */,
+				90AA02261FC5243800474B5C /* Intent HandlerUI.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		20B567341FA8F2D600051AFF /* RasberyPiLock */ = {
+			isa = PBXGroup;
+			children = (
+				90AA02181FC522F600474B5C /* RasberyPiLock.entitlements */,
+				20B567351FA8F2D600051AFF /* AppDelegate.swift */,
+				20B567391FA8F2D600051AFF /* Main.storyboard */,
+				20B5673C1FA8F2D600051AFF /* Assets.xcassets */,
+				20B5673E1FA8F2D600051AFF /* LaunchScreen.storyboard */,
+				20B567411FA8F2D600051AFF /* Info.plist */,
+				D70D27291FCF950700699C33 /* customtableview.swift */,
+				D70D272B1FCF97FC00699C33 /* HistoryViewController.swift */,
+				D70D272D1FCF980E00699C33 /* ContactsViewController.swift */,
+				D7D80B3E1FCFBC350004E973 /* HomeViewController.swift */,
+				209234901FD9C9D5007C31D7 /* AddContactViewController.swift */,
+				209234921FD9CCF8007C31D7 /* NSMutableDataExtension.swift */,
+			);
+			path = RasberyPiLock;
+			sourceTree = "<group>";
+		};
+		20B567491FA8F2D600051AFF /* RasberyPiLockTests */ = {
+			isa = PBXGroup;
+			children = (
+				20B5674A1FA8F2D600051AFF /* RasberyPiLockTests.swift */,
+				20B5674C1FA8F2D600051AFF /* Info.plist */,
+			);
+			path = RasberyPiLockTests;
+			sourceTree = "<group>";
+		};
+		20B567541FA8F2D600051AFF /* RasberyPiLockUITests */ = {
+			isa = PBXGroup;
+			children = (
+				20B567551FA8F2D600051AFF /* RasberyPiLockUITests.swift */,
+				20B567571FA8F2D600051AFF /* Info.plist */,
+			);
+			path = RasberyPiLockUITests;
+			sourceTree = "<group>";
+		};
+		90AA021E1FC5243800474B5C /* Intent Handler */ = {
+			isa = PBXGroup;
+			children = (
+				276F9D5F1FDA8AC0001DB3CA /* Intent Handler.entitlements */,
+				90AA021F1FC5243800474B5C /* IntentHandler.swift */,
+				90AA02211FC5243800474B5C /* Info.plist */,
+				90DF4F401FC5491900BDBB0E /* LockDoorIntent.swift */,
+			);
+			path = "Intent Handler";
+			sourceTree = "<group>";
+		};
+		90AA02271FC5243800474B5C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				90AA02281FC5243800474B5C /* IntentsUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		90AA022A1FC5243800474B5C /* Intent HandlerUI */ = {
+			isa = PBXGroup;
+			children = (
+				90AA022B1FC5243800474B5C /* IntentViewController.swift */,
+				90AA022D1FC5243800474B5C /* MainInterface.storyboard */,
+				90AA02301FC5243800474B5C /* Info.plist */,
+			);
+			path = "Intent HandlerUI";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		20B567311FA8F2D600051AFF /* RasberyPiLock */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 20B5675A1FA8F2D600051AFF /* Build configuration list for PBXNativeTarget "RasberyPiLock" */;
+			buildPhases = (
+				20B5672E1FA8F2D600051AFF /* Sources */,
+				20B5672F1FA8F2D600051AFF /* Frameworks */,
+				20B567301FA8F2D600051AFF /* Resources */,
+				90AA023D1FC5243800474B5C /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				90AA02321FC5243800474B5C /* PBXTargetDependency */,
+				90AA02351FC5243800474B5C /* PBXTargetDependency */,
+			);
+			name = RasberyPiLock;
+			productName = RasberyPiLock;
+			productReference = 20B567321FA8F2D600051AFF /* RasberyPiLock.app */;
+			productType = "com.apple.product-type.application";
+		};
+		20B567451FA8F2D600051AFF /* RasberyPiLockTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 20B5675D1FA8F2D600051AFF /* Build configuration list for PBXNativeTarget "RasberyPiLockTests" */;
+			buildPhases = (
+				20B567421FA8F2D600051AFF /* Sources */,
+				20B567431FA8F2D600051AFF /* Frameworks */,
+				20B567441FA8F2D600051AFF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				20B567481FA8F2D600051AFF /* PBXTargetDependency */,
+			);
+			name = RasberyPiLockTests;
+			productName = RasberyPiLockTests;
+			productReference = 20B567461FA8F2D600051AFF /* RasberyPiLockTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		20B567501FA8F2D600051AFF /* RasberyPiLockUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 20B567601FA8F2D600051AFF /* Build configuration list for PBXNativeTarget "RasberyPiLockUITests" */;
+			buildPhases = (
+				20B5674D1FA8F2D600051AFF /* Sources */,
+				20B5674E1FA8F2D600051AFF /* Frameworks */,
+				20B5674F1FA8F2D600051AFF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				20B567531FA8F2D600051AFF /* PBXTargetDependency */,
+			);
+			name = RasberyPiLockUITests;
+			productName = RasberyPiLockUITests;
+			productReference = 20B567511FA8F2D600051AFF /* RasberyPiLockUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		90AA021C1FC5243800474B5C /* Intent Handler */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 90AA023A1FC5243800474B5C /* Build configuration list for PBXNativeTarget "Intent Handler" */;
+			buildPhases = (
+				90AA02191FC5243800474B5C /* Sources */,
+				90AA021A1FC5243800474B5C /* Frameworks */,
+				90AA021B1FC5243800474B5C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Intent Handler";
+			productName = "Intent Handler";
+			productReference = 90AA021D1FC5243800474B5C /* Intent Handler.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		90AA02251FC5243800474B5C /* Intent HandlerUI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 90AA02371FC5243800474B5C /* Build configuration list for PBXNativeTarget "Intent HandlerUI" */;
+			buildPhases = (
+				90AA02221FC5243800474B5C /* Sources */,
+				90AA02231FC5243800474B5C /* Frameworks */,
+				90AA02241FC5243800474B5C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Intent HandlerUI";
+			productName = "Intent HandlerUI";
+			productReference = 90AA02261FC5243800474B5C /* Intent HandlerUI.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		20B5672A1FA8F2D600051AFF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0900;
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = "Sneha Kasetty Sudarshan";
+				TargetAttributes = {
+					20B567311FA8F2D600051AFF = {
+						CreatedOnToolsVersion = 9.0.1;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 0;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+							com.apple.Siri = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
+					};
+					20B567451FA8F2D600051AFF = {
+						CreatedOnToolsVersion = 9.0.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 20B567311FA8F2D600051AFF;
+					};
+					20B567501FA8F2D600051AFF = {
+						CreatedOnToolsVersion = 9.0.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 20B567311FA8F2D600051AFF;
+					};
+					90AA021C1FC5243800474B5C = {
+						CreatedOnToolsVersion = 9.0.1;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 0;
+							};
+						};
+					};
+					90AA02251FC5243800474B5C = {
+						CreatedOnToolsVersion = 9.0.1;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 20B5672D1FA8F2D600051AFF /* Build configuration list for PBXProject "RasberyPiLock" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 20B567291FA8F2D600051AFF;
+			productRefGroup = 20B567331FA8F2D600051AFF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				20B567311FA8F2D600051AFF /* RasberyPiLock */,
+				20B567451FA8F2D600051AFF /* RasberyPiLockTests */,
+				20B567501FA8F2D600051AFF /* RasberyPiLockUITests */,
+				90AA021C1FC5243800474B5C /* Intent Handler */,
+				90AA02251FC5243800474B5C /* Intent HandlerUI */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		20B567301FA8F2D600051AFF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				20B567401FA8F2D600051AFF /* LaunchScreen.storyboard in Resources */,
+				20B5673D1FA8F2D600051AFF /* Assets.xcassets in Resources */,
+				20B5673B1FA8F2D600051AFF /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		20B567441FA8F2D600051AFF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		20B5674F1FA8F2D600051AFF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		90AA021B1FC5243800474B5C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				90DF4F431FC5754E00BDBB0E /* AppIntentVocabulary.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		90AA02241FC5243800474B5C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				90AA022F1FC5243800474B5C /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		20B5672E1FA8F2D600051AFF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				20B567361FA8F2D600051AFF /* AppDelegate.swift in Sources */,
+				D70D272A1FCF950700699C33 /* customtableview.swift in Sources */,
+				D70D272C1FCF97FC00699C33 /* HistoryViewController.swift in Sources */,
+				209234931FD9CCF8007C31D7 /* NSMutableDataExtension.swift in Sources */,
+				209234911FD9C9D5007C31D7 /* AddContactViewController.swift in Sources */,
+				D70D272E1FCF980E00699C33 /* ContactsViewController.swift in Sources */,
+				D7D80B3F1FCFBC350004E973 /* HomeViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		20B567421FA8F2D600051AFF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				20B5674B1FA8F2D600051AFF /* RasberyPiLockTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		20B5674D1FA8F2D600051AFF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				20B567561FA8F2D600051AFF /* RasberyPiLockUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		90AA02191FC5243800474B5C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				90DF4F411FC5491900BDBB0E /* LockDoorIntent.swift in Sources */,
+				90AA02201FC5243800474B5C /* IntentHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		90AA02221FC5243800474B5C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				90AA022C1FC5243800474B5C /* IntentViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		20B567481FA8F2D600051AFF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 20B567311FA8F2D600051AFF /* RasberyPiLock */;
+			targetProxy = 20B567471FA8F2D600051AFF /* PBXContainerItemProxy */;
+		};
+		20B567531FA8F2D600051AFF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 20B567311FA8F2D600051AFF /* RasberyPiLock */;
+			targetProxy = 20B567521FA8F2D600051AFF /* PBXContainerItemProxy */;
+		};
+		90AA02321FC5243800474B5C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 90AA02251FC5243800474B5C /* Intent HandlerUI */;
+			targetProxy = 90AA02311FC5243800474B5C /* PBXContainerItemProxy */;
+		};
+		90AA02351FC5243800474B5C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 90AA021C1FC5243800474B5C /* Intent Handler */;
+			targetProxy = 90AA02341FC5243800474B5C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		20B567391FA8F2D600051AFF /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				20B5673A1FA8F2D600051AFF /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		20B5673E1FA8F2D600051AFF /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				20B5673F1FA8F2D600051AFF /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		90AA022D1FC5243800474B5C /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				90AA022E1FC5243800474B5C /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		20B567581FA8F2D600051AFF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		20B567591FA8F2D600051AFF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		20B5675B1FA8F2D600051AFF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = RasberyPiLock/RasberyPiLock.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5PKYKCYDR5;
+				INFOPLIST_FILE = RasberyPiLock/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.CMPE235.iCloudStore;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		20B5675C1FA8F2D600051AFF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = RasberyPiLock/RasberyPiLock.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5PKYKCYDR5;
+				INFOPLIST_FILE = RasberyPiLock/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.CMPE235.iCloudStore;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		20B5675E1FA8F2D600051AFF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5PKYKCYDR5;
+				INFOPLIST_FILE = RasberyPiLockTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = sneha.RasberyPiLockTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RasberyPiLock.app/RasberyPiLock";
+			};
+			name = Debug;
+		};
+		20B5675F1FA8F2D600051AFF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5PKYKCYDR5;
+				INFOPLIST_FILE = RasberyPiLockTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = sneha.RasberyPiLockTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RasberyPiLock.app/RasberyPiLock";
+			};
+			name = Release;
+		};
+		20B567611FA8F2D600051AFF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5PKYKCYDR5;
+				INFOPLIST_FILE = RasberyPiLockUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = sneha.RasberyPiLockUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = RasberyPiLock;
+			};
+			name = Debug;
+		};
+		20B567621FA8F2D600051AFF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5PKYKCYDR5;
+				INFOPLIST_FILE = RasberyPiLockUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = sneha.RasberyPiLockUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = RasberyPiLock;
+			};
+			name = Release;
+		};
+		90AA02381FC5243800474B5C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5PKYKCYDR5;
+				INFOPLIST_FILE = "Intent HandlerUI/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.CMPE235.iCloudStore.Intent-HandlerUI";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		90AA02391FC5243800474B5C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5PKYKCYDR5;
+				INFOPLIST_FILE = "Intent HandlerUI/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.CMPE235.iCloudStore.Intent-HandlerUI";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		90AA023B1FC5243800474B5C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "Intent Handler/Intent Handler.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5PKYKCYDR5;
+				INFOPLIST_FILE = "Intent Handler/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.CMPE235.iCloudStore.Intent-Handler";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		90AA023C1FC5243800474B5C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "Intent Handler/Intent Handler.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5PKYKCYDR5;
+				INFOPLIST_FILE = "Intent Handler/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.CMPE235.iCloudStore.Intent-Handler";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		20B5672D1FA8F2D600051AFF /* Build configuration list for PBXProject "RasberyPiLock" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				20B567581FA8F2D600051AFF /* Debug */,
+				20B567591FA8F2D600051AFF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		20B5675A1FA8F2D600051AFF /* Build configuration list for PBXNativeTarget "RasberyPiLock" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				20B5675B1FA8F2D600051AFF /* Debug */,
+				20B5675C1FA8F2D600051AFF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		20B5675D1FA8F2D600051AFF /* Build configuration list for PBXNativeTarget "RasberyPiLockTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				20B5675E1FA8F2D600051AFF /* Debug */,
+				20B5675F1FA8F2D600051AFF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		20B567601FA8F2D600051AFF /* Build configuration list for PBXNativeTarget "RasberyPiLockUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				20B567611FA8F2D600051AFF /* Debug */,
+				20B567621FA8F2D600051AFF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		90AA02371FC5243800474B5C /* Build configuration list for PBXNativeTarget "Intent HandlerUI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				90AA02381FC5243800474B5C /* Debug */,
+				90AA02391FC5243800474B5C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		90AA023A1FC5243800474B5C /* Build configuration list for PBXNativeTarget "Intent Handler" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				90AA023B1FC5243800474B5C /* Debug */,
+				90AA023C1FC5243800474B5C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 20B5672A1FA8F2D600051AFF /* Project object */;
+}
