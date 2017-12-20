@@ -27,11 +27,18 @@ iOS Core Motion Framework & CMPedometerData to compute number of steps taken, di
 7. Open The door<br>
 This is a deep learning based machine learning project. 
 
+https://m.youtube.com/watch?v=xXflrZ4Vrok&feature=youtu.be
+
 8. Skin Rash Diagnosis<br>
 ARKit based medical diagnosis app
 
+https://www.youtube.com/watch?v=9YX5-hDJQkM&t=20s
+
 9. Smart Street<br>
 This is a smart city project and a social platform
+
+https://www.youtube.com/watch?v=iiDnRLY4mdE
+
 
 10. TipCalculator<br>
 Simple Tip calculator ios app project
