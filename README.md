@@ -1,8 +1,8 @@
 # iOS Swift based Mobile Apps
 
 
-1. BLEScanner
-This project scans and connects the peripheral using corebluewooth framework.
+1. BLEScanner<br>
+This project scans and connects the peripheral using corebluewooth framework.<br>
 1.Start up a central manager object
 2.Discover and connect to peripheral devices that are advertising
 3.Explore the data on a peripheral device after you’ve connected to it
