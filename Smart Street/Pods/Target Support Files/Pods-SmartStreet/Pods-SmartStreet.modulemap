@@ -1,6 +1,0 @@
-framework module Pods_SmartStreet {
-  umbrella header "Pods-SmartStreet-umbrella.h"
-
-  export *
-  module * { export * }
-}
