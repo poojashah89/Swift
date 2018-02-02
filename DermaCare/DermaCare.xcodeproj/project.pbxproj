@@ -15,6 +15,16 @@
 		72FB9A502023D752009E4373 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 72FB9A4E2023D752009E4373 /* LaunchScreen.storyboard */; };
 		72FB9A5B2023D752009E4373 /* DermaCareTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FB9A5A2023D752009E4373 /* DermaCareTests.swift */; };
 		72FB9A662023D752009E4373 /* DermaCareUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FB9A652023D752009E4373 /* DermaCareUITests.swift */; };
+		72FB9A772024389E009E4373 /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FB9A762024389E009E4373 /* RegisterController.swift */; };
+		72FB9A79202438FE009E4373 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FB9A78202438FE009E4373 /* LoginController.swift */; };
+		72FB9A7B202439D9009E4373 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FB9A7A202439D9009E4373 /* HomeController.swift */; };
+		72FB9A7D20243A54009E4373 /* AccountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FB9A7C20243A54009E4373 /* AccountController.swift */; };
+		72FB9A7F20243A93009E4373 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FB9A7E20243A93009E4373 /* ProfileController.swift */; };
+		72FB9A8120243ABC009E4373 /* DoctorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FB9A8020243ABC009E4373 /* DoctorController.swift */; };
+		72FB9A8320243B59009E4373 /* ListDoctorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FB9A8220243B59009E4373 /* ListDoctorController.swift */; };
+		72FB9A8720243BF1009E4373 /* ViewAppointmentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FB9A8620243BF1009E4373 /* ViewAppointmentController.swift */; };
+		72FB9A8920243C4E009E4373 /* BookAppointmentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FB9A8820243C4E009E4373 /* BookAppointmentController.swift */; };
+		72FB9A8B202444FC009E4373 /* DiagnoseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FB9A8A202444FC009E4373 /* DiagnoseController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +59,16 @@
 		72FB9A612023D752009E4373 /* DermaCareUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DermaCareUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		72FB9A652023D752009E4373 /* DermaCareUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DermaCareUITests.swift; sourceTree = "<group>"; };
 		72FB9A672023D752009E4373 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		72FB9A762024389E009E4373 /* RegisterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
+		72FB9A78202438FE009E4373 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		72FB9A7A202439D9009E4373 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
+		72FB9A7C20243A54009E4373 /* AccountController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountController.swift; sourceTree = "<group>"; };
+		72FB9A7E20243A93009E4373 /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
+		72FB9A8020243ABC009E4373 /* DoctorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorController.swift; sourceTree = "<group>"; };
+		72FB9A8220243B59009E4373 /* ListDoctorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDoctorController.swift; sourceTree = "<group>"; };
+		72FB9A8620243BF1009E4373 /* ViewAppointmentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewAppointmentController.swift; sourceTree = "<group>"; };
+		72FB9A8820243C4E009E4373 /* BookAppointmentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookAppointmentController.swift; sourceTree = "<group>"; };
+		72FB9A8A202444FC009E4373 /* DiagnoseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiagnoseController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,8 +119,8 @@
 		72FB9A412023D752009E4373 /* DermaCare */ = {
 			isa = PBXGroup;
 			children = (
+				72FB9A752024387B009E4373 /* Controller */,
 				72FB9A422023D752009E4373 /* AppDelegate.swift */,
-				72FB9A442023D752009E4373 /* ViewController.swift */,
 				72FB9A462023D752009E4373 /* Main.storyboard */,
 				72FB9A4C2023D752009E4373 /* Assets.xcassets */,
 				72FB9A4E2023D752009E4373 /* LaunchScreen.storyboard */,
@@ -126,6 +146,24 @@
 				72FB9A672023D752009E4373 /* Info.plist */,
 			);
 			path = DermaCareUITests;
+			sourceTree = "<group>";
+		};
+		72FB9A752024387B009E4373 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				72FB9A442023D752009E4373 /* ViewController.swift */,
+				72FB9A762024389E009E4373 /* RegisterController.swift */,
+				72FB9A78202438FE009E4373 /* LoginController.swift */,
+				72FB9A7A202439D9009E4373 /* HomeController.swift */,
+				72FB9A7C20243A54009E4373 /* AccountController.swift */,
+				72FB9A7E20243A93009E4373 /* ProfileController.swift */,
+				72FB9A8020243ABC009E4373 /* DoctorController.swift */,
+				72FB9A8220243B59009E4373 /* ListDoctorController.swift */,
+				72FB9A8620243BF1009E4373 /* ViewAppointmentController.swift */,
+				72FB9A8820243C4E009E4373 /* BookAppointmentController.swift */,
+				72FB9A8A202444FC009E4373 /* DiagnoseController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,9 +300,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72FB9A7D20243A54009E4373 /* AccountController.swift in Sources */,
+				72FB9A772024389E009E4373 /* RegisterController.swift in Sources */,
+				72FB9A8320243B59009E4373 /* ListDoctorController.swift in Sources */,
+				72FB9A8B202444FC009E4373 /* DiagnoseController.swift in Sources */,
 				72FB9A4B2023D752009E4373 /* DermaCare.xcdatamodeld in Sources */,
+				72FB9A7B202439D9009E4373 /* HomeController.swift in Sources */,
+				72FB9A8120243ABC009E4373 /* DoctorController.swift in Sources */,
 				72FB9A452023D752009E4373 /* ViewController.swift in Sources */,
+				72FB9A8720243BF1009E4373 /* ViewAppointmentController.swift in Sources */,
 				72FB9A432023D752009E4373 /* AppDelegate.swift in Sources */,
+				72FB9A79202438FE009E4373 /* LoginController.swift in Sources */,
+				72FB9A8920243C4E009E4373 /* BookAppointmentController.swift in Sources */,
+				72FB9A7F20243A93009E4373 /* ProfileController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
