@@ -1,0 +1,575 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		900FE9DC2019B22E000C606B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900FE9DB2019B22E000C606B /* AppDelegate.swift */; };
+		900FE9DE2019B22E000C606B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900FE9DD2019B22E000C606B /* ViewController.swift */; };
+		900FE9E12019B22E000C606B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 900FE9DF2019B22E000C606B /* Main.storyboard */; };
+		900FE9E32019B22E000C606B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 900FE9E22019B22E000C606B /* Assets.xcassets */; };
+		900FE9E62019B22E000C606B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 900FE9E42019B22E000C606B /* LaunchScreen.storyboard */; };
+		900FE9F12019B22E000C606B /* ParkStashTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900FE9F02019B22E000C606B /* ParkStashTests.swift */; };
+		900FE9FC2019B22E000C606B /* ParkStashUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900FE9FB2019B22E000C606B /* ParkStashUITests.swift */; };
+		900FEA0A2019B456000C606B /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900FEA092019B456000C606B /* ContainerViewController.swift */; };
+		900FEA0C2019B506000C606B /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900FEA0B2019B506000C606B /* SideMenuViewController.swift */; };
+		900FEA0E2019BFA5000C606B /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900FEA0D2019BFA5000C606B /* MainViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		900FE9ED2019B22E000C606B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 900FE9D02019B22E000C606B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 900FE9D72019B22E000C606B;
+			remoteInfo = ParkStash;
+		};
+		900FE9F82019B22E000C606B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 900FE9D02019B22E000C606B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 900FE9D72019B22E000C606B;
+			remoteInfo = ParkStash;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		900FE9D82019B22E000C606B /* ParkStash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ParkStash.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		900FE9DB2019B22E000C606B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		900FE9DD2019B22E000C606B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		900FE9E02019B22E000C606B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		900FE9E22019B22E000C606B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		900FE9E52019B22E000C606B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		900FE9E72019B22E000C606B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		900FE9EC2019B22E000C606B /* ParkStashTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ParkStashTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		900FE9F02019B22E000C606B /* ParkStashTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkStashTests.swift; sourceTree = "<group>"; };
+		900FE9F22019B22E000C606B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		900FE9F72019B22E000C606B /* ParkStashUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ParkStashUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		900FE9FB2019B22E000C606B /* ParkStashUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkStashUITests.swift; sourceTree = "<group>"; };
+		900FE9FD2019B22E000C606B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		900FEA092019B456000C606B /* ContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
+		900FEA0B2019B506000C606B /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
+		900FEA0D2019BFA5000C606B /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		900FE9D52019B22E000C606B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		900FE9E92019B22E000C606B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		900FE9F42019B22E000C606B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		900FE9CF2019B22E000C606B = {
+			isa = PBXGroup;
+			children = (
+				900FE9DA2019B22E000C606B /* ParkStash */,
+				900FE9EF2019B22E000C606B /* ParkStashTests */,
+				900FE9FA2019B22E000C606B /* ParkStashUITests */,
+				900FE9D92019B22E000C606B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		900FE9D92019B22E000C606B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				900FE9D82019B22E000C606B /* ParkStash.app */,
+				900FE9EC2019B22E000C606B /* ParkStashTests.xctest */,
+				900FE9F72019B22E000C606B /* ParkStashUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		900FE9DA2019B22E000C606B /* ParkStash */ = {
+			isa = PBXGroup;
+			children = (
+				900FE9DB2019B22E000C606B /* AppDelegate.swift */,
+				900FE9DD2019B22E000C606B /* ViewController.swift */,
+				900FE9DF2019B22E000C606B /* Main.storyboard */,
+				900FEA0D2019BFA5000C606B /* MainViewController.swift */,
+				900FEA0B2019B506000C606B /* SideMenuViewController.swift */,
+				900FE9E22019B22E000C606B /* Assets.xcassets */,
+				900FE9E42019B22E000C606B /* LaunchScreen.storyboard */,
+				900FE9E72019B22E000C606B /* Info.plist */,
+				900FEA092019B456000C606B /* ContainerViewController.swift */,
+			);
+			path = ParkStash;
+			sourceTree = "<group>";
+		};
+		900FE9EF2019B22E000C606B /* ParkStashTests */ = {
+			isa = PBXGroup;
+			children = (
+				900FE9F02019B22E000C606B /* ParkStashTests.swift */,
+				900FE9F22019B22E000C606B /* Info.plist */,
+			);
+			path = ParkStashTests;
+			sourceTree = "<group>";
+		};
+		900FE9FA2019B22E000C606B /* ParkStashUITests */ = {
+			isa = PBXGroup;
+			children = (
+				900FE9FB2019B22E000C606B /* ParkStashUITests.swift */,
+				900FE9FD2019B22E000C606B /* Info.plist */,
+			);
+			path = ParkStashUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		900FE9D72019B22E000C606B /* ParkStash */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 900FEA002019B22E000C606B /* Build configuration list for PBXNativeTarget "ParkStash" */;
+			buildPhases = (
+				900FE9D42019B22E000C606B /* Sources */,
+				900FE9D52019B22E000C606B /* Frameworks */,
+				900FE9D62019B22E000C606B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ParkStash;
+			productName = ParkStash;
+			productReference = 900FE9D82019B22E000C606B /* ParkStash.app */;
+			productType = "com.apple.product-type.application";
+		};
+		900FE9EB2019B22E000C606B /* ParkStashTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 900FEA032019B22E000C606B /* Build configuration list for PBXNativeTarget "ParkStashTests" */;
+			buildPhases = (
+				900FE9E82019B22E000C606B /* Sources */,
+				900FE9E92019B22E000C606B /* Frameworks */,
+				900FE9EA2019B22E000C606B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				900FE9EE2019B22E000C606B /* PBXTargetDependency */,
+			);
+			name = ParkStashTests;
+			productName = ParkStashTests;
+			productReference = 900FE9EC2019B22E000C606B /* ParkStashTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		900FE9F62019B22E000C606B /* ParkStashUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 900FEA062019B22E000C606B /* Build configuration list for PBXNativeTarget "ParkStashUITests" */;
+			buildPhases = (
+				900FE9F32019B22E000C606B /* Sources */,
+				900FE9F42019B22E000C606B /* Frameworks */,
+				900FE9F52019B22E000C606B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				900FE9F92019B22E000C606B /* PBXTargetDependency */,
+			);
+			name = ParkStashUITests;
+			productName = ParkStashUITests;
+			productReference = 900FE9F72019B22E000C606B /* ParkStashUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		900FE9D02019B22E000C606B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = "Pooja Shah";
+				TargetAttributes = {
+					900FE9D72019B22E000C606B = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					900FE9EB2019B22E000C606B = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 900FE9D72019B22E000C606B;
+					};
+					900FE9F62019B22E000C606B = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 900FE9D72019B22E000C606B;
+					};
+				};
+			};
+			buildConfigurationList = 900FE9D32019B22E000C606B /* Build configuration list for PBXProject "ParkStash" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 900FE9CF2019B22E000C606B;
+			productRefGroup = 900FE9D92019B22E000C606B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				900FE9D72019B22E000C606B /* ParkStash */,
+				900FE9EB2019B22E000C606B /* ParkStashTests */,
+				900FE9F62019B22E000C606B /* ParkStashUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		900FE9D62019B22E000C606B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				900FE9E62019B22E000C606B /* LaunchScreen.storyboard in Resources */,
+				900FE9E32019B22E000C606B /* Assets.xcassets in Resources */,
+				900FE9E12019B22E000C606B /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		900FE9EA2019B22E000C606B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		900FE9F52019B22E000C606B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		900FE9D42019B22E000C606B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				900FEA0C2019B506000C606B /* SideMenuViewController.swift in Sources */,
+				900FE9DE2019B22E000C606B /* ViewController.swift in Sources */,
+				900FEA0A2019B456000C606B /* ContainerViewController.swift in Sources */,
+				900FE9DC2019B22E000C606B /* AppDelegate.swift in Sources */,
+				900FEA0E2019BFA5000C606B /* MainViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		900FE9E82019B22E000C606B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				900FE9F12019B22E000C606B /* ParkStashTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		900FE9F32019B22E000C606B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				900FE9FC2019B22E000C606B /* ParkStashUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		900FE9EE2019B22E000C606B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 900FE9D72019B22E000C606B /* ParkStash */;
+			targetProxy = 900FE9ED2019B22E000C606B /* PBXContainerItemProxy */;
+		};
+		900FE9F92019B22E000C606B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 900FE9D72019B22E000C606B /* ParkStash */;
+			targetProxy = 900FE9F82019B22E000C606B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		900FE9DF2019B22E000C606B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				900FE9E02019B22E000C606B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		900FE9E42019B22E000C606B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				900FE9E52019B22E000C606B /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		900FE9FE2019B22E000C606B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		900FE9FF2019B22E000C606B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		900FEA012019B22E000C606B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = LZYW5D8PTV;
+				INFOPLIST_FILE = ParkStash/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.park.ParkStash;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		900FEA022019B22E000C606B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = LZYW5D8PTV;
+				INFOPLIST_FILE = ParkStash/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.park.ParkStash;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		900FEA042019B22E000C606B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = LZYW5D8PTV;
+				INFOPLIST_FILE = ParkStashTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.park.ParkStashTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ParkStash.app/ParkStash";
+			};
+			name = Debug;
+		};
+		900FEA052019B22E000C606B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = LZYW5D8PTV;
+				INFOPLIST_FILE = ParkStashTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.park.ParkStashTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ParkStash.app/ParkStash";
+			};
+			name = Release;
+		};
+		900FEA072019B22E000C606B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = LZYW5D8PTV;
+				INFOPLIST_FILE = ParkStashUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.park.ParkStashUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ParkStash;
+			};
+			name = Debug;
+		};
+		900FEA082019B22E000C606B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = LZYW5D8PTV;
+				INFOPLIST_FILE = ParkStashUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.park.ParkStashUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ParkStash;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		900FE9D32019B22E000C606B /* Build configuration list for PBXProject "ParkStash" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				900FE9FE2019B22E000C606B /* Debug */,
+				900FE9FF2019B22E000C606B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		900FEA002019B22E000C606B /* Build configuration list for PBXNativeTarget "ParkStash" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				900FEA012019B22E000C606B /* Debug */,
+				900FEA022019B22E000C606B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		900FEA032019B22E000C606B /* Build configuration list for PBXNativeTarget "ParkStashTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				900FEA042019B22E000C606B /* Debug */,
+				900FEA052019B22E000C606B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		900FEA062019B22E000C606B /* Build configuration list for PBXNativeTarget "ParkStashUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				900FEA072019B22E000C606B /* Debug */,
+				900FEA082019B22E000C606B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 900FE9D02019B22E000C606B /* Project object */;
+}
