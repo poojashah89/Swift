@@ -7,14 +7,21 @@
 //
 
 import Foundation
-
+import FirebaseAuth
 import UIKit
 
 class ProfileController: UIViewController {
     
+    @IBOutlet weak var userNameText: UILabel!
+    
+    @IBOutlet weak var emailText: UITextField!
+    
+    @IBOutlet weak var passwordText: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        emailText.text = Auth.auth().currentUser?.email
+        userNameText.text = Auth.auth().currentUser?.email
     }
     
     override func didReceiveMemoryWarning() {
@@ -22,5 +29,11 @@ class ProfileController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
+    @IBAction func updateProfileAction(_ sender: Any) {
+    }
+    
+    @IBAction func changePasswordAction(_ sender: Any) {
+    }
     
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		72A3A1902032DB9100E67A63 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 72A3A18F2032DB9100E67A63 /* GoogleService-Info.plist */; };
 		72FB9A432023D752009E4373 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FB9A422023D752009E4373 /* AppDelegate.swift */; };
 		72FB9A452023D752009E4373 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FB9A442023D752009E4373 /* ViewController.swift */; };
 		72FB9A482023D752009E4373 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 72FB9A462023D752009E4373 /* Main.storyboard */; };
@@ -25,6 +26,9 @@
 		72FB9A8720243BF1009E4373 /* ViewAppointmentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FB9A8620243BF1009E4373 /* ViewAppointmentController.swift */; };
 		72FB9A8920243C4E009E4373 /* BookAppointmentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FB9A8820243C4E009E4373 /* BookAppointmentController.swift */; };
 		72FB9A8B202444FC009E4373 /* DiagnoseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FB9A8A202444FC009E4373 /* DiagnoseController.swift */; };
+		79678F2CE2B8CC951340B6ED /* Pods_DermaCareTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A0D81ADEB691E829B5BC454 /* Pods_DermaCareTests.framework */; };
+		85201F96371C499FBCCAFC2A /* Pods_DermaCareUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEB1F4D3893F2E75A8BD3E85 /* Pods_DermaCareUITests.framework */; };
+		FD6F7C3EAB3A944417688113 /* Pods_DermaCare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A1CCD7EB78F4977D9577BA1 /* Pods_DermaCare.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +49,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		40545FFFE0FA422624E9C320 /* Pods-DermaCare.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DermaCare.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DermaCare/Pods-DermaCare.debug.xcconfig"; sourceTree = "<group>"; };
+		72A3A18F2032DB9100E67A63 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		72FB9A3F2023D752009E4373 /* DermaCare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DermaCare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		72FB9A422023D752009E4373 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		72FB9A442023D752009E4373 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -69,6 +75,14 @@
 		72FB9A8620243BF1009E4373 /* ViewAppointmentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewAppointmentController.swift; sourceTree = "<group>"; };
 		72FB9A8820243C4E009E4373 /* BookAppointmentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookAppointmentController.swift; sourceTree = "<group>"; };
 		72FB9A8A202444FC009E4373 /* DiagnoseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiagnoseController.swift; sourceTree = "<group>"; };
+		7A1CCD7EB78F4977D9577BA1 /* Pods_DermaCare.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DermaCare.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A0D81ADEB691E829B5BC454 /* Pods_DermaCareTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DermaCareTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C4219805920FCD7E441C03A /* Pods-DermaCareUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DermaCareUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DermaCareUITests/Pods-DermaCareUITests.release.xcconfig"; sourceTree = "<group>"; };
+		9B71EAF79CA1A0F8C7BBADDA /* Pods-DermaCareUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DermaCareUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DermaCareUITests/Pods-DermaCareUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		9D839FD3A7F3E20EC46E20DE /* Pods-DermaCareTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DermaCareTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DermaCareTests/Pods-DermaCareTests.debug.xcconfig"; sourceTree = "<group>"; };
+		C72AFA4F3A92FF985FAC0A98 /* Pods-DermaCare.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DermaCare.release.xcconfig"; path = "Pods/Target Support Files/Pods-DermaCare/Pods-DermaCare.release.xcconfig"; sourceTree = "<group>"; };
+		D6FE3A8BB13B22E707363895 /* Pods-DermaCareTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DermaCareTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DermaCareTests/Pods-DermaCareTests.release.xcconfig"; sourceTree = "<group>"; };
+		DEB1F4D3893F2E75A8BD3E85 /* Pods_DermaCareUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DermaCareUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD6F7C3EAB3A944417688113 /* Pods_DermaCare.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +98,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79678F2CE2B8CC951340B6ED /* Pods_DermaCareTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,12 +106,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85201F96371C499FBCCAFC2A /* Pods_DermaCareUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3E46C121CF7354B47692BA32 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7A1CCD7EB78F4977D9577BA1 /* Pods_DermaCare.framework */,
+				8A0D81ADEB691E829B5BC454 /* Pods_DermaCareTests.framework */,
+				DEB1F4D3893F2E75A8BD3E85 /* Pods_DermaCareUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		72FB9A362023D752009E4373 = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +130,8 @@
 				72FB9A592023D752009E4373 /* DermaCareTests */,
 				72FB9A642023D752009E4373 /* DermaCareUITests */,
 				72FB9A402023D752009E4373 /* Products */,
+				DD41E7E6FF2238BB7F8D0D9E /* Pods */,
+				3E46C121CF7354B47692BA32 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -119,6 +148,7 @@
 		72FB9A412023D752009E4373 /* DermaCare */ = {
 			isa = PBXGroup;
 			children = (
+				72A3A18F2032DB9100E67A63 /* GoogleService-Info.plist */,
 				72FB9A752024387B009E4373 /* Controller */,
 				72FB9A422023D752009E4373 /* AppDelegate.swift */,
 				72FB9A462023D752009E4373 /* Main.storyboard */,
@@ -166,6 +196,19 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		DD41E7E6FF2238BB7F8D0D9E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				40545FFFE0FA422624E9C320 /* Pods-DermaCare.debug.xcconfig */,
+				C72AFA4F3A92FF985FAC0A98 /* Pods-DermaCare.release.xcconfig */,
+				9D839FD3A7F3E20EC46E20DE /* Pods-DermaCareTests.debug.xcconfig */,
+				D6FE3A8BB13B22E707363895 /* Pods-DermaCareTests.release.xcconfig */,
+				9B71EAF79CA1A0F8C7BBADDA /* Pods-DermaCareUITests.debug.xcconfig */,
+				8C4219805920FCD7E441C03A /* Pods-DermaCareUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -173,9 +216,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 72FB9A6A2023D753009E4373 /* Build configuration list for PBXNativeTarget "DermaCare" */;
 			buildPhases = (
+				962A28E846E15BBF1DFFD04E /* [CP] Check Pods Manifest.lock */,
 				72FB9A3B2023D752009E4373 /* Sources */,
 				72FB9A3C2023D752009E4373 /* Frameworks */,
 				72FB9A3D2023D752009E4373 /* Resources */,
+				FCC2345E3F91396D01B6391E /* [CP] Embed Pods Frameworks */,
+				D12209E77FEC774C66C51FB1 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -190,9 +236,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 72FB9A6D2023D753009E4373 /* Build configuration list for PBXNativeTarget "DermaCareTests" */;
 			buildPhases = (
+				52D3632B5763C021ACA5CB6D /* [CP] Check Pods Manifest.lock */,
 				72FB9A522023D752009E4373 /* Sources */,
 				72FB9A532023D752009E4373 /* Frameworks */,
 				72FB9A542023D752009E4373 /* Resources */,
+				6A587523E936AFF8F181C9E7 /* [CP] Embed Pods Frameworks */,
+				0D30090C47CEB68812A52FD6 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -208,9 +257,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 72FB9A702023D753009E4373 /* Build configuration list for PBXNativeTarget "DermaCareUITests" */;
 			buildPhases = (
+				B1CB464BD2EDCDFBAF421A40 /* [CP] Check Pods Manifest.lock */,
 				72FB9A5D2023D752009E4373 /* Sources */,
 				72FB9A5E2023D752009E4373 /* Frameworks */,
 				72FB9A5F2023D752009E4373 /* Resources */,
+				8D0D81B4078DF53E1626FA55 /* [CP] Embed Pods Frameworks */,
+				C2C1400C676793840EBBB7FA /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -274,6 +326,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				72FB9A502023D752009E4373 /* LaunchScreen.storyboard in Resources */,
+				72A3A1902032DB9100E67A63 /* GoogleService-Info.plist in Resources */,
 				72FB9A4D2023D752009E4373 /* Assets.xcassets in Resources */,
 				72FB9A482023D752009E4373 /* Main.storyboard in Resources */,
 			);
@@ -294,6 +347,162 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0D30090C47CEB68812A52FD6 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DermaCareTests/Pods-DermaCareTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		52D3632B5763C021ACA5CB6D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DermaCareTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6A587523E936AFF8F181C9E7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DermaCareTests/Pods-DermaCareTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8D0D81B4078DF53E1626FA55 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DermaCareUITests/Pods-DermaCareUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		962A28E846E15BBF1DFFD04E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DermaCare-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B1CB464BD2EDCDFBAF421A40 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DermaCareUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C2C1400C676793840EBBB7FA /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DermaCareUITests/Pods-DermaCareUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D12209E77FEC774C66C51FB1 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DermaCare/Pods-DermaCare-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FCC2345E3F91396D01B6391E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-DermaCare/Pods-DermaCare-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DermaCare/Pods-DermaCare-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		72FB9A3B2023D752009E4373 /* Sources */ = {
@@ -476,6 +685,7 @@
 		};
 		72FB9A6B2023D753009E4373 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 40545FFFE0FA422624E9C320 /* Pods-DermaCare.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -491,6 +701,7 @@
 		};
 		72FB9A6C2023D753009E4373 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C72AFA4F3A92FF985FAC0A98 /* Pods-DermaCare.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -506,6 +717,7 @@
 		};
 		72FB9A6E2023D753009E4373 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9D839FD3A7F3E20EC46E20DE /* Pods-DermaCareTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -523,6 +735,7 @@
 		};
 		72FB9A6F2023D753009E4373 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D6FE3A8BB13B22E707363895 /* Pods-DermaCareTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -540,6 +753,7 @@
 		};
 		72FB9A712023D753009E4373 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9B71EAF79CA1A0F8C7BBADDA /* Pods-DermaCareUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -556,6 +770,7 @@
 		};
 		72FB9A722023D753009E4373 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8C4219805920FCD7E441C03A /* Pods-DermaCareUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
