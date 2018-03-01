@@ -7,17 +7,16 @@
 //
 
 import Foundation
+import Firebase
 import FirebaseAuth
 import UIKit
 
 class HomeController: UIViewController {
     
-    
     @IBOutlet weak var userText: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(Auth.auth().currentUser?.email)
         userText.text = Auth.auth().currentUser?.email
     }
     
@@ -25,6 +24,5 @@ class HomeController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
     
 }

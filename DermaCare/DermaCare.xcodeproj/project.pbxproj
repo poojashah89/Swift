@@ -7,7 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7239C99D20350E6700A3C545 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7239C99C20350E6700A3C545 /* HealthKit.framework */; };
+		7239C9A020350FB900A3C545 /* HKManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7239C99F20350FB900A3C545 /* HKManager.swift */; };
+		7239C9A22037A29F00A3C545 /* HKManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7239C9A12037A29F00A3C545 /* HKManagerDelegate.swift */; };
 		72A3A1902032DB9100E67A63 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 72A3A18F2032DB9100E67A63 /* GoogleService-Info.plist */; };
+		72C4D88B203B92C0004FEA2E /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C4D88A203B92C0004FEA2E /* UserModel.swift */; };
+		72C4D88D203BACE1004FEA2E /* HealthModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C4D88C203BACE1004FEA2E /* HealthModel.swift */; };
 		72FB9A432023D752009E4373 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FB9A422023D752009E4373 /* AppDelegate.swift */; };
 		72FB9A452023D752009E4373 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FB9A442023D752009E4373 /* ViewController.swift */; };
 		72FB9A482023D752009E4373 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 72FB9A462023D752009E4373 /* Main.storyboard */; };
@@ -50,7 +55,13 @@
 
 /* Begin PBXFileReference section */
 		40545FFFE0FA422624E9C320 /* Pods-DermaCare.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DermaCare.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DermaCare/Pods-DermaCare.debug.xcconfig"; sourceTree = "<group>"; };
+		7239C99920350E5E00A3C545 /* DermaCare.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DermaCare.entitlements; sourceTree = "<group>"; };
+		7239C99C20350E6700A3C545 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		7239C99F20350FB900A3C545 /* HKManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HKManager.swift; sourceTree = "<group>"; };
+		7239C9A12037A29F00A3C545 /* HKManagerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HKManagerDelegate.swift; sourceTree = "<group>"; };
 		72A3A18F2032DB9100E67A63 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		72C4D88A203B92C0004FEA2E /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		72C4D88C203BACE1004FEA2E /* HealthModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthModel.swift; sourceTree = "<group>"; };
 		72FB9A3F2023D752009E4373 /* DermaCare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DermaCare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		72FB9A422023D752009E4373 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		72FB9A442023D752009E4373 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -91,6 +102,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FD6F7C3EAB3A944417688113 /* Pods_DermaCare.framework in Frameworks */,
+				7239C99D20350E6700A3C545 /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,11 +128,23 @@
 		3E46C121CF7354B47692BA32 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7239C99C20350E6700A3C545 /* HealthKit.framework */,
 				7A1CCD7EB78F4977D9577BA1 /* Pods_DermaCare.framework */,
 				8A0D81ADEB691E829B5BC454 /* Pods_DermaCareTests.framework */,
 				DEB1F4D3893F2E75A8BD3E85 /* Pods_DermaCareUITests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7239C99E20350F9300A3C545 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7239C99F20350FB900A3C545 /* HKManager.swift */,
+				7239C9A12037A29F00A3C545 /* HKManagerDelegate.swift */,
+				72C4D88A203B92C0004FEA2E /* UserModel.swift */,
+				72C4D88C203BACE1004FEA2E /* HealthModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		72FB9A362023D752009E4373 = {
@@ -148,6 +172,8 @@
 		72FB9A412023D752009E4373 /* DermaCare */ = {
 			isa = PBXGroup;
 			children = (
+				7239C99E20350F9300A3C545 /* Model */,
+				7239C99920350E5E00A3C545 /* DermaCare.entitlements */,
 				72A3A18F2032DB9100E67A63 /* GoogleService-Info.plist */,
 				72FB9A752024387B009E4373 /* Controller */,
 				72FB9A422023D752009E4373 /* AppDelegate.swift */,
@@ -287,6 +313,14 @@
 					72FB9A3E2023D752009E4373 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.HealthKit = {
+								enabled = 1;
+							};
+							com.apple.HomeKit = {
+								enabled = 0;
+							};
+						};
 					};
 					72FB9A552023D752009E4373 = {
 						CreatedOnToolsVersion = 9.2;
@@ -509,11 +543,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72C4D88D203BACE1004FEA2E /* HealthModel.swift in Sources */,
 				72FB9A7D20243A54009E4373 /* AccountController.swift in Sources */,
 				72FB9A772024389E009E4373 /* RegisterController.swift in Sources */,
 				72FB9A8320243B59009E4373 /* ListDoctorController.swift in Sources */,
+				7239C9A22037A29F00A3C545 /* HKManagerDelegate.swift in Sources */,
 				72FB9A8B202444FC009E4373 /* DiagnoseController.swift in Sources */,
+				7239C9A020350FB900A3C545 /* HKManager.swift in Sources */,
 				72FB9A4B2023D752009E4373 /* DermaCare.xcdatamodeld in Sources */,
+				72C4D88B203B92C0004FEA2E /* UserModel.swift in Sources */,
 				72FB9A7B202439D9009E4373 /* HomeController.swift in Sources */,
 				72FB9A8120243ABC009E4373 /* DoctorController.swift in Sources */,
 				72FB9A452023D752009E4373 /* ViewController.swift in Sources */,
@@ -688,6 +726,7 @@
 			baseConfigurationReference = 40545FFFE0FA422624E9C320 /* Pods-DermaCare.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = DermaCare/DermaCare.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LZYW5D8PTV;
 				INFOPLIST_FILE = DermaCare/Info.plist;
@@ -704,6 +743,7 @@
 			baseConfigurationReference = C72AFA4F3A92FF985FAC0A98 /* Pods-DermaCare.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = DermaCare/DermaCare.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LZYW5D8PTV;
 				INFOPLIST_FILE = DermaCare/Info.plist;

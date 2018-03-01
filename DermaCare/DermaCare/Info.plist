@@ -34,6 +34,14 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Access to Location is needed</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Access to Camera is needed to scan the image</string>
+	<key>NSHealthShareUsageDescription</key>
+	<string>Access to HealthKit needed</string>
+	<key>NSHealthUpdateUsageDescription</key>
+	<string></string>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

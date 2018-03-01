@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import FirebaseDatabase
 import FirebaseAuth
+import HealthKit
 
 class RegisterController: UIViewController {
     
@@ -22,7 +23,7 @@ class RegisterController: UIViewController {
     
     @IBOutlet weak var verifyText: UITextField!
     
-    @IBOutlet weak var phoneNo: UIImageView!
+    @IBOutlet weak var phoneNo: UITextField!
     
     @IBOutlet weak var loginTypeSegmentedControl: UISegmentedControl!
     
@@ -30,12 +31,22 @@ class RegisterController: UIViewController {
     
     var handle: AuthStateDidChangeListenerHandle?
     
-    var databaseReference : DatabaseReference!
+    var loginType: String?
+
+    private let dataModel = HKManager()
+    
+    private var databaseHandle: DatabaseHandle!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
        
+        usernameText.placeholder = "Enter Full Name"
+        passwordText.placeholder = "Enter Password"
+        verifyText.placeholder = "Re-Enter Password"
+        emailText.placeholder = "Enter E-Mail"
+        phoneNo.placeholder = "Enter Phone Number"
+        loginType = "Patient"
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -45,39 +56,92 @@ class RegisterController: UIViewController {
     
     
     @IBAction func registerAction(_ sender: Any) {
-        databaseReference = Database.database().reference()
-       
-        
-        var userType = "User"
-        if(loginTypeSegmentedControl.selectedSegmentIndex == 0) {
-            userType = "User"
-        } else {
-            userType = "Doctor"
-        }
-        
-       
         
         if(emailText.text != "" && passwordText.text != "") {
             Auth.auth().createUser(withEmail: emailText.text!, password: passwordText.text!, completion: { (user, error) in
                 if user != nil {
-                    let email = user?.email
-                     print("User is registered successfully for \(String(describing: email))")
-                    
-                     self.databaseReference.child("userlist").childByAutoId().setValue(self.usernameText.text)
-                    
-                     self.performSegue(withIdentifier: "loginSegue", sender: self)
+                    if(self.loginType == "Patient") {
+                        let usersReference = Database.database().reference(withPath: "patientlist")
+                        let lists = usersReference.child((user?.uid)!)
+                        lists.child("email").setValue(self.emailText.text)
+                        lists.child("userName").setValue(self.usernameText.text)
+                        lists.child("phone").setValue(self.phoneNo.text)
+                        lists.child("userType").setValue(self.loginType)
+                        lists.child("isHealthSync").setValue(self.healthDataConnectSwitch.isOn)
+                        
+                        //Import healhkit data
+                        if(self.healthDataConnectSwitch.isOn) {
+                            self.dataModel.delegate = self
+                            self.dataModel.requestData(user: user!)
+                        }
+                    } else {
+                        let usersReference = Database.database().reference(withPath: "doctorlist")
+                        let lists = usersReference.child((user?.uid)!)
+                        lists.child("email").setValue(self.emailText.text)
+                        lists.child("userName").setValue(self.usernameText.text)
+                        lists.child("phone").setValue(self.phoneNo.text)
+                        lists.child("userType").setValue(self.loginType)
+                    }
+                    print("User is registered successfully for \(String(describing: user?.email))")
+                    self.performSegue(withIdentifier: "loginSegue", sender: self)
                     
                 } else {
-                    if let signInError = error?.localizedDescription {
-                        print(signInError)
-                    } else {
-                        print("Unknown Error")
+                    
+                    if let error = error {
+                        if let errCode = AuthErrorCode(rawValue: error._code) {
+                            switch errCode {
+                            case .invalidEmail:
+                                self.showAlert("Enter a valid email.")
+                            case .emailAlreadyInUse:
+                                self.showAlert("Email already in use.")
+                            default:
+                                self.showAlert("Error: \(error.localizedDescription)")
+                            }
+                        }
+                        return
                     }
                 }
             })
         }
-       
+    }
+
+    @IBAction func indexChanged(_ sender: Any) {
+        switch loginTypeSegmentedControl.selectedSegmentIndex {
+        case 0:
+           self.loginType = "Patient"
+        case 1:
+           self.loginType = "Doctor"
+        default:
+            self.loginType = "Patient"
+        }
+    }
+
+    
+    func showAlert(_ message: String) {
+        let alertController = UIAlertController(title: "DermaCare User Login", message: message, preferredStyle: UIAlertControllerStyle.alert)
+        alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: nil))
+        self.present(alertController, animated: true, completion: nil)
+    }
+}
+
+extension RegisterController: HKManagerDelegate {
+    func didRecieveDataUpdate(data: HKManager) {
+        print("Health Data Imported")
+        
     }
     
 }
 
+extension RegisterController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == usernameText {
+            usernameText.becomeFirstResponder()
+        }
+        if textField == passwordText {
+            usernameText.resignFirstResponder()
+        }
+        return true
+    }
+    
+}
