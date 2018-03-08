@@ -18,7 +18,7 @@ class LoginController: UIViewController {
     @IBOutlet weak var passwordtext: UITextField!
     
     var handle: AuthStateDidChangeListenerHandle?
-    
+    var user: User?
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -38,9 +38,10 @@ class LoginController: UIViewController {
                     // The user's ID, unique to the Firebase project.
                     // To handle auth token. Use getTokenWithCompletion:completion: instead.
                     let email = user.email
+                    self.user = user
                     print("Sign in successful for \(String(describing: email))")
                    
-                    self.performSegue(withIdentifier: "loginSegue", sender: self)
+                    //self.performSegue(withIdentifier: "loginSegue", sender: self)
                     
                 } else {
                     if let error = error {
@@ -59,7 +60,10 @@ class LoginController: UIViewController {
                     assertionFailure("user and error are nil")
                 }
             }
+            
         }
+        
+        self.performSegue(withIdentifier: "loginSegue", sender: self)
         
     }
     
@@ -116,5 +120,23 @@ class LoginController: UIViewController {
         alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: nil))
         self.present(alertController, animated: true, completion: nil)
     }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "loginSegue"{
+            if user != nil {
+                let tabBarController = segue.destination as! UITabBarController
+                let homeCtrl = tabBarController.viewControllers![0] as! HomeController // or //
+                homeCtrl.userEmail = (user?.email)!
+                
+            } else {
+                self.showAlert("User account not found. Try registering")
+            }
+            
+        }
+    }
+    
+    
     
 }

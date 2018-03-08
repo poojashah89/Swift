@@ -15,9 +15,11 @@ class HomeController: UIViewController {
     
     @IBOutlet weak var userText: UILabel!
     
+    var userEmail: String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        userText.text = Auth.auth().currentUser?.email
+        userText.text = self.userEmail
     }
     
     override func didReceiveMemoryWarning() {
