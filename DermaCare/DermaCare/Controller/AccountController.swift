@@ -40,8 +40,45 @@ class AccountController: UIViewController {
     var HealthModelItems = [HealthModel]()
     
     @IBAction func healthKitSyncSwitch(_ sender: Any) {
+        let user = Auth.auth().currentUser
+        let userID = Auth.auth().currentUser?.uid
+        let lists = ref.child(userID!)
+        
         if(self.healthSyncButton.isOn){
+            let dataModel = HKManager()
+            dataModel.delegate = self
+            dataModel.requestData(user: user!)
             
+            print("if sync \(dataModel.ifHealthSyc )")
+            while (dataModel.ifHealthSyc){
+                print("sleep for 2 seconds.")
+                sleep(2) // working
+            }
+             print("if sync \(dataModel.ifHealthSyc )")
+            lists.child("isHealthSync").setValue(true)
+            lists.child("health").observeSingleEvent(of: .value, with: { (snapshot) in
+            // Get user value
+            let value = snapshot.value as? NSDictionary
+                
+                let age = value?["age"] as? String ?? "N/A"
+                let wt = value?["weight"] as? String ?? "N/A"
+                let ht = value?["height"] as? String ?? "N/A"
+                let gender = value?["sex"] as? String ?? "N/A"
+                let bp = value?["bloodType"] as? String ?? "N/A"
+                
+                self.ageText.text = "\(age) Years Old"
+                self.bpText.text = bp
+                self.weightText.text = wt
+                self.heightText.text = ht
+                self.genderText.text = gender
+                
+            }) { (error) in
+                print(error.localizedDescription)
+            }
+        
+        } else {
+            //remove health data
+            lists.child("isHealthSync").setValue(false)
         }
     }
     
@@ -52,12 +89,7 @@ class AccountController: UIViewController {
         
         startObservingDatabase()
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
+   
     
     @IBAction func userLogOut(_ sender: Any) {
         try! Auth.auth().signOut()
@@ -79,10 +111,12 @@ class AccountController: UIViewController {
                 self.healthSyncButton.setOn(false, animated: true)
             }
             
+            self.userNameText.text = value?["userName"] as? String ?? "Error"
+            
         }) { (error) in
             print(error.localizedDescription)
         }
-        
+       
         ref.child(userID!).child("health").observeSingleEvent(of: .value, with: { (snapshot) in
             // Get user value
             let value = snapshot.value as? NSDictionary
@@ -118,4 +152,6 @@ extension AccountController: HKManagerDelegate {
     }
     
 }
+
+
 

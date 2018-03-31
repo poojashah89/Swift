@@ -23,9 +23,8 @@ class HKManager {
     private var databaseHandle: DatabaseHandle!
     
     var user: User?
-    let heartRateUnit:HKUnit = HKUnit(from: "count/min")
-    let heartRateType:HKQuantityType   = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.heartRate)!
-    var heartRateQuery:HKQuery?
+    
+    var ifHealthSyc = false
     
     func requestData(user: User) {
         
@@ -48,7 +47,7 @@ class HKManager {
                                                          read: healthKitTypes) { _, _ in }
                 }
             
-                DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
+                DispatchQueue.main.asyncAfter(deadline: .now(), execute: {
                     
                     //1. Get Weight
                     self.getHeightFromHealth()
@@ -59,6 +58,8 @@ class HKManager {
                     //3. Get Blood Type, Gender, Age, DOB
                     self.readProfile()
                     
+                    self.getHeartData()
+                    self.ifHealthSyc = true
                 })
             
             } else {
@@ -186,7 +187,7 @@ class HKManager {
             HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.respiratoryRate)! as HKQuantityType,
             HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.bodyMass)! as HKQuantityType,
             HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.height)! as HKQuantityType,
-            
+            HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.heartRate)! as HKQuantityType
             
             ])
         
@@ -267,7 +268,11 @@ class HKManager {
         if biologicalSex?.biologicalSex == HKBiologicalSex.notSet {
             sexStr = "Not Set"
         } else{
-            sexStr = String(self.biologicalSexLiteral(biologicalSex!.biologicalSex))
+            if(biologicalSex == nil) {
+                sexStr = "Not Set"
+            } else{
+                sexStr = String(self.biologicalSexLiteral(biologicalSex!.biologicalSex))
+            }
             self.healthTree?.child("sex").setValue(sexStr)
         }
         
@@ -307,7 +312,54 @@ class HKManager {
         return biologicalSexText;
     }
 
-    
+    func getHeartData() {
+        let heartRateUnit:HKUnit = HKUnit(from: "count/min")
+        //let heartRateType:HKQuantityType   = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.heartRate)!
+        
+        // 1. Create a heart rate BPM Sample
+        let heartRateType = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.heartRate)!
+        let heartRateQuantity = HKQuantity(unit: HKUnit(from: "count/min"),
+                                           doubleValue: Double(arc4random_uniform(80) + 100))
+        let heartSample = HKQuantitySample(type: heartRateType, quantity: heartRateQuantity, start: NSDate() as Date, end: NSDate() as Date)
+        
+       
+        //predicate
+        let calendar = NSCalendar.current
+        let now = NSDate()
+        
+        let unitFlags = Set<Calendar.Component>([.day, .month, .year, .hour])
+        var componentsNow = calendar.dateComponents([.year, .month, .day, .hour, .minute], from: now as Date)
+        
+        let startDate:NSDate = calendar.date(from: componentsNow)! as NSDate
+        //let endDate:NSDate? = calendar.date(byAdding: .day, value: 1, to: startDate)
+        let endDate = startDate.addingTimeInterval(5.0 * 60.0)
+        
+        let predicate = HKQuery.predicateForSamples(withStart: startDate as Date, end: endDate as Date, options: [])
+        
+        // 2. descriptor
+        let sortDescriptors = [
+            NSSortDescriptor(key: HKSampleSortIdentifierEndDate, ascending: false)
+        ]
+        
+        // 3. we want to limit the number of samples returned by the query to just 1 (the most recent)
+        let limit = 1
+        var typeStr:String = "Unknown"
+        
+        let sampleQuery = HKSampleQuery(sampleType: heartRateType, predicate: predicate, limit: limit, sortDescriptors: sortDescriptors) { (sampleQuery, results, error ) -> Void in
+            
+        guard error == nil else { print("error"); return }
+            
+        let mostRecentSample = results?.first as? HKQuantitySample
+            if let ht = mostRecentSample?.quantity.doubleValue(for: heartRateUnit) {
+                typeStr = String(ht)
+                print(typeStr)
+            }
+            
+        
+        self.healthKitStore.execute(sampleQuery)
+        self.healthTree?.child("heartRate").setValue(String(typeStr))
+    }
+    }
     func startObservingDatabase (user: User) {
         databaseHandle = healthTree?.observe(.value, with: { (snapshot) in
             var newItems = [HealthModel]()
