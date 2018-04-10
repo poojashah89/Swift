@@ -6,14 +6,13 @@ Flickr App downloads the images from flickr API asynchronously and gets displaye
 
 <b>Functional requirements</b>
 
-1. App should display an empty list / grid with loading indicator on first launch and begin fetching items over the network. ![download](https://user-images.githubusercontent.com/18491653/38583704-b383df40-3cc8-11e8-99c4-f91cd8f776c8.jpeg)
-
-2. Image (for grid layout) or Image & Title (for list layout) should be displayed in a scrollable view
-3. Image thumbnails should be fetched and cached
-4. Display a “Load More” button at end of each batch of thumbnails
-5. “Load More” button should not be displayed after the last batch of thumbnails
-6. App should persist data and display the same on subsequent launch
-7. App should display appropriate error message in case network is unavailable
+1. App should display an empty list / grid with loading indicator on first launch and begin fetching items over the network. - <b>Done</b>
+2. Image (for grid layout) or Image & Title (for list layout) should be displayed in a scrollable view - <b>Done</b>
+3. Image thumbnails should be fetched and cached - <b>Done</b>
+4. Display a “Load More” button at end of each batch of thumbnails - <b>Done</b>
+5. “Load More” button should not be displayed after the last batch of thumbnails - <b>Done</b>
+6. App should persist data and display the same on subsequent launch - <b>Done</b>
+7. App should display appropriate error message in case network is unavailable - <b>Done</b>
 
 ![parkstash1](https://user-images.githubusercontent.com/18491653/38582545-f2fc140c-3cc4-11e8-80e8-45a7d4810bfa.gif)
 
@@ -21,10 +20,10 @@ Flickr App downloads the images from flickr API asynchronously and gets displaye
 
 <b>Non-functional requirements</b>
 
-1. Minimize the number of thumbnails that need to be fetched (i.e., do not begin fetching until a thumbnail is on-screen)
-2. Organize your code into multiple classes as appropriate. (Do not write all code in UIViewController for iOS and Activity / Fragment for Android)
-3. Make sure the UI remains responsive even when network operations are in progress
-4. Use platform provided methods for constructing URLs and encoding query parameters.
+1. Minimize the number of thumbnails that need to be fetched (i.e., do not begin fetching until a thumbnail is on-screen) - <b>Done</b> 
+2. Organize your code into multiple classes as appropriate. (Do not write all code in UIViewController for iOS and Activity / Fragment for Android) - <b>Done</b>
+3. Make sure the UI remains responsive even when network operations are in progress - <b>Done</b>
+4. Use platform provided methods for constructing URLs and encoding query parameters. - <b>Done</b>
 
 <b>Flickr APIs:</b>
 To use paging, page numbers are used
