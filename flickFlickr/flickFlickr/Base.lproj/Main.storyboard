@@ -147,11 +147,44 @@
                         <outlet property="collectionView" destination="ITe-eA-abr" id="ky5-gr-66n"/>
                         <outlet property="gridSwitch" destination="EVZ-HV-6ZF" id="arc-gj-5g5"/>
                         <outlet property="loadMoreButton" destination="yr6-Dc-lCJ" id="FCC-Qn-dc5"/>
+                        <segue destination="y9y-zo-DGa" kind="show" identifier="ShowDetail" id="Bup-dB-Pmn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E9k-TG-2Kn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1140" y="14.842578710644679"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="O5f-Zn-i7B">
+            <objects>
+                <viewController id="y9y-zo-DGa" customClass="DetailViewController" customModule="flickFlickr" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qMX-tO-jQO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ra3-R6-7Pz">
+                                <rect key="frame" x="0.0" y="64" width="375" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ryd-5K-ILs">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Qpd-H6-lG5"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="Ryd-5K-ILs" id="w3P-4h-3OG"/>
+                        <outlet property="imgTitle" destination="Ra3-R6-7Pz" id="XM3-jM-WLe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YBC-cD-jMe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2008.8" y="14.842578710644679"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="pwe-nV-9my">

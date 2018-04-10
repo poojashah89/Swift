@@ -17,6 +17,7 @@ class FlickrImageModel: NSObject {
     var secret: String?
     var server: String?
     var imageURLString: String?
+    var largePhotoURLString: String?
     
     var ispublic: Int?
     var isfriend: Int?
@@ -30,8 +31,13 @@ class FlickrImageModel: NSObject {
         farm = dictionary["farm"] as? Int ?? 0
         
         //Build farm{farm-id}.staticflickr.com/{server-id}/{id}_{secret}.jpg
+        
+        // download medium photo
         self.imageURLString = "https://farm\(farm ?? 0).staticflickr.com/\(server ?? "noserver")/\(id ?? "noid")_\(secret ?? "nosecret")_m.jpg"
         
+        // To download Large Photo
+        self.largePhotoURLString = "https://farm\(farm ?? 0).staticflickr.com/\(server ?? "noserver")/\(id ?? "noid")_\(secret ?? "nosecret")_b.jpg"
+
     }
     
     class func FlickrPhotoArray(array: [NSDictionary]) -> [FlickrImageModel] {
@@ -72,12 +78,6 @@ class FlickrImageModel: NSObject {
         task.resume()
         
     }
-   
-    func flickrLargePhotoURL(_ size:String = "m") -> URL? {
-        if let url =  URL(string: "https://farm\(farm).staticflickr.com/\(server)/\(id)_\(secret)_\(size).jpg") {
-            return url
-        }
-        return nil
-    }
+
     
 }

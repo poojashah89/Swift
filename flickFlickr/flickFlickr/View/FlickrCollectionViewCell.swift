@@ -14,7 +14,7 @@ class FlickrCollectionViewCell: UICollectionViewCell {
     var task = URLSessionDownloadTask()
     var session = URLSession.shared
     
-    // Thumbnail 
+    // Loads Thumbnail 
     @IBOutlet weak var flickrImage: UIImageView!
   
     var imageModel: FlickrImageModel? {
@@ -22,6 +22,7 @@ class FlickrCollectionViewCell: UICollectionViewCell {
             //render image from FlickerImageModel Object
             let key = imageModel?.id
             let flickrUrl = imageModel?.imageURLString
+            if flickrUrl != nil {
                 let url = URL(string: flickrUrl!)
                 if(url != nil) {
                     task = session.downloadTask(with: url!, completionHandler: { (location, response, error) -> Void in
@@ -39,5 +40,7 @@ class FlickrCollectionViewCell: UICollectionViewCell {
                     task.resume()
                 }
             }
+        }
     }
+    
  }

@@ -97,10 +97,22 @@ class FlickrViewController: UIViewController, UICollectionViewDelegate, UICollec
     
     func collectionView(_ collectionView: UICollectionView,
                                  didSelectItemAt indexPath: IndexPath) {
-       print(flickrImages[indexPath.row].title as Any)
+        //let title = flickrImages[indexPath.row].title
+        //let url = flickrImages[indexPath.row].largePhotoURLString
+        
+        self.performSegue(withIdentifier: "ShowDetail", sender: flickrImages[indexPath.row].largePhotoURLString)
         
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if segue.identifier == "ShowDetail"{
+            let detailVC : DetailViewController = (segue.destination as? DetailViewController)!
+            
+            detailVC.img = sender as? String
+            
+        }
+    }
     override func viewDidAppear(_ animated: Bool) {
         self.collectionView.reloadData()
     }
@@ -131,6 +143,7 @@ class FlickrViewController: UIViewController, UICollectionViewDelegate, UICollec
             
             DispatchQueue.main.async{
                 self.collectionView.reloadData()
+                self.activityAnimator.stopAnimating()
                 self.activityAnimator.isHidden = true
             }
         })

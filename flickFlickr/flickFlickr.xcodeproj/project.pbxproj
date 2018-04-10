@@ -18,6 +18,8 @@
 		72207BF6207BE4BD00B7B268 /* FlickrViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72207BF5207BE4BD00B7B268 /* FlickrViewController.swift */; };
 		72207BF8207BE8D600B7B268 /* FlickrCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72207BF7207BE8D600B7B268 /* FlickrCollectionViewCell.swift */; };
 		72207C08207C77E100B7B268 /* FlickrPhotosMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72207C07207C77E100B7B268 /* FlickrPhotosMetadata.swift */; };
+		72207C0A207D425D00B7B268 /* ZoomTransitioningDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72207C09207D425D00B7B268 /* ZoomTransitioningDelegate.swift */; };
+		72207C0C207D433300B7B268 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72207C0B207D433300B7B268 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,8 @@
 		72207BF5207BE4BD00B7B268 /* FlickrViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrViewController.swift; sourceTree = "<group>"; };
 		72207BF7207BE8D600B7B268 /* FlickrCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrCollectionViewCell.swift; sourceTree = "<group>"; };
 		72207C07207C77E100B7B268 /* FlickrPhotosMetadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrPhotosMetadata.swift; sourceTree = "<group>"; };
+		72207C09207D425D00B7B268 /* ZoomTransitioningDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomTransitioningDelegate.swift; sourceTree = "<group>"; };
+		72207C0B207D433300B7B268 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +153,7 @@
 			isa = PBXGroup;
 			children = (
 				72207BF7207BE8D600B7B268 /* FlickrCollectionViewCell.swift */,
+				72207C09207D425D00B7B268 /* ZoomTransitioningDelegate.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -157,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				72207BF5207BE4BD00B7B268 /* FlickrViewController.swift */,
+				72207C0B207D433300B7B268 /* DetailViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -294,10 +300,12 @@
 			files = (
 				72207BF8207BE8D600B7B268 /* FlickrCollectionViewCell.swift in Sources */,
 				72207BF2207B4B0C00B7B268 /* FlickrImageModel.swift in Sources */,
+				72207C0A207D425D00B7B268 /* ZoomTransitioningDelegate.swift in Sources */,
 				72207BC9207B3FD900B7B268 /* flickFlickr.xcdatamodeld in Sources */,
 				72207BF6207BE4BD00B7B268 /* FlickrViewController.swift in Sources */,
 				72207C08207C77E100B7B268 /* FlickrPhotosMetadata.swift in Sources */,
 				72207BC1207B3FD900B7B268 /* AppDelegate.swift in Sources */,
+				72207C0C207D433300B7B268 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
