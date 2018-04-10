@@ -6,7 +6,8 @@ Flickr App downloads the images from flickr API asynchronously and gets displaye
 
 <b>Functional requirements</b>
 
-1. App should display an empty list / grid with loading indicator on first launch and begin fetching items over the network.
+1. App should display an empty list / grid with loading indicator on first launch and begin fetching items over the network. ![download](https://user-images.githubusercontent.com/18491653/38583704-b383df40-3cc8-11e8-99c4-f91cd8f776c8.jpeg)
+
 2. Image (for grid layout) or Image & Title (for list layout) should be displayed in a scrollable view
 3. Image thumbnails should be fetched and cached
 4. Display a “Load More” button at end of each batch of thumbnails
@@ -39,7 +40,7 @@ To display thumbnail
 <img width="344" alt="screen shot 2018-04-10 at 1 56 56 pm" src="https://user-images.githubusercontent.com/18491653/38583164-0e51bc6e-3cc7-11e8-9282-3604acba2658.png">
 
 To display large size photo
-3. farm{farm-id}.staticflickr.com/{server-id}/{id}_{secret}_b.jpg
+3. farm{farm-id}.staticflickr.com/{server-id}/{id}_{secret}_<b>b<b>.jpg
 
 <img width="384" alt="screen shot 2018-04-10 at 1 55 21 pm" src="https://user-images.githubusercontent.com/18491653/38583116-db0ef880-3cc6-11e8-85e8-8669659a8d2b.png">
 
