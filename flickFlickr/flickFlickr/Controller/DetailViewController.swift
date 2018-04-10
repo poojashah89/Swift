@@ -12,14 +12,14 @@ import UIKit
 // Display large photo
 class DetailViewController: UIViewController {
  
-    var img: String?
+    var img: FlickrImageModel?
    
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var imgTitle: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(img as Any)
+        imgTitle.text = img?.title
         loadLargeImage()
     }
 
@@ -34,7 +34,7 @@ class DetailViewController: UIViewController {
         var task = URLSessionDownloadTask()
         let session = URLSession.shared
         
-        let flickrUrl = self.img
+        let flickrUrl = self.img?.largePhotoURLString
         if flickrUrl != nil {
             let url = URL(string: flickrUrl!)
             if(url != nil) {

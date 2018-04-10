@@ -100,7 +100,7 @@ class FlickrViewController: UIViewController, UICollectionViewDelegate, UICollec
         //let title = flickrImages[indexPath.row].title
         //let url = flickrImages[indexPath.row].largePhotoURLString
         
-        self.performSegue(withIdentifier: "ShowDetail", sender: flickrImages[indexPath.row].largePhotoURLString)
+        self.performSegue(withIdentifier: "ShowDetail", sender: flickrImages[indexPath.row])
         
     }
     
@@ -109,7 +109,7 @@ class FlickrViewController: UIViewController, UICollectionViewDelegate, UICollec
         if segue.identifier == "ShowDetail"{
             let detailVC : DetailViewController = (segue.destination as? DetailViewController)!
             
-            detailVC.img = sender as? String
+            detailVC.img = sender as? FlickrImageModel
             
         }
     }

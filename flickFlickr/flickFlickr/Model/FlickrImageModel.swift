@@ -33,7 +33,7 @@ class FlickrImageModel: NSObject {
         //Build farm{farm-id}.staticflickr.com/{server-id}/{id}_{secret}.jpg
         
         // download medium photo
-        self.imageURLString = "https://farm\(farm ?? 0).staticflickr.com/\(server ?? "noserver")/\(id ?? "noid")_\(secret ?? "nosecret")_m.jpg"
+        self.imageURLString = "https://farm\(farm ?? 0).staticflickr.com/\(server ?? "noserver")/\(id ?? "noid")_\(secret ?? "nosecret")_t.jpg"
         
         // To download Large Photo
         self.largePhotoURLString = "https://farm\(farm ?? 0).staticflickr.com/\(server ?? "noserver")/\(id ?? "noid")_\(secret ?? "nosecret")_b.jpg"
