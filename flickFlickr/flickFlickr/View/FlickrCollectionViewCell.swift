@@ -14,6 +14,7 @@ class FlickrCollectionViewCell: UICollectionViewCell {
     var task = URLSessionDownloadTask()
     var session = URLSession.shared
     
+    // Thumbnail 
     @IBOutlet weak var flickrImage: UIImageView!
   
     var imageModel: FlickrImageModel? {

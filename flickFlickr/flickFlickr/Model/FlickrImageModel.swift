@@ -31,7 +31,7 @@ class FlickrImageModel: NSObject {
         
         //Build farm{farm-id}.staticflickr.com/{server-id}/{id}_{secret}.jpg
         self.imageURLString = "https://farm\(farm ?? 0).staticflickr.com/\(server ?? "noserver")/\(id ?? "noid")_\(secret ?? "nosecret")_m.jpg"
-        print(imageURLString as Any)
+        
     }
     
     class func FlickrPhotoArray(array: [NSDictionary]) -> [FlickrImageModel] {
@@ -72,8 +72,8 @@ class FlickrImageModel: NSObject {
         task.resume()
         
     }
-    
-    func flickrImageURL(_ size:String = "m") -> URL? {
+   
+    func flickrLargePhotoURL(_ size:String = "m") -> URL? {
         if let url =  URL(string: "https://farm\(farm).staticflickr.com/\(server)/\(id)_\(secret)_\(size).jpg") {
             return url
         }

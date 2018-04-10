@@ -19,13 +19,14 @@ class FlickrViewController: UIViewController, UICollectionViewDelegate, UICollec
     
     @IBOutlet weak var gridSwitch: UISwitch!
     
-    var activityIndicator : UIActivityIndicatorView = UIActivityIndicatorView()
+    @IBOutlet weak var activityAnimator: UIActivityIndicatorView!
+    
+    @IBOutlet weak var loadMoreButton: UIButton!
+    
     
     var flickrImages = [FlickrImageModel]()
     var page:Int = 1, flickrTotalPages : Int? = 0 , perpage: Int? = 0, totalPhotos : Int? = 0
     let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-    
-    @IBOutlet weak var loadMoreButton: UIButton!
     
     // ViewDidLoad
     override func viewDidLoad() {
@@ -56,7 +57,6 @@ class FlickrViewController: UIViewController, UICollectionViewDelegate, UICollec
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as! FlickrCollectionViewCell
         
-        //cell.flickrImage.image = UIImage(named: "placeholder")
         let key = flickrImages[indexPath.row].id
         
         // Check if the object for key (id) exists in the cache
@@ -94,6 +94,13 @@ class FlickrViewController: UIViewController, UICollectionViewDelegate, UICollec
         return cell
     }
     
+    
+    func collectionView(_ collectionView: UICollectionView,
+                                 didSelectItemAt indexPath: IndexPath) {
+       print(flickrImages[indexPath.row].title as Any)
+        
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         self.collectionView.reloadData()
     }
@@ -111,6 +118,10 @@ class FlickrViewController: UIViewController, UICollectionViewDelegate, UICollec
     // Fetch All Photos
     func loadFlickrData(){
         
+        activityAnimator.isHidden = false
+        activityAnimator.startAnimating()
+        activityAnimator.sizeToFit()
+        
         FlickrImageModel.recentFlickrPhotos(page: page, callback: { (flickerImages: [FlickrImageModel]?) -> Void in
             
             for img in flickerImages! {
@@ -120,6 +131,7 @@ class FlickrViewController: UIViewController, UICollectionViewDelegate, UICollec
             
             DispatchQueue.main.async{
                 self.collectionView.reloadData()
+                self.activityAnimator.isHidden = true
             }
         })
     }
@@ -136,11 +148,16 @@ class FlickrViewController: UIViewController, UICollectionViewDelegate, UICollec
 
     // Load More Action
     @objc func lodMoreAction(sender: UIButton!) {
-        activityIndicator.startAnimating()
+       
+        // Track Page
         page = page + 1
+        
+        //hide load more button
         loadMoreButton.isHidden = true
+        
+        // Load additional data
         loadFlickrData()
-        activityIndicator.stopAnimating()
+        
     }
    
     // Render Initial UI
@@ -148,10 +165,6 @@ class FlickrViewController: UIViewController, UICollectionViewDelegate, UICollec
         self.loadMoreButton.addTarget(self, action: #selector(self.lodMoreAction), for: .touchUpInside)
         
         self.collectionView?.backgroundColor = UIColor(white: 0.2, alpha: 1)
-        activityIndicator.center = self.view.center
-        activityIndicator.hidesWhenStopped = true
-        activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
-        view.addSubview(activityIndicator)
         
         self.layout.sectionInset = UIEdgeInsets(top: 0, left: 0.5, bottom: 0, right: 0.5)
         self.layout.itemSize = CGSize(width: width , height: height)

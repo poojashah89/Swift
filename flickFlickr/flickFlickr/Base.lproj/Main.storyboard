@@ -125,6 +125,10 @@
                                     <action selector="reArrangeCollectionView:" destination="LYF-yf-Wu4" eventType="valueChanged" id="uP0-oN-uFI"/>
                                 </connections>
                             </switch>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="ZSv-tC-aPB">
+                                <rect key="frame" x="177" y="344" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.92626351118087769" green="0.59007327328500003" blue="0.42393975710384768" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -139,6 +143,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Flick the Flickr" id="gjp-ra-Phg"/>
                     <connections>
+                        <outlet property="activityAnimator" destination="ZSv-tC-aPB" id="0De-9U-Bek"/>
                         <outlet property="collectionView" destination="ITe-eA-abr" id="ky5-gr-66n"/>
                         <outlet property="gridSwitch" destination="EVZ-HV-6ZF" id="arc-gj-5g5"/>
                         <outlet property="loadMoreButton" destination="yr6-Dc-lCJ" id="FCC-Qn-dc5"/>
