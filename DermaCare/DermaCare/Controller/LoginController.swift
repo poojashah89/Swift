@@ -11,7 +11,7 @@ import UIKit
 import Firebase
 import FirebaseAuth
 
-class LoginController: UIViewController {
+class LoginController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var emailText: UITextField!
     
@@ -19,9 +19,14 @@ class LoginController: UIViewController {
     
     var handle: AuthStateDidChangeListenerHandle?
     var user: User?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        
+        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:))))
+
     }
     
     override func didReceiveMemoryWarning() {
@@ -29,6 +34,12 @@ class LoginController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool
+    {
+        emailText.resignFirstResponder()
+        passwordtext.resignFirstResponder()
+        return true;
+    }
     
     @IBAction func loginAction(_ sender: Any) {
         
@@ -62,6 +73,7 @@ class LoginController: UIViewController {
             }
             
         }
+     
         
         self.performSegue(withIdentifier: "loginSegue", sender: self)
         
