@@ -1,8 +1,8 @@
-INSTALLATION
+<b>INSTALLATION</b>
 1. Install Tensorflow 
 2. Install tflearn
 
-STEPS TO CREATE Model
+<b>STEPS TO CREATE Model</b>
 
 1. Create TfLearn Model
 Run chatbot.ipynb notebook on jupyter. It will create model.tflearn data
@@ -11,7 +11,7 @@ Run chatbot.ipynb notebook on jupyter. It will create model.tflearn data
 
 2. Run ConvertChatBotTfLearn.py against the model.tflearn
 
-3. STEPS to CONVERT to mlmodel
+<b> STEPS to CONVERT to mlmodel </b>
 
   1. Install tf-coreml
   2. Go to utils
