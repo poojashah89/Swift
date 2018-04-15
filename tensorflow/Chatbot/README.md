@@ -14,7 +14,7 @@ Run chatbot.ipynb notebook on jupyter. It will create model.tflearn data
 
 <img width="521" alt="screen shot 2018-04-14 at 6 26 41 pm" src="https://user-images.githubusercontent.com/18491653/38774024-cc8eee7a-4011-11e8-9074-d680bbf86b14.png">
 
-2. Run ConvertChatBotTfLearn.py against the model.tflearn
+2. Run tf_freeze.py against the model.tflearn
 <img width="876" alt="screen shot 2018-04-14 at 3 00 13 pm" src="https://user-images.githubusercontent.com/18491653/38774055-3a9e6ad4-4013-11e8-9615-6a1522a60fd8.png">
 
 <b> STEPS to CONVERT to mlmodel </b>
