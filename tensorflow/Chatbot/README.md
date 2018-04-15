@@ -1,6 +1,11 @@
 <b>INSTALLATION</b>
 1. Install Tensorflow 
 2. Install tflearn
+3. Download punkt using nltk_data
+
+
+<img width="840" alt="screen shot 2018-04-11 at 4 10 06 pm" src="https://user-images.githubusercontent.com/18491653/38774065-79506944-4013-11e8-916f-3bd8100b488e.png">
+
 
 <b>STEPS TO CREATE Model</b>
 
