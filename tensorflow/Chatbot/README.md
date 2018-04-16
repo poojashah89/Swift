@@ -35,3 +35,10 @@ Run chatbot.ipynb notebook on jupyter. It will create model.tflearn data
   
  mlmodel file will be generated
 <img width="692" alt="screen shot 2018-04-14 at 6 36 35 pm" src="https://user-images.githubusercontent.com/18491653/38774043-f1872016-4012-11e8-838c-509886bfce7a.png">
+
+
+
+pip install Pyro4
+
+python -m Pyro4.naming
+NS running on localhost:9090 
