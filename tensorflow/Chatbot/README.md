@@ -48,4 +48,5 @@ NS running on localhost:9090
 4. python chatbot.py
 
 5. FLASK_APP=client.py flask run
+<img width="666" alt="screen shot 2018-04-17 at 10 07 51 pm" src="https://user-images.githubusercontent.com/18491653/38912738-dbb5a138-428b-11e8-9c9d-ddf05c515775.png">
 
