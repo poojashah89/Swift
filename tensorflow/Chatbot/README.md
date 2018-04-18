@@ -2,14 +2,17 @@
 1. Install Tensorflow 
 
 >sudo apt-get update && sudo apt-get -y upgrade
+
 >sudo apt-get install python-pip
 
 Verify version
 >pip -V
 pip 8.1.1 from /usr/lib/python2.7/dist-packages (python 2.7)
+
 >pip install --upgrade pip
 
 >sudo apt-get install python3-pip
+
 >sudo pip3 install virtualenv
 
 sudo apt-get install python-pip python-dev python-virtualenv
@@ -19,18 +22,23 @@ virtualenv --system-site-packages ~/tensorflow
 source ~/tensorflow/bin/activate
 
 (tensorflow)$ easy_install -U pip
+
 (tensorflow)$ pip install --upgrade tensorflow 
  
  (tensorflow)$ deactivate 
  
 2. Install tflearn
+
 pip3 install tflearn
 
 3. Download punkt using nltk_data
+
 sudo pip3 install -U nltk
 
 >python3
+
 >>> import nltk
+
 >>> nltk.download('punkt')
 
 <img width="840" alt="screen shot 2018-04-11 at 4 10 06 pm" src="https://user-images.githubusercontent.com/18491653/38774065-79506944-4013-11e8-916f-3bd8100b488e.png">
@@ -69,6 +77,7 @@ Run chatbot.ipynb notebook on jupyter. It will create model.tflearn data
 How to run : 
 
 1. pip install Pyro4
+
 2. pip install flask
 
 3. python -m Pyro4.naming
