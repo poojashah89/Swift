@@ -10,8 +10,10 @@
 		201FD235207174D200B2B1BE /* ScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201FD234207174D200B2B1BE /* ScanViewController.swift */; };
 		7239C9A020350FB900A3C545 /* HKManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7239C99F20350FB900A3C545 /* HKManager.swift */; };
 		7239C9A22037A29F00A3C545 /* HKManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7239C9A12037A29F00A3C545 /* HKManagerDelegate.swift */; };
-		724A6EF62082D25A00DF3DAC /* chatbot_coreml.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 724A6EF52082D25A00DF3DAC /* chatbot_coreml.mlmodel */; };
 		724A6EFE2082D85400DF3DAC /* inception_coreml.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 724A6EFD2082D85400DF3DAC /* inception_coreml.mlmodel */; };
+		724A6F022086AA3B00DF3DAC /* chatbot_coreml.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 724A6F012086AA3B00DF3DAC /* chatbot_coreml.mlmodel */; };
+		724A6F042086B58100DF3DAC /* ResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724A6F032086B58100DF3DAC /* ResultController.swift */; };
+		724A6F062086CC8400DF3DAC /* HistoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724A6F052086CC8400DF3DAC /* HistoryController.swift */; };
 		72C4D88B203B92C0004FEA2E /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C4D88A203B92C0004FEA2E /* UserModel.swift */; };
 		72C4D88D203BACE1004FEA2E /* HealthModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C4D88C203BACE1004FEA2E /* HealthModel.swift */; };
 		72EBDBE4204FC8EF004ABAA4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 72EBDBE3204FC8EF004ABAA4 /* GoogleService-Info.plist */; };
@@ -61,8 +63,10 @@
 		7239C99920350E5E00A3C545 /* DermaCare.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DermaCare.entitlements; sourceTree = "<group>"; };
 		7239C99F20350FB900A3C545 /* HKManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HKManager.swift; sourceTree = "<group>"; };
 		7239C9A12037A29F00A3C545 /* HKManagerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HKManagerDelegate.swift; sourceTree = "<group>"; };
-		724A6EF52082D25A00DF3DAC /* chatbot_coreml.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = chatbot_coreml.mlmodel; sourceTree = "<group>"; };
 		724A6EFD2082D85400DF3DAC /* inception_coreml.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = inception_coreml.mlmodel; sourceTree = "<group>"; };
+		724A6F012086AA3B00DF3DAC /* chatbot_coreml.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = chatbot_coreml.mlmodel; sourceTree = "<group>"; };
+		724A6F032086B58100DF3DAC /* ResultController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultController.swift; sourceTree = "<group>"; };
+		724A6F052086CC8400DF3DAC /* HistoryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryController.swift; sourceTree = "<group>"; };
 		72C4D88A203B92C0004FEA2E /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		72C4D88C203BACE1004FEA2E /* HealthModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthModel.swift; sourceTree = "<group>"; };
 		72EBDBE3204FC8EF004ABAA4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
@@ -177,7 +181,7 @@
 				7239C99E20350F9300A3C545 /* Model */,
 				7239C99920350E5E00A3C545 /* DermaCare.entitlements */,
 				724A6EFD2082D85400DF3DAC /* inception_coreml.mlmodel */,
-				724A6EF52082D25A00DF3DAC /* chatbot_coreml.mlmodel */,
+				724A6F012086AA3B00DF3DAC /* chatbot_coreml.mlmodel */,
 				72EBDBE3204FC8EF004ABAA4 /* GoogleService-Info.plist */,
 				72FB9A752024387B009E4373 /* Controller */,
 				72FB9A422023D752009E4373 /* AppDelegate.swift */,
@@ -223,6 +227,8 @@
 				72FB9A8820243C4E009E4373 /* BookAppointmentController.swift */,
 				72FB9A8A202444FC009E4373 /* DiagnoseController.swift */,
 				201FD234207174D200B2B1BE /* ScanViewController.swift */,
+				724A6F032086B58100DF3DAC /* ResultController.swift */,
+				724A6F052086CC8400DF3DAC /* HistoryController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -553,18 +559,20 @@
 				72FB9A772024389E009E4373 /* RegisterController.swift in Sources */,
 				72FB9A8320243B59009E4373 /* ListDoctorController.swift in Sources */,
 				7239C9A22037A29F00A3C545 /* HKManagerDelegate.swift in Sources */,
+				724A6F042086B58100DF3DAC /* ResultController.swift in Sources */,
 				72FB9A8B202444FC009E4373 /* DiagnoseController.swift in Sources */,
 				724A6EFE2082D85400DF3DAC /* inception_coreml.mlmodel in Sources */,
+				724A6F062086CC8400DF3DAC /* HistoryController.swift in Sources */,
 				7239C9A020350FB900A3C545 /* HKManager.swift in Sources */,
 				72FB9A4B2023D752009E4373 /* DermaCare.xcdatamodeld in Sources */,
 				72C4D88B203B92C0004FEA2E /* UserModel.swift in Sources */,
 				72FB9A7B202439D9009E4373 /* HomeController.swift in Sources */,
 				72FB9A8120243ABC009E4373 /* DoctorController.swift in Sources */,
-				724A6EF62082D25A00DF3DAC /* chatbot_coreml.mlmodel in Sources */,
 				72FB9A452023D752009E4373 /* ViewController.swift in Sources */,
 				72FB9A8720243BF1009E4373 /* ViewAppointmentController.swift in Sources */,
 				72FB9A432023D752009E4373 /* AppDelegate.swift in Sources */,
 				72FB9A79202438FE009E4373 /* LoginController.swift in Sources */,
+				724A6F022086AA3B00DF3DAC /* chatbot_coreml.mlmodel in Sources */,
 				72FB9A8920243C4E009E4373 /* BookAppointmentController.swift in Sources */,
 				72FB9A7F20243A93009E4373 /* ProfileController.swift in Sources */,
 				201FD235207174D200B2B1BE /* ScanViewController.swift in Sources */,
