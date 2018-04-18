@@ -32,6 +32,8 @@ pip 8.1.1 from /usr/lib/python2.7/dist-packages (python 2.7)
 
 Download and copy installer to EC2 Python 2.7 https://www.anaconda.com/download/#linux
 
+bash Anaconda2-5.1.0-Linux-x86_64.sh 
+
 $ conda create -n tensorflow pip python=2.7 # or python=3.3, etc.
 
 $ source activate tensorflow
