@@ -37,8 +37,16 @@ Run chatbot.ipynb notebook on jupyter. It will create model.tflearn data
 <img width="692" alt="screen shot 2018-04-14 at 6 36 35 pm" src="https://user-images.githubusercontent.com/18491653/38774043-f1872016-4012-11e8-838c-509886bfce7a.png">
 
 
+How to run : 
 
-pip install Pyro4
+1. pip install Pyro4
 
-python -m Pyro4.naming
+2. python -m Pyro4.naming
 NS running on localhost:9090 
+
+3. python chatbot.py
+
+4. python client.py "hi"
+
+
+<img width="569" alt="screen shot 2018-04-17 at 2 02 29 pm" src="https://user-images.githubusercontent.com/18491653/38898705-9e0f723c-424a-11e8-8da8-a0e547aae9b9.png">
