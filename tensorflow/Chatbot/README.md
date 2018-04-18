@@ -27,6 +27,25 @@ pip 8.1.1 from /usr/lib/python2.7/dist-packages (python 2.7)
  
 >(tensorflow)$ deactivate 
  
+ 
+ Anaconda version
+
+Download and copy installer to EC2 Python 2.7 https://www.anaconda.com/download/#linux
+
+$ conda create -n tensorflow pip python=2.7 # or python=3.3, etc.
+
+$ source activate tensorflow
+
+>pip install --upgrade pip
+
+>pip install --ignore-installed --upgrade
+ https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-1.7.0-cp27-none-linux_x86_64.whl
+
+ >>import tensorflow as tf
+ >>print(tf.__version__)
+ 
+ 
+ 
 2. Install tflearn
 
 >pip3 install tflearn
