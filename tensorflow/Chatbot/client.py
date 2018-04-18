@@ -1,8 +1,12 @@
-
+from flask import Flask, request 
 import Pyro4
 import sys
 
-question = sys.argv[1]
-get = Pyro4.Proxy("PYRONAME:example.bot")
-name = get.get_response(question)
-print(name)
+app = Flask(__name__)
+
+@app.route("/chat")
+def chat():
+    get = Pyro4.Proxy("PYRONAME:example.bot")
+    question = request.args.get('chat')
+    name = get.get_response(question)
+    return name
