@@ -24,8 +24,7 @@ source ~/tensorflow/bin/activate
  (tensorflow)$ deactivate 
  
 2. Install tflearn
-pip install git+https://github.com/tflearn/tflearn.git
-pip install tflearn
+pip3 install tflearn
 
 3. Download punkt using nltk_data
 sudo pip3 install -U nltk
