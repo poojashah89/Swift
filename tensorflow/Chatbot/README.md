@@ -15,25 +15,25 @@ pip 8.1.1 from /usr/lib/python2.7/dist-packages (python 2.7)
 
 >sudo pip3 install virtualenv
 
-sudo apt-get install python-pip python-dev python-virtualenv
+>sudo apt-get install python-pip python-dev python-virtualenv
 
-virtualenv --system-site-packages ~/tensorflow
+>virtualenv --system-site-packages ~/tensorflow
 
-source ~/tensorflow/bin/activate
+>source ~/tensorflow/bin/activate
 
-(tensorflow)$ easy_install -U pip
+>(tensorflow)$ easy_install -U pip
 
-(tensorflow)$ pip install --upgrade tensorflow 
+>(tensorflow)$ pip install --upgrade tensorflow 
  
- (tensorflow)$ deactivate 
+>(tensorflow)$ deactivate 
  
 2. Install tflearn
 
-pip3 install tflearn
+>pip3 install tflearn
 
 3. Download punkt using nltk_data
 
-sudo pip3 install -U nltk
+>sudo pip3 install -U nltk
 
 >python3
 
