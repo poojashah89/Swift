@@ -40,13 +40,13 @@ Run chatbot.ipynb notebook on jupyter. It will create model.tflearn data
 How to run : 
 
 1. pip install Pyro4
+2. pip install flask
 
-2. python -m Pyro4.naming
+3. python -m Pyro4.naming
 NS running on localhost:9090 
 
-3. python chatbot.py
+4. python chatbot.py
 
-4. python client.py "hi"
+5. FLASK_APP=client.py flask run
+<img width="666" alt="screen shot 2018-04-17 at 10 07 51 pm" src="https://user-images.githubusercontent.com/18491653/38912738-dbb5a138-428b-11e8-9c9d-ddf05c515775.png">
 
-
-<img width="569" alt="screen shot 2018-04-17 at 2 02 29 pm" src="https://user-images.githubusercontent.com/18491653/38898705-9e0f723c-424a-11e8-8da8-a0e547aae9b9.png">
