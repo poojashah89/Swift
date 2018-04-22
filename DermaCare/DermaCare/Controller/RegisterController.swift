@@ -47,6 +47,8 @@ class RegisterController: UIViewController {
         phoneNo.placeholder = "Enter Phone Number"
         loginType = "Patient"
         
+         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:))))
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -61,7 +63,7 @@ class RegisterController: UIViewController {
             Auth.auth().createUser(withEmail: emailText.text!, password: passwordText.text!, completion: { (user, error) in
                 if user != nil {
                     if(self.loginType == "Patient") {
-                        let usersReference = Database.database().reference(withPath: "patientlist")
+                        let usersReference = Database.database().reference(withPath: "userlist")
                         let lists = usersReference.child((user?.uid)!)
                         lists.child("email").setValue(self.emailText.text)
                         lists.child("userName").setValue(self.usernameText.text)
@@ -75,7 +77,7 @@ class RegisterController: UIViewController {
                             self.dataModel.requestData(user: user!)
                         }
                     } else {
-                        let usersReference = Database.database().reference(withPath: "doctorlist")
+                        let usersReference = Database.database().reference(withPath: "userlist")
                         let lists = usersReference.child((user?.uid)!)
                         lists.child("email").setValue(self.emailText.text)
                         lists.child("userName").setValue(self.usernameText.text)

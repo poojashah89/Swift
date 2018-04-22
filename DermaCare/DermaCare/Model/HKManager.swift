@@ -30,7 +30,7 @@ class HKManager {
         
         // the data was received and parsed to String
         self.user = user
-        self.healthTree = Database.database().reference(withPath: "patientlist").child(user.uid).child("health")
+        self.healthTree = Database.database().reference(withPath: "userlist").child(user.uid).child("health")
         
         if HKHealthStore.isHealthDataAvailable() {
             authorizeHealthKit() {

@@ -10,8 +10,9 @@ import Foundation
 
 import Firebase
 import UIKit
+import MessageUI
 
-class ResultController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+class ResultController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate, MFMailComposeViewControllerDelegate {
     
     @IBOutlet weak var myImageview: UIImageView!
     
@@ -73,31 +74,66 @@ class ResultController: UIViewController, UINavigationControllerDelegate, UIImag
      * Step 1. Store image
      * Step 2. Consult Doctor screen
      */
-    @IBAction func saveImage(_ sender: Any) {
+    
+    
+    @IBAction func saveAndHisotry(_ sender: Any) {
         
         let database = Database.database().reference()
         let storage = Storage.storage().reference()
         let userID: String = (Auth.auth().currentUser?.uid)!
-        
-        let tempImageRef = storage.child("ImagesUploaded/\(userID)")
-        let id = String(format:"%.0f", Date().timeIntervalSince1970*1000)
-        let image = myImageview.image
-        let metaData = StorageMetadata()
-        metaData.contentType = "image/jpeg"
-        
-        tempImageRef.child(id).putData(UIImageJPEGRepresentation(image!, 0.8)!, metadata: metaData){ (metadata, error) in
-            if error == nil {
-                print ("upload successful")
-                let alert = UIAlertController(title: "Alert", message: "Saved Successfully", preferredStyle: UIAlertControllerStyle.alert)
-                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
-                self.present(alert, animated: true, completion: nil)
-            }else {
-                print (error?.localizedDescription)
-            }
+        database.child("userlist/\(userID)/userType").observe(.value, with: { (snapshot) in
             
+            let tempImageRef = storage.child("ImagesUploaded/\(userID)")
+            let id = String(format:"%.0f", Date().timeIntervalSince1970*1000)
+            let image = self.myImageview.image
+            let metaData = StorageMetadata()
+            metaData.contentType = "image/jpeg"
+            
+            tempImageRef.child(id).putData(UIImageJPEGRepresentation(image!, 0.8)!, metadata: metaData){ (metaData, error) in
+                //tempImageRef.child(id).putData(, metadata: metaData){(metaData,error) in
+                if error == nil {
+                    print ("upload successful")
+                    let imageURL = metaData!.downloadURL()?.absoluteString
+                    var path = "userlist"
+                    if(snapshot.exists()){
+                        path = "userlist"
+                    }
+                    let refUser = database.child("\(path)/\(userID)/Photos/\(id)")
+                    refUser.setValue(imageURL)
+                    
+                    let alert = UIAlertController(title: "Alert", message: "Saved Successfully", preferredStyle: UIAlertControllerStyle.alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
+                }else {
+                    print (error?.localizedDescription)
+                }
+                
+            }
+        })
+    }
+        
+    @IBAction func emailDoctor(_ sender: Any) {
+        
+        if MFMailComposeViewController.canSendMail() {
+            let mail = MFMailComposeViewController()
+            mail.mailComposeDelegate = self;
+            //mail.setCcRecipients(["yyyy@xxx.com"])
+            mail.setSubject("Your messagge")
+            mail.setMessageBody("Message body", isHTML: false)
+            if let imageData: NSData = UIImagePNGRepresentation(myImageview.image!)! as NSData{
+            mail.addAttachmentData(imageData as Data, mimeType: "image/png", fileName: "imageName.png")
+            }
+            self.present(mail, animated: true, completion: nil)
         }
         
     }
+        
+    func mailComposeController(_ controller: MFMailComposeViewController,
+                               didFinishWith result: MFMailComposeResult, error: Error?) {
+        controller.dismiss(animated: true, completion: nil)
+    }
     
     
-}
+    }
+    
+    

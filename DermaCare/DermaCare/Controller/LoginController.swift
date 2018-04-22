@@ -34,13 +34,13 @@ class LoginController: UIViewController, UITextFieldDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool
+  /*  func textFieldShouldReturn(_ textField: UITextField) -> Bool
     {
         emailText.resignFirstResponder()
         passwordtext.resignFirstResponder()
         return true;
     }
-    
+    */
     @IBAction func loginAction(_ sender: Any) {
         
         if(emailText.text != "" && passwordtext.text != "") {

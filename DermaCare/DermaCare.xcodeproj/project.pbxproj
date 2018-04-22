@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		201FD235207174D200B2B1BE /* ScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201FD234207174D200B2B1BE /* ScanViewController.swift */; };
+		20AAB1D320874575008FD056 /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AAB1D220874575008FD056 /* HistoryTableViewCell.swift */; };
 		7239C9A020350FB900A3C545 /* HKManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7239C99F20350FB900A3C545 /* HKManager.swift */; };
 		7239C9A22037A29F00A3C545 /* HKManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7239C9A12037A29F00A3C545 /* HKManagerDelegate.swift */; };
 		724A6EFE2082D85400DF3DAC /* inception_coreml.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 724A6EFD2082D85400DF3DAC /* inception_coreml.mlmodel */; };
@@ -59,6 +60,7 @@
 
 /* Begin PBXFileReference section */
 		201FD234207174D200B2B1BE /* ScanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanViewController.swift; sourceTree = "<group>"; };
+		20AAB1D220874575008FD056 /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
 		40545FFFE0FA422624E9C320 /* Pods-DermaCare.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DermaCare.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DermaCare/Pods-DermaCare.debug.xcconfig"; sourceTree = "<group>"; };
 		7239C99920350E5E00A3C545 /* DermaCare.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DermaCare.entitlements; sourceTree = "<group>"; };
 		7239C99F20350FB900A3C545 /* HKManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HKManager.swift; sourceTree = "<group>"; };
@@ -186,6 +188,7 @@
 				72FB9A752024387B009E4373 /* Controller */,
 				72FB9A422023D752009E4373 /* AppDelegate.swift */,
 				72FB9A462023D752009E4373 /* Main.storyboard */,
+				20AAB1D220874575008FD056 /* HistoryTableViewCell.swift */,
 				72FB9A4C2023D752009E4373 /* Assets.xcassets */,
 				72FB9A4E2023D752009E4373 /* LaunchScreen.storyboard */,
 				72FB9A512023D752009E4373 /* Info.plist */,
@@ -562,6 +565,7 @@
 				724A6F042086B58100DF3DAC /* ResultController.swift in Sources */,
 				72FB9A8B202444FC009E4373 /* DiagnoseController.swift in Sources */,
 				724A6EFE2082D85400DF3DAC /* inception_coreml.mlmodel in Sources */,
+				20AAB1D320874575008FD056 /* HistoryTableViewCell.swift in Sources */,
 				724A6F062086CC8400DF3DAC /* HistoryController.swift in Sources */,
 				7239C9A020350FB900A3C545 /* HKManager.swift in Sources */,
 				72FB9A4B2023D752009E4373 /* DermaCare.xcdatamodeld in Sources */,
@@ -743,7 +747,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = LZYW5D8PTV;
+				DEVELOPMENT_TEAM = 4LAC7B63N5;
 				INFOPLIST_FILE = DermaCare/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -760,7 +764,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = LZYW5D8PTV;
+				DEVELOPMENT_TEAM = 4LAC7B63N5;
 				INFOPLIST_FILE = DermaCare/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

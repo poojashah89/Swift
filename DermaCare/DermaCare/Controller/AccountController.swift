@@ -34,7 +34,7 @@ class AccountController: UIViewController {
     @IBOutlet weak var healthSyncButton: UISwitch!
     
     
-    var ref = Database.database().reference(withPath: "patientlist")
+    var ref = Database.database().reference(withPath: "userlist")
     private var databaseHandle: DatabaseHandle!
 
     var HealthModelItems = [HealthModel]()
