@@ -2,35 +2,64 @@
 1. Install Tensorflow 
 
 >sudo apt-get update && sudo apt-get -y upgrade
+
 >sudo apt-get install python-pip
 
 Verify version
 >pip -V
 pip 8.1.1 from /usr/lib/python2.7/dist-packages (python 2.7)
+
 >pip install --upgrade pip
 
 >sudo apt-get install python3-pip
+
 >sudo pip3 install virtualenv
 
-sudo apt-get install python-pip python-dev python-virtualenv
+>sudo apt-get install python-pip python-dev python-virtualenv
 
-virtualenv --system-site-packages ~/tensorflow
+>virtualenv --system-site-packages ~/tensorflow
 
-source ~/tensorflow/bin/activate
+>source ~/tensorflow/bin/activate
 
-(tensorflow)$ easy_install -U pip
-(tensorflow)$ pip install --upgrade tensorflow 
+>(tensorflow)$ easy_install -U pip
+
+>(tensorflow)$ pip install --upgrade tensorflow 
  
- (tensorflow)$ deactivate 
+>(tensorflow)$ deactivate 
+ 
+ 
+ Anaconda version
+
+Download and copy installer to EC2 Python 2.7 https://www.anaconda.com/download/#linux
+
+bash Anaconda2-5.1.0-Linux-x86_64.sh 
+
+$ conda create -n tensorflow pip python=2.7 # or python=3.3, etc.
+
+$ source activate tensorflow
+
+>pip install --upgrade pip
+
+>pip install --ignore-installed --upgrade
+ https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-1.7.0-cp27-none-linux_x86_64.whl
+
+ >>import tensorflow as tf
+ >>print(tf.__version__)
+ 
+ 
  
 2. Install tflearn
-pip3 install tflearn
+
+>pip3 install tflearn
 
 3. Download punkt using nltk_data
-sudo pip3 install -U nltk
+
+>sudo pip3 install -U nltk
 
 >python3
+
 >>> import nltk
+
 >>> nltk.download('punkt')
 
 <img width="840" alt="screen shot 2018-04-11 at 4 10 06 pm" src="https://user-images.githubusercontent.com/18491653/38774065-79506944-4013-11e8-916f-3bd8100b488e.png">
@@ -69,6 +98,7 @@ Run chatbot.ipynb notebook on jupyter. It will create model.tflearn data
 How to run : 
 
 1. pip install Pyro4
+
 2. pip install flask
 
 3. python -m Pyro4.naming
