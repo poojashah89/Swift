@@ -26,8 +26,7 @@ class HKManager {
     
     var ifHealthSyc = false
     
-    func requestData(user: User) {
-        
+    func requestData(user: User, callback: @escaping (Bool) -> ()) {
         // the data was received and parsed to String
         self.user = user
         self.healthTree = Database.database().reference(withPath: "userlist").child(user.uid).child("health")
@@ -36,38 +35,12 @@ class HKManager {
             authorizeHealthKit() {
                 success, error in
                 if !success {
+                    self.ifHealthSyc = false
                     print( "ERROR in permission")
-                    return
                 }
-                let healthKitTypes: Set = [
-                    HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.heartRate)!,
-                    ]
-                
-                self.healthKitStore.requestAuthorization(toShare: healthKitTypes,
-                                                         read: healthKitTypes) { _, _ in }
-                }
-            
-                DispatchQueue.main.asyncAfter(deadline: .now(), execute: {
-                    
-                    //1. Get Weight
-                    self.getHeightFromHealth()
-                    
-                    //2. Get Height
-                    self.getWeightFromHealth()
-                    
-                    //3. Get Blood Type, Gender, Age, DOB
-                    self.readProfile()
-                    
-                    self.getHeartData()
-                    self.ifHealthSyc = true
-                })
-            
-            } else {
-            print("No Health Data")
+            }
         }
-        
-        delegate?.didRecieveDataUpdate(data: self)
-        startObservingDatabase(user: user)
+         callback(ifHealthSyc)
     }
     /*
      Generate the query to get Quantity for Weight
@@ -174,6 +147,7 @@ class HKManager {
         if !HKHealthStore.isHealthDataAvailable() {
             
             if (completion != nil) {
+                ifHealthSyc = false
                 completion(false, "Health Kit not available")
             }
             return
@@ -189,16 +163,36 @@ class HKManager {
             HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.height)! as HKQuantityType,
             HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.heartRate)! as HKQuantityType
             
-            ])
+        ])
         
         healthKitStore.requestAuthorization(toShare: nil, read: healthKitTypesToRead) {
             (success, error) -> Void in
             if !success {
                 let error = "Error while requesting authorization."
                 if (completion != nil) {
+                    self.ifHealthSyc = false
                     completion(false, error)
                 }
                 return
+            }
+            else {
+                DispatchQueue.main.asyncAfter(deadline: .now(), execute: {
+                    
+                    //1. Get Weight
+                    self.getHeightFromHealth()
+                    
+                    //2. Get Height
+                    self.getWeightFromHealth()
+                    
+                    //3. Get Blood Type, Gender, Age, DOB
+                    self.readProfile()
+                    
+                    self.getHeartData()
+                    self.ifHealthSyc = true
+                })
+                
+                self.delegate?.didRecieveDataUpdate(data: self)
+                self.startObservingDatabase(user: self.user!)
             }
         }
     }

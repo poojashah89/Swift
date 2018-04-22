@@ -25,7 +25,7 @@
 	<key>NSHealthShareUsageDescription</key>
 	<string>Access to HealthKit needed</string>
 	<key>NSHealthUpdateUsageDescription</key>
-	<string></string>
+	<string>HealthKit data needed</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Access to Location is needed</string>
 	<key>UILaunchStoryboardName</key>
@@ -40,7 +40,6 @@
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 		<string>UIInterfaceOrientationLandscapeLeft</string>
-		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>

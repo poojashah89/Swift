@@ -74,7 +74,9 @@ class RegisterController: UIViewController {
                         //Import healhkit data
                         if(self.healthDataConnectSwitch.isOn) {
                             self.dataModel.delegate = self
-                            self.dataModel.requestData(user: user!)
+                            self.dataModel.requestData(user: user!, callback: { (isHealthSync: Bool) -> Void in
+                        })
+                            
                         }
                     } else {
                         let usersReference = Database.database().reference(withPath: "userlist")

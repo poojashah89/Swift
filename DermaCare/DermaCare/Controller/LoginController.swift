@@ -33,14 +33,7 @@ class LoginController: UIViewController, UITextFieldDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-  /*  func textFieldShouldReturn(_ textField: UITextField) -> Bool
-    {
-        emailText.resignFirstResponder()
-        passwordtext.resignFirstResponder()
-        return true;
-    }
-    */
+  
     @IBAction func loginAction(_ sender: Any) {
         
         if(emailText.text != "" && passwordtext.text != "") {
@@ -139,8 +132,9 @@ class LoginController: UIViewController, UITextFieldDelegate {
         if segue.identifier == "loginSegue"{
             if user != nil {
                 let tabBarController = segue.destination as! UITabBarController
-                let homeCtrl = tabBarController.viewControllers![0] as! HomeController // or //
-                homeCtrl.userEmail = (user?.email)!
+                let homeCtrl = tabBarController.viewControllers![0] as! HomeController
+             
+                homeCtrl.user = user
                 
             } else {
                 self.showAlert("User account not found. Try registering")

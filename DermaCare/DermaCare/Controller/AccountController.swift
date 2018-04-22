@@ -47,7 +47,9 @@ class AccountController: UIViewController {
         if(self.healthSyncButton.isOn){
             let dataModel = HKManager()
             dataModel.delegate = self
-            dataModel.requestData(user: user!)
+            dataModel.requestData(user: user!, callback: { (ifHealthSyc: Bool) -> Void in
+                
+            })
             
             print("if sync \(dataModel.ifHealthSyc )")
             while (dataModel.ifHealthSyc){
