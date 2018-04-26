@@ -77,39 +77,38 @@ class ResultController: UIViewController, UINavigationControllerDelegate, UIImag
     
     
     @IBAction func saveAndHisotry(_ sender: Any) {
+     
+        // Save Image to database
         
-        let database = Database.database().reference()
+     /*   let database = Database.database().reference()
+        let userID :String = (Auth.auth().currentUser?.uid)!
         let storage = Storage.storage().reference()
-        let userID: String = (Auth.auth().currentUser?.uid)!
-        database.child("userlist/\(userID)/userType").observe(.value, with: { (snapshot) in
-            
-            let tempImageRef = storage.child("ImagesUploaded/\(userID)")
-            let id = String(format:"%.0f", Date().timeIntervalSince1970*1000)
-            let image = self.myImageview.image
-            let metaData = StorageMetadata()
-            metaData.contentType = "image/jpeg"
-            
-            tempImageRef.child(id).putData(UIImageJPEGRepresentation(image!, 0.8)!, metadata: metaData){ (metaData, error) in
-                //tempImageRef.child(id).putData(, metadata: metaData){(metaData,error) in
-                if error == nil {
-                    print ("upload successful")
-                    let imageURL = metaData!.downloadURL()?.absoluteString
-                    var path = "userlist"
-                    if(snapshot.exists()){
-                        path = "userlist"
-                    }
-                    let refUser = database.child("\(path)/\(userID)/Photos/\(id)")
-                    refUser.setValue(imageURL)
-                    
-                    let alert = UIAlertController(title: "Alert", message: "Saved Successfully", preferredStyle: UIAlertControllerStyle.alert)
-                    alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
-                    self.present(alert, animated: true, completion: nil)
-                }else {
-                    print (error?.localizedDescription)
-                }
+        
+        let tempImageRef = storage.child("ImagesUploaded/\(userID)")
+        let id = String(format:"%.0f", Date().timeIntervalSince1970*1000)
+        let image = self.myImageview.image
+        let metaData = StorageMetadata()
+        metaData.contentType = "image/jpeg"
+        
+        tempImageRef.child(id).putData(UIImageJPEGRepresentation(image!, 0.8)!, metadata: metaData){ (metaData, error) in
+            //tempImageRef.child(id).putData(, metadata: metaData){(metaData,error) in
+            if error == nil {
+                print ("upload successful")
+                let imageURL = metaData!.downloadURL()?.absoluteString
+                let refUser = database.child("userlist/\(userID)/Photos/\(id)")
+                refUser.setValue(imageURL)
                 
+                let alert = UIAlertController(title: "Alert", message: "Saved Successfully", preferredStyle: UIAlertControllerStyle.alert)
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+            }else {
+                print (error?.localizedDescription)
             }
-        })
+            
+        }
+        
+      */
+        
     }
         
     @IBAction func emailDoctor(_ sender: Any) {

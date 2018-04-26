@@ -45,7 +45,7 @@ class LoginController: UIViewController, UITextFieldDelegate {
                     self.user = user
                     print("Sign in successful for \(String(describing: email))")
                    
-                    //self.performSegue(withIdentifier: "loginSegue", sender: self)
+                    self.performSegue(withIdentifier: "loginSegue", sender: self)
                     
                 } else {
                     if let error = error {
@@ -68,7 +68,7 @@ class LoginController: UIViewController, UITextFieldDelegate {
         }
      
         
-        self.performSegue(withIdentifier: "loginSegue", sender: self)
+       // self.performSegue(withIdentifier: "loginSegue", sender: self)
         
     }
     
