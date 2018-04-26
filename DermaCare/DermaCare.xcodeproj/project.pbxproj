@@ -10,6 +10,8 @@
 		201FD235207174D200B2B1BE /* ScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201FD234207174D200B2B1BE /* ScanViewController.swift */; };
 		20AAB1D320874575008FD056 /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AAB1D220874575008FD056 /* HistoryTableViewCell.swift */; };
 		722FB3B4208D18CC0088A7EE /* RootTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722FB3B3208D18CC0088A7EE /* RootTabController.swift */; };
+		722FB3B6208E9A2E0088A7EE /* ChatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722FB3B5208E9A2E0088A7EE /* ChatModel.swift */; };
+		722FB3B8208EB4630088A7EE /* ChatMessageViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722FB3B7208EB4630088A7EE /* ChatMessageViewCell.swift */; };
 		7239C9A020350FB900A3C545 /* HKManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7239C99F20350FB900A3C545 /* HKManager.swift */; };
 		7239C9A22037A29F00A3C545 /* HKManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7239C9A12037A29F00A3C545 /* HKManagerDelegate.swift */; };
 		724A6EFE2082D85400DF3DAC /* inception_coreml.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 724A6EFD2082D85400DF3DAC /* inception_coreml.mlmodel */; };
@@ -65,6 +67,8 @@
 		20AAB1D220874575008FD056 /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
 		40545FFFE0FA422624E9C320 /* Pods-DermaCare.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DermaCare.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DermaCare/Pods-DermaCare.debug.xcconfig"; sourceTree = "<group>"; };
 		722FB3B3208D18CC0088A7EE /* RootTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabController.swift; sourceTree = "<group>"; };
+		722FB3B5208E9A2E0088A7EE /* ChatModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatModel.swift; sourceTree = "<group>"; };
+		722FB3B7208EB4630088A7EE /* ChatMessageViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessageViewCell.swift; sourceTree = "<group>"; };
 		7239C99920350E5E00A3C545 /* DermaCare.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DermaCare.entitlements; sourceTree = "<group>"; };
 		7239C99F20350FB900A3C545 /* HKManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HKManager.swift; sourceTree = "<group>"; };
 		7239C9A12037A29F00A3C545 /* HKManagerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HKManagerDelegate.swift; sourceTree = "<group>"; };
@@ -157,6 +161,8 @@
 				7239C9A12037A29F00A3C545 /* HKManagerDelegate.swift */,
 				72C4D88A203B92C0004FEA2E /* UserModel.swift */,
 				72C4D88C203BACE1004FEA2E /* HealthModel.swift */,
+				722FB3B5208E9A2E0088A7EE /* ChatModel.swift */,
+				722FB3B7208EB4630088A7EE /* ChatMessageViewCell.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -268,7 +274,6 @@
 				72FB9A3C2023D752009E4373 /* Frameworks */,
 				72FB9A3D2023D752009E4373 /* Resources */,
 				FCC2345E3F91396D01B6391E /* [CP] Embed Pods Frameworks */,
-				D12209E77FEC774C66C51FB1 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -287,8 +292,6 @@
 				72FB9A522023D752009E4373 /* Sources */,
 				72FB9A532023D752009E4373 /* Frameworks */,
 				72FB9A542023D752009E4373 /* Resources */,
-				6A587523E936AFF8F181C9E7 /* [CP] Embed Pods Frameworks */,
-				0D30090C47CEB68812A52FD6 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -308,8 +311,6 @@
 				72FB9A5D2023D752009E4373 /* Sources */,
 				72FB9A5E2023D752009E4373 /* Frameworks */,
 				72FB9A5F2023D752009E4373 /* Resources */,
-				8D0D81B4078DF53E1626FA55 /* [CP] Embed Pods Frameworks */,
-				C2C1400C676793840EBBB7FA /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -404,21 +405,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0D30090C47CEB68812A52FD6 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DermaCareTests/Pods-DermaCareTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		52D3632B5763C021ACA5CB6D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -435,36 +421,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		6A587523E936AFF8F181C9E7 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DermaCareTests/Pods-DermaCareTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		8D0D81B4078DF53E1626FA55 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DermaCareUITests/Pods-DermaCareUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		962A28E846E15BBF1DFFD04E /* [CP] Check Pods Manifest.lock */ = {
@@ -503,36 +459,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C2C1400C676793840EBBB7FA /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DermaCareUITests/Pods-DermaCareUITests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D12209E77FEC774C66C51FB1 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DermaCare/Pods-DermaCare-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		FCC2345E3F91396D01B6391E /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -540,15 +466,21 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-DermaCare/Pods-DermaCare-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/BDBOAuth1Manager/BDBOAuth1Manager.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BDBOAuth1Manager.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -579,6 +511,7 @@
 				72FB9A4B2023D752009E4373 /* DermaCare.xcdatamodeld in Sources */,
 				72C4D88B203B92C0004FEA2E /* UserModel.swift in Sources */,
 				72FB9A7B202439D9009E4373 /* HomeController.swift in Sources */,
+				722FB3B6208E9A2E0088A7EE /* ChatModel.swift in Sources */,
 				72FB9A8120243ABC009E4373 /* DoctorController.swift in Sources */,
 				72FB9A452023D752009E4373 /* ViewController.swift in Sources */,
 				72FB9A8720243BF1009E4373 /* ViewAppointmentController.swift in Sources */,
@@ -587,6 +520,7 @@
 				724A6F022086AA3B00DF3DAC /* chatbot_coreml.mlmodel in Sources */,
 				72FB9A8920243C4E009E4373 /* BookAppointmentController.swift in Sources */,
 				72FB9A7F20243A93009E4373 /* ProfileController.swift in Sources */,
+				722FB3B8208EB4630088A7EE /* ChatMessageViewCell.swift in Sources */,
 				201FD235207174D200B2B1BE /* ScanViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
