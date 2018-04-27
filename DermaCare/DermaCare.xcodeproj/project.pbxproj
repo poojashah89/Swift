@@ -19,6 +19,7 @@
 		724A6F062086CC8400DF3DAC /* HistoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724A6F052086CC8400DF3DAC /* HistoryController.swift */; };
 		724A6F08208C4FAD00DF3DAC /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 724A6F07208C4FAD00DF3DAC /* HealthKit.framework */; };
 		727EC13D2092CD63005008CE /* inception_coreml.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 727EC13C2092CD63005008CE /* inception_coreml.mlmodel */; };
+		727EC1402092E308005008CE /* PharmacyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727EC13F2092E308005008CE /* PharmacyController.swift */; };
 		72C4D88B203B92C0004FEA2E /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C4D88A203B92C0004FEA2E /* UserModel.swift */; };
 		72C4D88D203BACE1004FEA2E /* HealthModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C4D88C203BACE1004FEA2E /* HealthModel.swift */; };
 		72EBDBE4204FC8EF004ABAA4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 72EBDBE3204FC8EF004ABAA4 /* GoogleService-Info.plist */; };
@@ -77,6 +78,7 @@
 		724A6F052086CC8400DF3DAC /* HistoryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryController.swift; sourceTree = "<group>"; };
 		724A6F07208C4FAD00DF3DAC /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		727EC13C2092CD63005008CE /* inception_coreml.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = inception_coreml.mlmodel; sourceTree = "<group>"; };
+		727EC13F2092E308005008CE /* PharmacyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PharmacyController.swift; sourceTree = "<group>"; };
 		72C4D88A203B92C0004FEA2E /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		72C4D88C203BACE1004FEA2E /* HealthModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthModel.swift; sourceTree = "<group>"; };
 		72EBDBE3204FC8EF004ABAA4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
@@ -253,6 +255,7 @@
 				724A6F032086B58100DF3DAC /* ResultController.swift */,
 				724A6F052086CC8400DF3DAC /* HistoryController.swift */,
 				722FB3B3208D18CC0088A7EE /* RootTabController.swift */,
+				727EC13F2092E308005008CE /* PharmacyController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -519,6 +522,7 @@
 				72C4D88B203B92C0004FEA2E /* UserModel.swift in Sources */,
 				72FB9A7B202439D9009E4373 /* HomeController.swift in Sources */,
 				722FB3B6208E9A2E0088A7EE /* ChatModel.swift in Sources */,
+				727EC1402092E308005008CE /* PharmacyController.swift in Sources */,
 				72FB9A8120243ABC009E4373 /* DoctorController.swift in Sources */,
 				72FB9A452023D752009E4373 /* ViewController.swift in Sources */,
 				72FB9A8720243BF1009E4373 /* ViewAppointmentController.swift in Sources */,
