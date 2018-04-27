@@ -21,7 +21,6 @@ class HistoryController: UIViewController, UITableViewDelegate, UITableViewDataS
     override func viewDidLoad() {
         super .viewDidLoad()
         
-        
         tableview.delegate = self
         tableview.dataSource = self
         
@@ -33,7 +32,6 @@ class HistoryController: UIViewController, UITableViewDelegate, UITableViewDataS
     
     func loaddata(){
         let userID: String = (Auth.auth().currentUser?.uid)!
-        
         let ref = Database.database().reference()
         
         let refuser = ref.child("userlist/\(userID)").child("Photos")
