@@ -22,13 +22,14 @@ class DiagnoseController: UIViewController,UITableViewDelegate, UITableViewDataS
         // Do any additional setup after loading the view, typically from a nib.
         tableView.delegate = self
         tableView.dataSource = self
-        
+        tableView.backgroundView = UIImageView(image: UIImage(named: "chat"))
         let message = "hi"
         ChatModel.getChatString(message: message) { (json) in
             print(json.message!)
             self.displayMessage(message: json.message!, from: "server", time: json.time!)
         }
-       
+        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:))))
+        
     }
     override func viewWillAppear(_ animated: Bool) {
         //tableView.separatorStyle = .none
@@ -89,7 +90,6 @@ class DiagnoseController: UIViewController,UITableViewDelegate, UITableViewDataS
         UIView.animate(withDuration: 0.3) {
             self.view.layoutIfNeeded()
         }
-        
     }
     
     func keyboardWillHide(sender: NSNotification) {

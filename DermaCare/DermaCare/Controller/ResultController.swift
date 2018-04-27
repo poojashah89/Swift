@@ -18,20 +18,40 @@ class ResultController: UIViewController, UINavigationControllerDelegate, UIImag
     
     @IBOutlet weak var debugTextView: UITextView!
     
-    @IBAction func importFromGallery(_ sender: Any) {
+    @IBAction func saveDiagnosis(_ sender: Any) {
         
-        let image = UIImagePickerController()
-        image.delegate = self
-        image.sourceType = UIImagePickerControllerSourceType.photoLibrary
+        let database = Database.database().reference()
+        let userID :String = (Auth.auth().currentUser?.uid)!
+        let storage = Storage.storage().reference()
         
-        image.allowsEditing = false
+        let tempImageRef = storage.child("ImagesUploaded/\(userID)")
+        let id = String(format:"%.0f", Date().timeIntervalSince1970*1000)
+        let image = self.myImageview.image
+        let metaData = StorageMetadata()
+        metaData.contentType = "image/jpeg"
         
-        self.present(image, animated: true)
-        {
+        tempImageRef.child(id).putData(UIImageJPEGRepresentation(image!, 0.8)!, metadata: metaData){ (metaData, error) in
+            //tempImageRef.child(id).putData(, metadata: metaData){(metaData,error) in
+            if error == nil {
+                print ("upload successful")
+                let imageURL = metaData!.downloadURL()?.absoluteString
+                let refUser = database.child("userlist/\(userID)/Photos/\(id)")
+                refUser.setValue(imageURL)
+                
+                let alert = UIAlertController(title: "Alert", message: "Saved Successfully", preferredStyle: UIAlertControllerStyle.alert)
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+            }else {
+                print (error?.localizedDescription)
+            }
             
         }
+
+        
+        
         
     }
+    
     @IBAction func scanButton(_ sender: Any) {
         if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera){
             let imagePicker = UIImagePickerController()
@@ -55,7 +75,7 @@ class ResultController: UIViewController, UINavigationControllerDelegate, UIImag
         }
         _picker.dismiss(animated: true, completion: nil)
     }
-
+    
     /*
      * Set Image
      */
@@ -76,42 +96,8 @@ class ResultController: UIViewController, UINavigationControllerDelegate, UIImag
      */
     
     
-    @IBAction func saveAndHisotry(_ sender: Any) {
-        
-        let database = Database.database().reference()
-        let storage = Storage.storage().reference()
-        let userID: String = (Auth.auth().currentUser?.uid)!
-        database.child("userlist/\(userID)/userType").observe(.value, with: { (snapshot) in
-            
-            let tempImageRef = storage.child("ImagesUploaded/\(userID)")
-            let id = String(format:"%.0f", Date().timeIntervalSince1970*1000)
-            let image = self.myImageview.image
-            let metaData = StorageMetadata()
-            metaData.contentType = "image/jpeg"
-            
-            tempImageRef.child(id).putData(UIImageJPEGRepresentation(image!, 0.8)!, metadata: metaData){ (metaData, error) in
-                //tempImageRef.child(id).putData(, metadata: metaData){(metaData,error) in
-                if error == nil {
-                    print ("upload successful")
-                    let imageURL = metaData!.downloadURL()?.absoluteString
-                    var path = "userlist"
-                    if(snapshot.exists()){
-                        path = "userlist"
-                    }
-                    let refUser = database.child("\(path)/\(userID)/Photos/\(id)")
-                    refUser.setValue(imageURL)
-                    
-                    let alert = UIAlertController(title: "Alert", message: "Saved Successfully", preferredStyle: UIAlertControllerStyle.alert)
-                    alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
-                    self.present(alert, animated: true, completion: nil)
-                }else {
-                    print (error?.localizedDescription)
-                }
-                
-            }
-        })
-    }
-        
+    
+    
     @IBAction func emailDoctor(_ sender: Any) {
         
         if MFMailComposeViewController.canSendMail() {
@@ -121,19 +107,19 @@ class ResultController: UIViewController, UINavigationControllerDelegate, UIImag
             mail.setSubject("Your messagge")
             mail.setMessageBody("Message body", isHTML: false)
             if let imageData: NSData = UIImagePNGRepresentation(myImageview.image!)! as NSData{
-            mail.addAttachmentData(imageData as Data, mimeType: "image/png", fileName: "imageName.png")
+                mail.addAttachmentData(imageData as Data, mimeType: "image/png", fileName: "imageName.png")
             }
             self.present(mail, animated: true, completion: nil)
         }
         
     }
-        
+    
     func mailComposeController(_ controller: MFMailComposeViewController,
                                didFinishWith result: MFMailComposeResult, error: Error?) {
         controller.dismiss(animated: true, completion: nil)
     }
     
     
-    }
-    
-    
+}
+
+

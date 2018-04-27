@@ -10,16 +10,10 @@ import Foundation
 import UIKit
 import Firebase
 
-struct HistoryDetails : Decodable{
-    let image: String
-    let date: String
-    let results: String
-}
-
 
 class HistoryController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-   
-    var historydataURL = [String]()
+    
+    var imgURL = [String]()
     var imagename = [String]()
     
     @IBOutlet weak var tableview: UITableView!
@@ -27,9 +21,7 @@ class HistoryController: UIViewController, UITableViewDelegate, UITableViewDataS
     override func viewDidLoad() {
         super .viewDidLoad()
         
-       
-         //print("sneha doctordataURL", self.historydataURL)
-      
+        
         tableview.delegate = self
         tableview.dataSource = self
         
@@ -48,51 +40,16 @@ class HistoryController: UIViewController, UITableViewDelegate, UITableViewDataS
         
         refuser.observe(.value, with: {(snapshot) in
             
-            if(snapshot.exists()){
-                
-                for item in snapshot.children{
-                    let child = item as AnyObject
-                    //if(child.key != "Nil"){
-                        
-                        self.imagename.append(child.key)
-                        self.historydataURL.append(child.value)
-                   
-                    DispatchQueue.main.async(execute: {
-                        self.tableview.reloadData()
-                    })
-                        
-                    }
-                }
-                
-            //}
             
-            else{
+            for item in snapshot.children{
+                let child = item as AnyObject
                 
-                let refuser = ref.child("userlist/\(userID)").child("Photos")
                 
-                refuser.observe(.value, with: {(snapshot) in
-                    
-                    if(snapshot.exists()){
-                        
-                        for item in snapshot.children{
-                            let child = item as AnyObject
-                            if(child.key != "Nil"){
-                                
-                                self.historydataURL.append(child.key)
-                                
-                                print("sneha patientdataURL", self.historydataURL)
-                                
-                                DispatchQueue.main.async(execute: {
-                                  self.tableview.reloadData()
-                                })
-                                
-                                
-                            }
-                        }
-                        
-                    }
-                    
-                    
+                self.imagename.append(child.key)
+                self.imgURL.append(child.value)
+                
+                DispatchQueue.main.async(execute: {
+                    self.tableview.reloadData()
                 })
                 
             }
@@ -107,12 +64,12 @@ class HistoryController: UIViewController, UITableViewDelegate, UITableViewDataS
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        print ("Hostory data count", self.historydataURL.count)
-        return self.historydataURL.count
+        print ("Hostory data count", self.imagename.count)
+        return self.imagename.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    
+        
         guard let cell = tableview.dequeueReusableCell(withIdentifier: "HistoryTableViewCell") as?HistoryTableViewCell else {
             return UITableViewCell()
         }
@@ -133,49 +90,66 @@ class HistoryController: UIViewController, UITableViewDelegate, UITableViewDataS
                 cell.dateLabel?.text = formatter.string(from: date as! Date)
             }
         }
-       /*
-        storage.getData(maxSize: 10 * 1024 * 1024) { data, error in
-            if data != nil{
-                let loadedImage = UIImage(data: data!)
-                DispatchQueue.main.async {
-                    cell.imageView?.image = loadedImage
-                }
-            }
-        }
+        
+        /*    storage.getData(maxSize: 10 * 1024 * 1024) { data, error in
+         if data != nil{
+         let loadedImage = UIImage(data: data!)
+         DispatchQueue.main.async {
+         cell.imageView?.image = loadedImage
+         self.tableview.reloadData()
+         }
+         }
+         }
+         */
         
         
-        */
         //print(imageURL)
-
-        storage.downloadURL(completion: { (url, error) in
-
-            if error != nil {
-                print(error?.localizedDescription)
-                return
-            }
-
-            URLSession.shared.dataTask(with: url!, completionHandler: { (data, response, error) in
-
-                if error != nil {
+        /*
+         storage.downloadURL(completion: { (url, error) in
+         
+         if error != nil {
+         print(error?.localizedDescription)
+         return
+         }
+         
+         URLSession.shared.dataTask(with: url!, completionHandler: { (data, response, error) in
+         
+         if error != nil {
+         print(error)
+         return
+         }
+         
+         guard let imageData = UIImage(data: data!) else { return }
+         
+         DispatchQueue.main.async {
+         cell.imageView?.image = imageData
+         self.tableview.reloadData()
+         }
+         
+         }).resume()
+         
+         }) */
+        
+        if let imageURL = URL(string: self.imgURL[indexPath.row]) {
+            //let url = NSURL(String: imageURL)
+            URLSession.shared.dataTask(with: imageURL, completionHandler: {(data,response,error) in
+                
+                if error != nil{
                     print(error)
                     return
                 }
-
-                guard let imageData = UIImage(data: data!) else { return }
-
+                
                 DispatchQueue.main.async {
-                    cell.imageView?.image = imageData
-                    self.tableview.reloadData()
+                    cell.imgView?.image = UIImage(data: data!)
+                    
                 }
-
             }).resume()
-
-        })
+        }
         
-       
         
-         return cell
+        
+        return cell
     }
     
-
+    
 }

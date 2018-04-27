@@ -38,7 +38,6 @@ class ChatModel: NSObject {
                     
                     let chatMessage = json as NSDictionary
                     let chatm = ChatModel(dictionary: chatMessage)
-                    //callback(ChatModel.ChatModelData(chatMessage: chatMessage))
                     callback(chatm)
                 }
             } catch let err{

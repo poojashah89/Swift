@@ -14,11 +14,11 @@
 		722FB3B8208EB4630088A7EE /* ChatMessageViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722FB3B7208EB4630088A7EE /* ChatMessageViewCell.swift */; };
 		7239C9A020350FB900A3C545 /* HKManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7239C99F20350FB900A3C545 /* HKManager.swift */; };
 		7239C9A22037A29F00A3C545 /* HKManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7239C9A12037A29F00A3C545 /* HKManagerDelegate.swift */; };
-		724A6EFE2082D85400DF3DAC /* inception_coreml.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 724A6EFD2082D85400DF3DAC /* inception_coreml.mlmodel */; };
 		724A6F022086AA3B00DF3DAC /* chatbot_coreml.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 724A6F012086AA3B00DF3DAC /* chatbot_coreml.mlmodel */; };
 		724A6F042086B58100DF3DAC /* ResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724A6F032086B58100DF3DAC /* ResultController.swift */; };
 		724A6F062086CC8400DF3DAC /* HistoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724A6F052086CC8400DF3DAC /* HistoryController.swift */; };
 		724A6F08208C4FAD00DF3DAC /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 724A6F07208C4FAD00DF3DAC /* HealthKit.framework */; };
+		727EC13D2092CD63005008CE /* inception_coreml.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 727EC13C2092CD63005008CE /* inception_coreml.mlmodel */; };
 		72C4D88B203B92C0004FEA2E /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C4D88A203B92C0004FEA2E /* UserModel.swift */; };
 		72C4D88D203BACE1004FEA2E /* HealthModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C4D88C203BACE1004FEA2E /* HealthModel.swift */; };
 		72EBDBE4204FC8EF004ABAA4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 72EBDBE3204FC8EF004ABAA4 /* GoogleService-Info.plist */; };
@@ -72,11 +72,11 @@
 		7239C99920350E5E00A3C545 /* DermaCare.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DermaCare.entitlements; sourceTree = "<group>"; };
 		7239C99F20350FB900A3C545 /* HKManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HKManager.swift; sourceTree = "<group>"; };
 		7239C9A12037A29F00A3C545 /* HKManagerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HKManagerDelegate.swift; sourceTree = "<group>"; };
-		724A6EFD2082D85400DF3DAC /* inception_coreml.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = inception_coreml.mlmodel; sourceTree = "<group>"; };
 		724A6F012086AA3B00DF3DAC /* chatbot_coreml.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = chatbot_coreml.mlmodel; sourceTree = "<group>"; };
 		724A6F032086B58100DF3DAC /* ResultController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultController.swift; sourceTree = "<group>"; };
 		724A6F052086CC8400DF3DAC /* HistoryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryController.swift; sourceTree = "<group>"; };
 		724A6F07208C4FAD00DF3DAC /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		727EC13C2092CD63005008CE /* inception_coreml.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = inception_coreml.mlmodel; sourceTree = "<group>"; };
 		72C4D88A203B92C0004FEA2E /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		72C4D88C203BACE1004FEA2E /* HealthModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthModel.swift; sourceTree = "<group>"; };
 		72EBDBE3204FC8EF004ABAA4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
@@ -162,9 +162,17 @@
 				72C4D88A203B92C0004FEA2E /* UserModel.swift */,
 				72C4D88C203BACE1004FEA2E /* HealthModel.swift */,
 				722FB3B5208E9A2E0088A7EE /* ChatModel.swift */,
-				722FB3B7208EB4630088A7EE /* ChatMessageViewCell.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		727EC13E2092D9A5005008CE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				722FB3B7208EB4630088A7EE /* ChatMessageViewCell.swift */,
+				20AAB1D220874575008FD056 /* HistoryTableViewCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		72FB9A362023D752009E4373 = {
@@ -192,15 +200,15 @@
 		72FB9A412023D752009E4373 /* DermaCare */ = {
 			isa = PBXGroup;
 			children = (
+				727EC13E2092D9A5005008CE /* View */,
 				7239C99E20350F9300A3C545 /* Model */,
 				7239C99920350E5E00A3C545 /* DermaCare.entitlements */,
-				724A6EFD2082D85400DF3DAC /* inception_coreml.mlmodel */,
 				724A6F012086AA3B00DF3DAC /* chatbot_coreml.mlmodel */,
+				727EC13C2092CD63005008CE /* inception_coreml.mlmodel */,
 				72EBDBE3204FC8EF004ABAA4 /* GoogleService-Info.plist */,
 				72FB9A752024387B009E4373 /* Controller */,
 				72FB9A422023D752009E4373 /* AppDelegate.swift */,
 				72FB9A462023D752009E4373 /* Main.storyboard */,
-				20AAB1D220874575008FD056 /* HistoryTableViewCell.swift */,
 				72FB9A4C2023D752009E4373 /* Assets.xcassets */,
 				72FB9A4E2023D752009E4373 /* LaunchScreen.storyboard */,
 				72FB9A512023D752009E4373 /* Info.plist */,
@@ -504,7 +512,6 @@
 				7239C9A22037A29F00A3C545 /* HKManagerDelegate.swift in Sources */,
 				724A6F042086B58100DF3DAC /* ResultController.swift in Sources */,
 				72FB9A8B202444FC009E4373 /* DiagnoseController.swift in Sources */,
-				724A6EFE2082D85400DF3DAC /* inception_coreml.mlmodel in Sources */,
 				20AAB1D320874575008FD056 /* HistoryTableViewCell.swift in Sources */,
 				724A6F062086CC8400DF3DAC /* HistoryController.swift in Sources */,
 				7239C9A020350FB900A3C545 /* HKManager.swift in Sources */,
@@ -517,6 +524,7 @@
 				72FB9A8720243BF1009E4373 /* ViewAppointmentController.swift in Sources */,
 				72FB9A432023D752009E4373 /* AppDelegate.swift in Sources */,
 				72FB9A79202438FE009E4373 /* LoginController.swift in Sources */,
+				727EC13D2092CD63005008CE /* inception_coreml.mlmodel in Sources */,
 				724A6F022086AA3B00DF3DAC /* chatbot_coreml.mlmodel in Sources */,
 				72FB9A8920243C4E009E4373 /* BookAppointmentController.swift in Sources */,
 				72FB9A7F20243A93009E4373 /* ProfileController.swift in Sources */,
