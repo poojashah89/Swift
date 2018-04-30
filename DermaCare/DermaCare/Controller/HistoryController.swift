@@ -20,13 +20,12 @@ class HistoryController: UIViewController, UITableViewDelegate, UITableViewDataS
     @IBOutlet weak var tableview: UITableView!
     
     override func viewDidLoad() {
-        super .viewDidLoad()
+        super.viewDidLoad()
         
         tableview.delegate = self
         tableview.dataSource = self
         
         loaddata()
-        
         self.tableview.reloadData()
         
     }
@@ -36,8 +35,6 @@ class HistoryController: UIViewController, UITableViewDelegate, UITableViewDataS
         let ref = Database.database().reference()
         
         let refuser = ref.child("userlist/\(userID)").child("Photos")
-        
-        
         refuser.observeSingleEvent(of: .value, with: { (snapshot) in
             for item in snapshot.children{
                 
@@ -46,7 +43,6 @@ class HistoryController: UIViewController, UITableViewDelegate, UITableViewDataS
                 
                 self.imagename.append(childkey)
                 print("id", self.imagename)
-                
                 
                 let result = child?["result"] as? String ?? ""
                 let url = child?["url"] as? String ?? ""
@@ -60,8 +56,6 @@ class HistoryController: UIViewController, UITableViewDelegate, UITableViewDataS
                     self.tableview.reloadData()
                 })
             }
-            
-            
         })
         
         
@@ -78,9 +72,7 @@ class HistoryController: UIViewController, UITableViewDelegate, UITableViewDataS
                 DispatchQueue.main.async(execute: {
                     self.tableview.reloadData()
                 })
-                
             }
-            
         }) */
         
     }
@@ -100,11 +92,14 @@ class HistoryController: UIViewController, UITableViewDelegate, UITableViewDataS
         guard let cell = tableview.dequeueReusableCell(withIdentifier: "HistoryTableViewCell") as?HistoryTableViewCell else {
             return UITableViewCell()
         }
+        if(self.imagename.count == 0){
+            cell.ressultLabel?.text = "No App Diagnosis Found"
+        }
         
         let userID: String = (Auth.auth().currentUser?.uid)!
         let imageNameLocal = self.imagename[indexPath.row]
         let resultLocal = self.results[indexPath.row]
-        print("sneha result", resultLocal)
+       
         let storage = Storage.storage().reference(forURL: "gs://dermacare-b1017.appspot.com/ImagesUploaded/\(userID)/\(imageNameLocal)")
         
         storage.getMetadata { metadata, error in
@@ -175,9 +170,8 @@ class HistoryController: UIViewController, UITableViewDelegate, UITableViewDataS
                 }
             }).resume()
         }
-        
-        
-        
+        tableView.layer.borderColor = UIColor.gray.cgColor
+        tableView.layer.borderWidth = 1.0
         return cell
     }
     

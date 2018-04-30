@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -1062,7 +1062,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Kfn-C8-xbW"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="My Account" id="Tgx-Tq-un1"/>
+                    <tabBarItem key="tabBarItem" title="My Account" image="MyAccountTab" id="Tgx-Tq-un1"/>
                     <connections>
                         <outlet property="ageText" destination="w6t-bL-xQB" id="sKa-dD-fgV"/>
                         <outlet property="bpText" destination="DeI-DS-g6q" id="MkY-Ya-gge"/>
@@ -1385,7 +1385,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="5Ho-xH-caG"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Home" id="IGu-lC-cv9"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="HomeTab" id="IGu-lC-cv9"/>
                     <connections>
                         <outlet property="userText" destination="uo8-lG-LbM" id="w0a-np-Le3"/>
                     </connections>
@@ -1402,7 +1402,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="67B-uG-bix">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="67B-uG-bix">
                                 <rect key="frame" x="0.0" y="85" width="375" height="582"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -1410,11 +1410,11 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="138"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FEQ-bt-Alj" id="nyj-jn-KHk">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="137.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="138"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4py-4Q-PnX">
-                                                    <rect key="frame" x="11" y="1" width="102" height="134"/>
+                                                    <rect key="frame" x="11" y="1" width="102" height="136"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="102" id="xtc-mZ-uTi"/>
                                                     </constraints>
@@ -1456,7 +1456,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Id: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="baf-PF-SWm">
-                                                    <rect key="frame" x="120" y="103" width="23" height="18"/>
+                                                    <rect key="frame" x="120" y="103" width="23" height="20"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -1476,7 +1476,6 @@
                                                 <constraint firstItem="5wV-eA-Vh4" firstAttribute="top" secondItem="nyj-jn-KHk" secondAttribute="top" constant="62" id="YDc-gj-rLk"/>
                                                 <constraint firstItem="DRp-Kr-dcx" firstAttribute="top" secondItem="nyj-jn-KHk" secondAttribute="topMargin" constant="7" id="fJm-p1-KaA"/>
                                                 <constraint firstItem="LYL-9e-mHw" firstAttribute="leading" secondItem="rZA-Aa-3vD" secondAttribute="leading" id="owQ-Of-evd"/>
-                                                <constraint firstItem="X58-St-jF8" firstAttribute="baseline" secondItem="baf-PF-SWm" secondAttribute="baseline" id="qPK-G5-tnf"/>
                                                 <constraint firstItem="5wV-eA-Vh4" firstAttribute="centerY" secondItem="rZA-Aa-3vD" secondAttribute="centerY" id="rJc-eF-ngz"/>
                                                 <constraint firstItem="X58-St-jF8" firstAttribute="leading" secondItem="rZA-Aa-3vD" secondAttribute="leading" id="vMH-bD-hcn"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="X58-St-jF8" secondAttribute="bottom" constant="6" id="y0y-F2-Zxs"/>
@@ -1974,11 +1973,11 @@
             </objects>
             <point key="canvasLocation" x="1444" y="1238"/>
         </scene>
-        <!--Find Doctor-->
+        <!--Find Doctors-->
         <scene sceneID="oFr-FV-nnH">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5fG-pT-OJE" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Find Doctor" id="ViP-hg-eQc"/>
+                    <tabBarItem key="tabBarItem" title="Find Doctors" image="DoctorTab" id="ViP-hg-eQc"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="MAj-gf-ut3">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -1995,6 +1994,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="DoctorTab" width="20" height="25"/>
+        <image name="HomeTab" width="31" height="25"/>
+        <image name="MyAccountTab" width="19" height="25"/>
         <image name="Pharmacy" width="190" height="50"/>
         <image name="Screen Shot 2018-04-11 at 2.29.21 PM" width="586" height="698"/>
         <image name="account" width="375" height="726"/>
@@ -2011,11 +2013,11 @@
     <inferredMetricsTieBreakers>
         <segue reference="H9p-aC-Wi9"/>
         <segue reference="Opu-1A-u79"/>
-        <segue reference="0oT-Aj-77d"/>
-        <segue reference="hS3-BP-CoM"/>
-        <segue reference="INN-R6-iJG"/>
+        <segue reference="Qi6-lm-eUS"/>
+        <segue reference="02c-VV-vhf"/>
+        <segue reference="PfD-MG-yV0"/>
         <segue reference="Ljt-Nz-UON"/>
-        <segue reference="i36-UI-ZlM"/>
+        <segue reference="8XC-6Q-Gd5"/>
         <segue reference="YhO-YA-AQd"/>
     </inferredMetricsTieBreakers>
 </document>
