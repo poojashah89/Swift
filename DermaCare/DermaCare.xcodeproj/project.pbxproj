@@ -47,6 +47,8 @@
 		79678F2CE2B8CC951340B6ED /* Pods_DermaCareTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A0D81ADEB691E829B5BC454 /* Pods_DermaCareTests.framework */; };
 		85201F96371C499FBCCAFC2A /* Pods_DermaCareUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEB1F4D3893F2E75A8BD3E85 /* Pods_DermaCareUITests.framework */; };
 		FD6F7C3EAB3A944417688113 /* Pods_DermaCare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A1CCD7EB78F4977D9577BA1 /* Pods_DermaCare.framework */; };
+		FE02632020969E5A00758CF9 /* DoctorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE02631F20969E5A00758CF9 /* DoctorTableViewCell.swift */; };
+		FE0263222096FAE500758CF9 /* DoctorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE0263212096FAE500758CF9 /* DoctorModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -120,6 +122,8 @@
 		C72AFA4F3A92FF985FAC0A98 /* Pods-DermaCare.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DermaCare.release.xcconfig"; path = "Pods/Target Support Files/Pods-DermaCare/Pods-DermaCare.release.xcconfig"; sourceTree = "<group>"; };
 		D6FE3A8BB13B22E707363895 /* Pods-DermaCareTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DermaCareTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DermaCareTests/Pods-DermaCareTests.release.xcconfig"; sourceTree = "<group>"; };
 		DEB1F4D3893F2E75A8BD3E85 /* Pods_DermaCareUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DermaCareUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE02631F20969E5A00758CF9 /* DoctorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorTableViewCell.swift; sourceTree = "<group>"; };
+		FE0263212096FAE500758CF9 /* DoctorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +175,7 @@
 				72C4D88C203BACE1004FEA2E /* HealthModel.swift */,
 				722FB3B5208E9A2E0088A7EE /* ChatModel.swift */,
 				726DB4722093A15F0033B6B8 /* PharmacyModel.swift */,
+				FE0263212096FAE500758CF9 /* DoctorModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -190,6 +195,7 @@
 				20AAB1D220874575008FD056 /* HistoryTableViewCell.swift */,
 				726DB4702093A1280033B6B8 /* PharmacyViewCell.swift */,
 				726DB4782093D4970033B6B8 /* AppointmentViewCell.swift */,
+				FE02631F20969E5A00758CF9 /* DoctorTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -527,10 +533,12 @@
 				72C4D88D203BACE1004FEA2E /* HealthModel.swift in Sources */,
 				722FB3B4208D18CC0088A7EE /* RootTabController.swift in Sources */,
 				72FB9A7D20243A54009E4373 /* AccountController.swift in Sources */,
+				FE02632020969E5A00758CF9 /* DoctorTableViewCell.swift in Sources */,
 				72FB9A772024389E009E4373 /* RegisterController.swift in Sources */,
 				72FB9A8320243B59009E4373 /* ListDoctorController.swift in Sources */,
 				7239C9A22037A29F00A3C545 /* HKManagerDelegate.swift in Sources */,
 				724A6F042086B58100DF3DAC /* ResultController.swift in Sources */,
+				FE0263222096FAE500758CF9 /* DoctorModel.swift in Sources */,
 				72FB9A8B202444FC009E4373 /* DiagnoseController.swift in Sources */,
 				20AAB1D320874575008FD056 /* HistoryTableViewCell.swift in Sources */,
 				726DB4712093A1280033B6B8 /* PharmacyViewCell.swift in Sources */,
