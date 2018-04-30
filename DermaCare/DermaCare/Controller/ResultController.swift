@@ -14,6 +14,8 @@ import MessageUI
 
 class ResultController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate, MFMailComposeViewControllerDelegate {
     
+    var result = " Severe Rash"
+    
     @IBOutlet weak var myImageview: UIImageView!
     
     @IBOutlet weak var debugTextView: UITextView!
@@ -36,7 +38,11 @@ class ResultController: UIViewController, UINavigationControllerDelegate, UIImag
                 print ("upload successful")
                 let imageURL = metaData!.downloadURL()?.absoluteString
                 let refUser = database.child("userlist/\(userID)/Photos/\(id)")
-                refUser.setValue(imageURL)
+                refUser.setValue(nil)
+                refUser.child("url").setValue(imageURL)
+                refUser.child("result").setValue(self.result)
+                
+                //refUser.setValue(imageURL)
                 
                 let alert = UIAlertController(title: "Alert", message: "Saved Successfully", preferredStyle: UIAlertControllerStyle.alert)
                 alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
@@ -46,9 +52,7 @@ class ResultController: UIViewController, UINavigationControllerDelegate, UIImag
             }
             
         }
-
-        
-        
+ 
         
     }
     

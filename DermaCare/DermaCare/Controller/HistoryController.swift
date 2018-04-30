@@ -15,6 +15,7 @@ class HistoryController: UIViewController, UITableViewDelegate, UITableViewDataS
     
     var imgURL = [String]()
     var imagename = [String]()
+    var results = [String]()
     
     @IBOutlet weak var tableview: UITableView!
     
@@ -36,7 +37,35 @@ class HistoryController: UIViewController, UITableViewDelegate, UITableViewDataS
         
         let refuser = ref.child("userlist/\(userID)").child("Photos")
         
-        refuser.observe(.value, with: {(snapshot) in
+        
+        refuser.observeSingleEvent(of: .value, with: { (snapshot) in
+            for item in snapshot.children{
+                
+                let child = (item as! DataSnapshot).value as? [String:Any]
+                let childkey = (item as! DataSnapshot).key
+                
+                self.imagename.append(childkey)
+                print("id", self.imagename)
+                
+                
+                let result = child?["result"] as? String ?? ""
+                let url = child?["url"] as? String ?? ""
+                
+                self.imgURL.append(url)
+                self.results.append(result)
+                print("result",self.results)
+                print("url", self.imgURL)
+                
+                DispatchQueue.main.async(execute: {
+                    self.tableview.reloadData()
+                })
+            }
+            
+            
+        })
+        
+        
+      /*  refuser.observe(.value, with: {(snapshot) in
             
             
             for item in snapshot.children{
@@ -52,7 +81,7 @@ class HistoryController: UIViewController, UITableViewDelegate, UITableViewDataS
                 
             }
             
-        })
+        }) */
         
     }
     
@@ -74,6 +103,8 @@ class HistoryController: UIViewController, UITableViewDelegate, UITableViewDataS
         
         let userID: String = (Auth.auth().currentUser?.uid)!
         let imageNameLocal = self.imagename[indexPath.row]
+        let resultLocal = self.results[indexPath.row]
+        print("sneha result", resultLocal)
         let storage = Storage.storage().reference(forURL: "gs://dermacare-b1017.appspot.com/ImagesUploaded/\(userID)/\(imageNameLocal)")
         
         storage.getMetadata { metadata, error in
@@ -82,9 +113,10 @@ class HistoryController: UIViewController, UITableViewDelegate, UITableViewDataS
             }else{
                 let date = metadata?.timeCreated
                 //print("date", date )
-                cell.resultLabel?.text = imageNameLocal
+                cell.ressultLabel?.text = resultLocal
                 let formatter = DateFormatter()
                 formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+                cell.idLabel?.text = imageNameLocal
                 cell.dateLabel?.text = formatter.string(from: date as! Date)
             }
         }
