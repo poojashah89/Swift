@@ -522,9 +522,6 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                     <state key="normal" title="&gt;"/>
-                                                    <connections>
-                                                        <segue destination="Wwx-IH-PH2" kind="show" id="Ljt-Nz-UON"/>
-                                                    </connections>
                                                 </button>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -532,6 +529,7 @@
                                             <outlet property="docImage" destination="buV-EO-npN" id="gsQ-NO-dRK"/>
                                             <outlet property="docName" destination="HLp-R1-ijT" id="4wR-xM-gI3"/>
                                             <outlet property="docSpec" destination="J7H-In-VME" id="Yg4-IX-WPx"/>
+                                            <segue destination="Wwx-IH-PH2" kind="show" identifier="showDoctorDetail" id="C8k-50-lVc"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -541,11 +539,7 @@
                         <viewLayoutGuide key="safeArea" id="ny2-Mx-gMX"/>
                     </view>
                     <navigationItem key="navigationItem" title="Find Doctors" id="PpI-XT-T1q">
-                        <barButtonItem key="rightBarButtonItem" title="Next" id="QZy-QS-fYk">
-                            <connections>
-                                <segue destination="Wwx-IH-PH2" kind="show" id="oIa-gA-6ul"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Next" id="QZy-QS-fYk"/>
                     </navigationItem>
                     <connections>
                         <outlet property="doctorTableView" destination="4rP-J2-oXc" id="RSX-ak-nhR"/>
@@ -567,6 +561,13 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="737"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pLw-aK-cXl">
+                                <rect key="frame" x="57" y="211" width="120" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="n75-Vp-Q5b">
                                 <rect key="frame" x="20" y="90" width="101" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -641,10 +642,26 @@
                                 <color key="textColor" red="0.95401009790000002" green="0.96345574239999998" blue="0.96345574239999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BV4-uu-peX">
+                                <rect key="frame" x="271" y="211" width="83" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="4RF-DN-K0e"/>
                     </view>
+                    <connections>
+                        <outlet property="docAge" destination="f4V-wH-2u2" id="MUe-Jd-tok"/>
+                        <outlet property="docFees" destination="BV4-uu-peX" id="gnk-Lp-utI"/>
+                        <outlet property="docHours" destination="pLw-aK-cXl" id="Viy-Nd-eZn"/>
+                        <outlet property="docImage" destination="n75-Vp-Q5b" id="E8w-pJ-8ct"/>
+                        <outlet property="docMedicalPractise" destination="fBs-SF-yoq" id="yWy-Zv-oXC"/>
+                        <outlet property="docName" destination="TUe-G7-oBo" id="0Fk-vp-YtY"/>
+                        <outlet property="docSpec" destination="sN5-0o-ztz" id="abB-24-3EI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O9c-z7-Yow" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -2016,7 +2033,6 @@
         <segue reference="Qi6-lm-eUS"/>
         <segue reference="02c-VV-vhf"/>
         <segue reference="PfD-MG-yV0"/>
-        <segue reference="Ljt-Nz-UON"/>
         <segue reference="8XC-6Q-Gd5"/>
         <segue reference="YhO-YA-AQd"/>
     </inferredMetricsTieBreakers>

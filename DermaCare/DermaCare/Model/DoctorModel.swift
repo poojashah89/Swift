@@ -10,15 +10,24 @@ import UIKit
 
 class DoctorModel: NSObject {
     
-        var docName: String?
-        var docSpec: String?
+    var docName: String?
+    var specialization: String?
+    var experience: String?
+    var hours: String?
+    var fees: Int?
+    
+    override init()
+    {
         
-        init(name: String, spec: String)
+    }
+    
+    init(name: String, spec: String,exp: String,hours:String,fees:Int)
         {
-            
             self.docName = name
-            self.docSpec = spec
-            
+            self.specialization = spec
+            self.hours = hours
+            self.experience = exp
+            self.fees = fees
         }
     
 }

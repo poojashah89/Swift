@@ -47,7 +47,10 @@ class ListDoctorController: UIViewController,UITableViewDelegate,UITableViewData
                         let user_name = user["userName"] as! String
                         let doc_details = user["details"] as! [String : AnyObject]
                         let spec = doc_details["specialization"] as! String
-                        let doctorItem = DoctorModel(name: user_name,spec: spec)
+                        let experience = doc_details["experience"] as! String
+                        let hours = doc_details["hours"] as! String
+                        let fees = doc_details["fees"] as! Int
+                        let doctorItem = DoctorModel(name: user_name,spec: spec, exp: experience, hours: hours, fees: fees)
                         self.docList.append(doctorItem)
                         
                         DispatchQueue.main.async(execute: {
@@ -90,8 +93,31 @@ class ListDoctorController: UIViewController,UITableViewDelegate,UITableViewData
         }
         cell.docImage.image = UIImage(named: "doc.png")
         cell.docName.text = docList[indexPath.row].docName
-        cell.docSpec.text = docList[indexPath.row].docSpec
-        
+        cell.docSpec.text = docList[indexPath.row].specialization
+
         return cell;
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        super.prepare(for: segue, sender: sender)
+        
+        if(segue.identifier == "showDoctorDetail"){
+            let doctorDetailView = segue.destination as? DoctorController
+            
+            guard let selectedTableCell = sender as? DoctorTableViewCell else {
+                fatalError("Unexpected sender: \(sender)")
+            }
+            
+            guard let indexPath = doctorTableView.indexPath(for: selectedTableCell) else {
+                fatalError("The selected cell is not being displayed by the table")
+            }
+            
+            let selectedDoctor = docList[indexPath.row]
+            doctorDetailView?.doctorDetails = selectedDoctor
+            
+        }
+    }
+    
+    
 }
