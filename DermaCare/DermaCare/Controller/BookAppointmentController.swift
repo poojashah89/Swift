@@ -176,33 +176,32 @@ class BookAppointmentController: UIViewController, UICollectionViewDelegate, UIC
         let userID :String = (Auth.auth().currentUser?.uid)!
         let usersReference = Database.database().reference(withPath: "userlist")
         
-        datePicker.datePickerMode = .date
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM-dd-yyyy HH:mm"
+        let selectedDate = dateFormatter.string(from: datePicker.date)
+        print(selectedDate)
         
-        
-        
-        let dateFormatter = DateFormatter();
-        let dateFormat = "MM/DD/YY HH:MM"
-        dateFormatter.dateFormat = dateFormat;
-        let selectedDate = dateFormatter.string(from: datePicker.date) as String?
-        dateFormatter.locale = NSLocale.current;
-        dateFormatter.timeZone = TimeZone(abbreviation: "GMT-8:00");
-        
-        dateFormatter.dateFormat = dateFormat as String;
-        let sourceDate = dateFormatter.date(from: selectedDate as! String);
-        
-        print(sourceDate)
         //set id with apptdate
-        let lists = usersReference.child(userID).child("appointments").child(selectedDate!)
-        lists.child("doctor").setValue(selectedDoctor.docName)
+        let lists = usersReference.child(userID).child("appointments").child(selectedDate)
         
-        let details = lists.child("details")
+        lists.observeSingleEvent(of: .value, with: { (snapshot) in
+            if snapshot.hasChild("doctor"){
+                self.showAlert("You already have an Appointment")
+            }else{
+                lists.child("doctor").setValue(self.selectedDoctor.docName)
+                let details = lists.child("details")
+                for img in self.selectedHistoryModel {
+                    details.child("url").setValue(img.url)
+                    details.child("result").setValue(img.result)
+                    
+                }
+                
+                self.setAppointmentWithDoctor(docid: self.selectedDoctor.id!, apptdate: selectedDate, patient: userID, selectedHistoryModel: self.selectedHistoryModel)
+                
+                self.showAlert("Your Appointment is confirmed with Doctor \(String(describing: self.selectedDoctor.docName)) on \(selectedDate)" )
+            }
+        })
         
-        for img in selectedHistoryModel {
-            details.child("result").setValue(img.result)
-            details.child("url").setValue(img.url)
-        }
-        
-        setAppointmentWithDoctor(docid: selectedDoctor.id!, apptdate: selectedDate!, patient: userID, selectedHistoryModel: selectedHistoryModel)
     }
     
     
@@ -252,6 +251,13 @@ class BookAppointmentController: UIViewController, UICollectionViewDelegate, UIC
         self.layout.minimumInteritemSpacing = 0
         self.layout.minimumLineSpacing = 0
         collectionView!.collectionViewLayout = self.layout
+    }
+    
+    
+    func showAlert(_ message: String) {
+        let alertController = UIAlertController(title: "Appointment Confirmation", message: message, preferredStyle: UIAlertControllerStyle.alert)
+        alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: nil))
+        self.present(alertController, animated: true, completion: nil)
     }
 }
 

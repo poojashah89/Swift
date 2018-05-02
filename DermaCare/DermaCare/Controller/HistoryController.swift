@@ -21,12 +21,12 @@ class HistoryController: UIViewController, UITableViewDelegate, UITableViewDataS
     
     @IBOutlet weak var noTable: UILabel!
     
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableview.delegate = self
         tableview.dataSource = self
-        
         loaddata()
         self.tableview.reloadData()
         
@@ -61,33 +61,37 @@ class HistoryController: UIViewController, UITableViewDelegate, UITableViewDataS
         })
         
         
-      /*  refuser.observe(.value, with: {(snapshot) in
-            
-            
-            for item in snapshot.children{
-                let child = item as AnyObject
-                
-                
-                self.imagename.append(child.key)
-                self.imgURL.append(child.value)
-                
-                DispatchQueue.main.async(execute: {
-                    self.tableview.reloadData()
-                })
-            }
-        }) */
+        /*  refuser.observe(.value, with: {(snapshot) in
+         
+         
+         for item in snapshot.children{
+         let child = item as AnyObject
+         
+         
+         self.imagename.append(child.key)
+         self.imgURL.append(child.value)
+         
+         DispatchQueue.main.async(execute: {
+         self.tableview.reloadData()
+         })
+         }
+         }) */
         
-    }
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if(self.imagename.count > 0) {
+            self.noTable.text = ""
+            return self.imagename.count
+        }
+        else {
+            self.noTable.text = "No App Diagnosis Found."
+            tableView.separatorStyle = .none
+            return 0
+        }
         
-        print ("Hostory data count", self.imagename.count)
-        return self.imagename.count
     }
+    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
@@ -101,7 +105,7 @@ class HistoryController: UIViewController, UITableViewDelegate, UITableViewDataS
         let userID: String = (Auth.auth().currentUser?.uid)!
         let imageNameLocal = self.imagename[indexPath.row]
         let resultLocal = self.results[indexPath.row]
-       
+        
         let storage = Storage.storage().reference(forURL: "gs://dermacare-b1017.appspot.com/ImagesUploaded/\(userID)/\(imageNameLocal)")
         
         storage.getMetadata { metadata, error in
@@ -176,6 +180,7 @@ class HistoryController: UIViewController, UITableViewDelegate, UITableViewDataS
         tableView.layer.borderWidth = 1.0
         return cell
     }
+    
     
     
 }

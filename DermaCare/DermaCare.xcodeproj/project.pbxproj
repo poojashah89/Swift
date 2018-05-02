@@ -22,6 +22,8 @@
 		726DB4732093A15F0033B6B8 /* PharmacyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726DB4722093A15F0033B6B8 /* PharmacyModel.swift */; };
 		726DB4792093D4970033B6B8 /* AppointmentViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726DB4782093D4970033B6B8 /* AppointmentViewCell.swift */; };
 		726DB47D2098EAEE0033B6B8 /* HistoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726DB47C2098EAEE0033B6B8 /* HistoryModel.swift */; };
+		726DB47F209982990033B6B8 /* ViewAppointmentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726DB47E209982990033B6B8 /* ViewAppointmentCell.swift */; };
+		726DB4812099851B0033B6B8 /* AppointmentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726DB4802099851B0033B6B8 /* AppointmentModel.swift */; };
 		727EC13D2092CD63005008CE /* inception_coreml.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 727EC13C2092CD63005008CE /* inception_coreml.mlmodel */; };
 		727EC1402092E308005008CE /* PharmacyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727EC13F2092E308005008CE /* PharmacyController.swift */; };
 		72C4D88B203B92C0004FEA2E /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C4D88A203B92C0004FEA2E /* UserModel.swift */; };
@@ -87,6 +89,8 @@
 		726DB4722093A15F0033B6B8 /* PharmacyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PharmacyModel.swift; sourceTree = "<group>"; };
 		726DB4782093D4970033B6B8 /* AppointmentViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentViewCell.swift; sourceTree = "<group>"; };
 		726DB47C2098EAEE0033B6B8 /* HistoryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryModel.swift; sourceTree = "<group>"; };
+		726DB47E209982990033B6B8 /* ViewAppointmentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewAppointmentCell.swift; sourceTree = "<group>"; };
+		726DB4802099851B0033B6B8 /* AppointmentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentModel.swift; sourceTree = "<group>"; };
 		727EC13C2092CD63005008CE /* inception_coreml.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = inception_coreml.mlmodel; sourceTree = "<group>"; };
 		727EC13F2092E308005008CE /* PharmacyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PharmacyController.swift; sourceTree = "<group>"; };
 		72C4D88A203B92C0004FEA2E /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
@@ -179,6 +183,7 @@
 				722FB3B5208E9A2E0088A7EE /* ChatModel.swift */,
 				726DB4722093A15F0033B6B8 /* PharmacyModel.swift */,
 				FE0263212096FAE500758CF9 /* DoctorModel.swift */,
+				726DB4802099851B0033B6B8 /* AppointmentModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -199,6 +204,7 @@
 				726DB4702093A1280033B6B8 /* PharmacyViewCell.swift */,
 				726DB4782093D4970033B6B8 /* AppointmentViewCell.swift */,
 				FE02631F20969E5A00758CF9 /* DoctorTableViewCell.swift */,
+				726DB47E209982990033B6B8 /* ViewAppointmentCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -549,8 +555,10 @@
 				726DB4732093A15F0033B6B8 /* PharmacyModel.swift in Sources */,
 				724A6F062086CC8400DF3DAC /* HistoryController.swift in Sources */,
 				7239C9A020350FB900A3C545 /* HKManager.swift in Sources */,
+				726DB47F209982990033B6B8 /* ViewAppointmentCell.swift in Sources */,
 				72FB9A4B2023D752009E4373 /* DermaCare.xcdatamodeld in Sources */,
 				72C4D88B203B92C0004FEA2E /* UserModel.swift in Sources */,
+				726DB4812099851B0033B6B8 /* AppointmentModel.swift in Sources */,
 				72FB9A7B202439D9009E4373 /* HomeController.swift in Sources */,
 				722FB3B6208E9A2E0088A7EE /* ChatModel.swift in Sources */,
 				727EC1402092E308005008CE /* PharmacyController.swift in Sources */,
