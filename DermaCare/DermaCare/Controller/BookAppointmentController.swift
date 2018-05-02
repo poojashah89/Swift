@@ -13,30 +13,40 @@ import Firebase
 import SystemConfiguration
 class BookAppointmentController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
-    @IBOutlet weak var loadMore: UIButton!
-    
     @IBOutlet weak var collectionView: UICollectionView!
     
-    let width = UIScreen.main.bounds.width
+    @IBOutlet weak var noHistoryData: UILabel!
     
-    //var historyImages = [AppointmentImagesModel]()
+    @IBOutlet weak var docAge: UILabel!
+    
+    @IBOutlet weak var hours: UILabel!
+    
+    let width = UIScreen.main.bounds.width
     let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
     
-    var imgURL = [String]()
-    var imagename = [String]()
-    var _selectedCells : NSMutableArray = []
+    var historyModel=Array<HistoryModel>()
+    var selectedHistoryModel=Array<HistoryModel>()
+    
+    var selectedDoctor: DoctorModel!
+    
+    @IBOutlet weak var datePicker: UIDatePicker!
     
     @IBOutlet weak var activityAnimator: UIActivityIndicatorView!
+    
+    @IBOutlet weak var docname: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.delegate = self
         collectionView.dataSource = self
-         collectionView.allowsMultipleSelection=true
+        collectionView.allowsMultipleSelection=true
+        
+        docname.text = selectedDoctor.docName
+        docAge.text = selectedDoctor.experience
+        hours.text = selectedDoctor.hours
         
         if(isInternetAvailable()) { // Validate network connectivity
             loadHistoryData()
-            
             renderUI(width: Int(width/4), height: Int(width/2))
         } else{
             let alert = UIAlertController(title: "Error!", message: "Please check the network connectivity. History data could not be loaded ", preferredStyle: .alert)
@@ -56,20 +66,27 @@ class BookAppointmentController: UIViewController, UICollectionViewDelegate, UIC
         let userID: String = (Auth.auth().currentUser?.uid)!
         let ref = Database.database().reference()
         let refuser = ref.child("userlist/\(userID)").child("Photos")
-        refuser.observe(.value, with: {(snapshot) in
+        refuser.observeSingleEvent(of: .value, with: { (snapshot) in
             for item in snapshot.children{
-                let child = item as AnyObject
-                self.imagename.append(child.key)
-                self.imgURL.append(child.value)
+                
+                let child = (item as! DataSnapshot).value as? [String:Any]
+                let childkey = (item as! DataSnapshot).key
+                
+                let result = child?["result"] as? String ?? ""
+                let url = child?["url"] as? String ?? ""
+                
+                let historyItem = HistoryModel(result: result, url: url, name: childkey)
+                self.historyModel.append(historyItem)
                 
                 DispatchQueue.main.async(execute: {
                     self.collectionView.reloadData()
+                    
                     self.activityAnimator.stopAnimating()
                     self.activityAnimator.isHidden = true
                 })
             }
-            
         })
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -88,18 +105,23 @@ class BookAppointmentController: UIViewController, UICollectionViewDelegate, UIC
     
     // Render each cell using cellForItemAt
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.imagename.count
+        if(self.historyModel.count > 0) {
+            self.noHistoryData.text = ""
+            return self.historyModel.count
+        }
+        else {
+            self.noHistoryData.text = "No App Diagnosis Found."
+            return 0
+        }
     }
     
     // Render each cell using cellForItemAt
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HistoryImageCell", for: indexPath) as! AppointmentViewCell
-       
-        //let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HistoryImageCell") as? AppointmentViewCell
         
         let userID: String = (Auth.auth().currentUser?.uid)!
-        let imageNameLocal = self.imagename[indexPath.row]
+        let imageNameLocal = self.historyModel[indexPath.row].name
         let storage = Storage.storage().reference(forURL: "gs://dermacare-b1017.appspot.com/ImagesUploaded/\(userID)/\(imageNameLocal)")
         
         storage.getMetadata { metadata, error in
@@ -107,59 +129,95 @@ class BookAppointmentController: UIViewController, UICollectionViewDelegate, UIC
                 print("error occurred", error)
             }else{
                 let date = metadata?.timeCreated
-                //print("date", date )
-                //cell.resultLabel?.text = imageNameLocal
                 let formatter = DateFormatter()
                 formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-               // cell.dateLabel?.text = formatter.string(from: date as! Date)
             }
         }
-    
-        if let imageURL = URL(string: self.imgURL[indexPath.row]) {
-            //let url = NSURL(String: imageURL)
+        
+        if let imageURL = URL(string: self.historyModel[indexPath.row].url!) {
             URLSession.shared.dataTask(with: imageURL, completionHandler: {(data,response,error) in
                 
                 if error != nil{
-                    print(error)
+                    print(error as Any)
                     return
                 }
                 DispatchQueue.main.async {
-                   // cell.imgView?.image = UIImage(data: data!)
                     cell.historyImage?.image = UIImage(data: data!)
                 }
             }).resume()
         }
         
-        
-        //add your tick mark image to the cell in your storyboard or xib file.
-        let tickImage = cell.viewWithTag(indexPath.row) as? UIImageView
-        
-        if _selectedCells.contains(indexPath) {
-            cell.isSelected=true
-            collectionView.selectItem(at: indexPath, animated: true, scrollPosition: UICollectionViewScrollPosition.top)
-            tickImage?.isHidden=false
-        }
-        else{
-            cell.isSelected=false
-            tickImage?.isHidden=true
-        }
         return cell
         
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath){
-        
         //add the selected cell contents to _selectedCells arr when cell is selected
-        _selectedCells.add(indexPath)
+        selectedHistoryModel.append(historyModel[indexPath.row])
         collectionView.reloadItems(at: [indexPath])
     }
     
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
         
-        //remove the selected cell contents from _selectedCells arr when cell is De-Selected
-        
-        _selectedCells.remove(indexPath)
+        selectedHistoryModel.remove(at: indexPath.row)
         collectionView.reloadItems(at: [indexPath])
+    }
+    
+    
+    
+    @IBAction func bookAppointment(_ sender: Any) {
+        
+        var urls = Array<String>()
+        
+        for lists in selectedHistoryModel {
+            urls.append(lists.url!)
+        }
+        
+        let userID :String = (Auth.auth().currentUser?.uid)!
+        let usersReference = Database.database().reference(withPath: "userlist")
+        
+        datePicker.datePickerMode = .date
+        
+        
+        
+        let dateFormatter = DateFormatter();
+        let dateFormat = "MM/DD/YY HH:MM"
+        dateFormatter.dateFormat = dateFormat;
+        let selectedDate = dateFormatter.string(from: datePicker.date) as String?
+        dateFormatter.locale = NSLocale.current;
+        dateFormatter.timeZone = TimeZone(abbreviation: "GMT-8:00");
+        
+        dateFormatter.dateFormat = dateFormat as String;
+        let sourceDate = dateFormatter.date(from: selectedDate as! String);
+        
+        print(sourceDate)
+        //set id with apptdate
+        let lists = usersReference.child(userID).child("appointments").child(selectedDate!)
+        lists.child("doctor").setValue(selectedDoctor.docName)
+        
+        let details = lists.child("details")
+        
+        for img in selectedHistoryModel {
+            details.child("result").setValue(img.result)
+            details.child("url").setValue(img.url)
+        }
+        
+        setAppointmentWithDoctor(docid: selectedDoctor.id!, apptdate: selectedDate!, patient: userID, selectedHistoryModel: selectedHistoryModel)
+    }
+    
+    
+    func setAppointmentWithDoctor(docid: String, apptdate: String, patient: String, selectedHistoryModel: Array<HistoryModel>) {
+        let usersReference = Database.database().reference(withPath: "userlist")
+        
+        //set id with apptdate
+        let appts = usersReference.child(docid).child("appointments").child(apptdate)
+        appts.child("patient").setValue(patient)
+        let details = appts.child("details")
+        
+        for img in selectedHistoryModel {
+            details.child("result").setValue(img.result)
+            details.child("url").setValue(img.url)
+        }
     }
     
     // Validate Network Connectivity
@@ -194,8 +252,6 @@ class BookAppointmentController: UIViewController, UICollectionViewDelegate, UIC
         self.layout.minimumInteritemSpacing = 0
         self.layout.minimumLineSpacing = 0
         collectionView!.collectionViewLayout = self.layout
-        
     }
 }
-
 

@@ -40,13 +40,26 @@ class DoctorController: UIViewController {
         docMedicalPractise.text = doctorDetails.experience
         docSpec.text = doctorDetails.specialization
         
-        
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    @IBAction func bookAppointment(_ sender: Any) {
+        performSegue(withIdentifier: "doctor", sender: self)
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        if(segue.identifier == "doctor"){
+            let doctorDetailView = segue.destination as? BookAppointmentController
+            doctorDetailView?.selectedDoctor = doctorDetails
+        }
+    }
+    
     
     
 }

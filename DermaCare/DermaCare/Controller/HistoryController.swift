@@ -19,6 +19,8 @@ class HistoryController: UIViewController, UITableViewDelegate, UITableViewDataS
     
     @IBOutlet weak var tableview: UITableView!
     
+    @IBOutlet weak var noTable: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

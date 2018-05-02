@@ -21,6 +21,7 @@
 		726DB4712093A1280033B6B8 /* PharmacyViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726DB4702093A1280033B6B8 /* PharmacyViewCell.swift */; };
 		726DB4732093A15F0033B6B8 /* PharmacyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726DB4722093A15F0033B6B8 /* PharmacyModel.swift */; };
 		726DB4792093D4970033B6B8 /* AppointmentViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726DB4782093D4970033B6B8 /* AppointmentViewCell.swift */; };
+		726DB47D2098EAEE0033B6B8 /* HistoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726DB47C2098EAEE0033B6B8 /* HistoryModel.swift */; };
 		727EC13D2092CD63005008CE /* inception_coreml.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 727EC13C2092CD63005008CE /* inception_coreml.mlmodel */; };
 		727EC1402092E308005008CE /* PharmacyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727EC13F2092E308005008CE /* PharmacyController.swift */; };
 		72C4D88B203B92C0004FEA2E /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C4D88A203B92C0004FEA2E /* UserModel.swift */; };
@@ -85,6 +86,7 @@
 		726DB4702093A1280033B6B8 /* PharmacyViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PharmacyViewCell.swift; sourceTree = "<group>"; };
 		726DB4722093A15F0033B6B8 /* PharmacyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PharmacyModel.swift; sourceTree = "<group>"; };
 		726DB4782093D4970033B6B8 /* AppointmentViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentViewCell.swift; sourceTree = "<group>"; };
+		726DB47C2098EAEE0033B6B8 /* HistoryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryModel.swift; sourceTree = "<group>"; };
 		727EC13C2092CD63005008CE /* inception_coreml.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = inception_coreml.mlmodel; sourceTree = "<group>"; };
 		727EC13F2092E308005008CE /* PharmacyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PharmacyController.swift; sourceTree = "<group>"; };
 		72C4D88A203B92C0004FEA2E /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 		7239C99E20350F9300A3C545 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				726DB47C2098EAEE0033B6B8 /* HistoryModel.swift */,
 				7239C99F20350FB900A3C545 /* HKManager.swift */,
 				7239C9A12037A29F00A3C545 /* HKManagerDelegate.swift */,
 				72C4D88A203B92C0004FEA2E /* UserModel.swift */,
@@ -535,6 +538,7 @@
 				72FB9A7D20243A54009E4373 /* AccountController.swift in Sources */,
 				FE02632020969E5A00758CF9 /* DoctorTableViewCell.swift in Sources */,
 				72FB9A772024389E009E4373 /* RegisterController.swift in Sources */,
+				726DB47D2098EAEE0033B6B8 /* HistoryModel.swift in Sources */,
 				72FB9A8320243B59009E4373 /* ListDoctorController.swift in Sources */,
 				7239C9A22037A29F00A3C545 /* HKManagerDelegate.swift in Sources */,
 				724A6F042086B58100DF3DAC /* ResultController.swift in Sources */,

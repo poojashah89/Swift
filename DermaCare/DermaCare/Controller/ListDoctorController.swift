@@ -39,18 +39,16 @@ class ListDoctorController: UIViewController,UITableViewDelegate,UITableViewData
         refuser.observe(.value, with: {(snapshot) in
         
             if let users = snapshot.value as? [String:AnyObject] {
-                for (_,user) in users {
-                    
+                for (key, user) in users {
                     let userType  = user["userType"] as? String
                     if(userType == "Doctor"){
-                        
                         let user_name = user["userName"] as! String
                         let doc_details = user["details"] as! [String : AnyObject]
                         let spec = doc_details["specialization"] as! String
                         let experience = doc_details["experience"] as! String
                         let hours = doc_details["hours"] as! String
                         let fees = doc_details["fees"] as! Int
-                        let doctorItem = DoctorModel(name: user_name,spec: spec, exp: experience, hours: hours, fees: fees)
+                        let doctorItem = DoctorModel(id: key, name: user_name,spec: spec, exp: experience, hours: hours, fees: fees)
                         self.docList.append(doctorItem)
                         
                         DispatchQueue.main.async(execute: {
