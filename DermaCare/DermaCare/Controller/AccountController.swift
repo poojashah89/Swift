@@ -10,8 +10,9 @@ import Foundation
 import FirebaseAuth
 import UIKit
 import FirebaseDatabase
+import Firebase
 
-class AccountController: UIViewController {
+class AccountController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
     @IBOutlet weak var userNameText: UILabel!
     
@@ -33,7 +34,9 @@ class AccountController: UIViewController {
     
     @IBOutlet weak var healthSyncButton: UISwitch!
     
+    @IBOutlet weak var imageView: UIImageView!
     
+    let imagePicker = UIImagePickerController()
     var ref = Database.database().reference(withPath: "userlist")
     private var databaseHandle: DatabaseHandle!
 
@@ -88,10 +91,57 @@ class AccountController: UIViewController {
         super.viewDidLoad()
        
         //let healthTree = Database.database().reference(withPath: "patientlist").child(uid!).child("health")
-        
+       
         startObservingDatabase()
     }
    
+    
+    @IBAction func savePhoto(_ sender: Any) {
+        let database = Database.database().reference()
+        let userID :String = (Auth.auth().currentUser?.uid)!
+        let storage = Storage.storage().reference()
+        
+        let tempImageRef = storage.child("UserPhotos/\(userID)")
+        
+        let metaData = StorageMetadata()
+        metaData.contentType = "image/jpeg"
+        
+        tempImageRef.putData(UIImageJPEGRepresentation(imageView.image!, 0.8)!, metadata: metaData){ (metaData, error) in
+            if error == nil {
+                print ("upload successful")
+                let imageURL = metaData!.downloadURL()?.absoluteString
+                let refUser = database.child("userlist/\(userID)")
+                //refUser.setValue(nil)
+                refUser.updateChildValues(["userphoto" : imageURL!])
+                
+                let alert = UIAlertController(title: "Alert", message: "Photo saved Successfully", preferredStyle: UIAlertControllerStyle.alert)
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+            }else {
+                print (error?.localizedDescription)
+            }
+            
+        }
+    }
+    
+    @IBAction func addPhoto(_ sender: Any) {
+        
+        let image = UIImagePickerController()
+        image.delegate = self as! UIImagePickerControllerDelegate & UINavigationControllerDelegate
+        image.sourceType = UIImagePickerControllerSourceType.photoLibrary
+        
+        image.allowsEditing = false
+        
+        self.present(image, animated: true)
+        {
+            
+        }
+        
+        self.imageView.clipsToBounds = true
+        self.imageView.layer.cornerRadius = self.imageView.frame.size.width / 2
+        self.imageView.layer.cornerRadius = 18;
+        
+    }
     
     @IBAction func userLogOut(_ sender: Any) {
         try! Auth.auth().signOut()
@@ -100,7 +150,6 @@ class AccountController: UIViewController {
     
     func startObservingDatabase () {
         let userID = Auth.auth().currentUser?.uid
-        print("Getting information for user \(userID)" )
         
         ref.child(userID!).observeSingleEvent(of: .value, with: { (snapshot) in
             // Get user value
@@ -114,6 +163,20 @@ class AccountController: UIViewController {
             }
             
             self.userNameText.text = value?["userName"] as? String ?? "Error"
+            
+            let photoURL = value?["userphoto"] as? String ?? "Error"
+            if let imageURL = URL(string: photoURL) {
+                //let url = NSURL(String: imageURL)
+                URLSession.shared.dataTask(with: imageURL, completionHandler: {(data,response,error) in
+                    if error != nil{
+                        print(error)
+                        return
+                    }
+                    DispatchQueue.main.async {
+                        self.imageView.image = UIImage(data: data!)
+                    }
+                }).resume()
+            }
             
         }) { (error) in
             print(error.localizedDescription)
@@ -139,6 +202,32 @@ class AccountController: UIViewController {
             print(error.localizedDescription)
         }
         
+    }
+    
+    /*
+     * Pick Image
+     */
+    func imagePickerController(_ _picker: UIImagePickerController,didFinishPickingMediaWithInfo info:[String : Any]){
+        
+        if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage{
+            imageView.contentMode = .scaleToFill
+            imageView.image = pickedImage
+            
+        }
+        _picker.dismiss(animated: true, completion: nil)
+    }
+    
+    /*
+     * Set Image
+     */
+    func imagePickerController(_ picker: UIImagePickerController, didFinisjPickingMediaWithInfo info: [String : Any]) {
+        
+        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            imageView.image = image
+        } else{
+            print("Error in importing image")
+        }
+        self.dismiss(animated: true, completion: nil)
     }
     
     /*deinit {

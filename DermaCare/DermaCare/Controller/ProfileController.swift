@@ -31,9 +31,8 @@ class ProfileController: UIViewController {
     
     
     @IBAction func updateProfileAction(_ sender: Any) {
+        
     }
     
-    @IBAction func changePasswordAction(_ sender: Any) {
-    }
     
 }

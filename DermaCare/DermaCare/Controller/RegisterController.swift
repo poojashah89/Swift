@@ -67,6 +67,7 @@ class RegisterController: UIViewController {
                         let lists = usersReference.child((user?.uid)!)
                         lists.child("email").setValue(self.emailText.text)
                         lists.child("userName").setValue(self.usernameText.text)
+                        lists.child("userphoto").setValue("nil")
                         lists.child("phone").setValue(self.phoneNo.text)
                         lists.child("userType").setValue(self.loginType)
                         lists.child("isHealthSync").setValue(self.healthDataConnectSwitch.isOn)
