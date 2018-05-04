@@ -16,7 +16,7 @@ class ViewAppointmentController: UIViewController, UITableViewDelegate, UITableV
     
     @IBOutlet weak var noTable: UILabel!
     
-    var docList=Array<AppointmentModel>()
+    var docList=Array<PatientAppointmentModel>()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,7 +44,7 @@ class ViewAppointmentController: UIViewController, UITableViewDelegate, UITableV
             if let users = snapshot.value as? [String:AnyObject] {
                 for (key, user) in users {
                     let doc  = user["doctor"] as? String
-                    let doctorItem = AppointmentModel(docName: doc!, date: key)
+                    let doctorItem = PatientAppointmentModel(docName: doc!, date: key)
                     self.docList.append(doctorItem)
                     DispatchQueue.main.async(execute: {
                         self.apptTableView.reloadData()

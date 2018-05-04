@@ -35,6 +35,8 @@ class LoginController: UIViewController, UITextFieldDelegate {
     }
   
     @IBAction func loginAction(_ sender: Any) {
+        let database = Database.database().reference()
+        
         
         if(emailText.text != "" && passwordtext.text != "") {
             Auth.auth().signIn(withEmail: emailText.text!, password: passwordtext.text!) { (user, error) in
@@ -44,8 +46,22 @@ class LoginController: UIViewController, UITextFieldDelegate {
                     let email = user.email
                     self.user = user
                     print("Sign in successful for \(String(describing: email))")
-                   
-                    self.performSegue(withIdentifier: "loginSegue", sender: self)
+                    
+                    let userDetailRef = database.child("userlist/\(user.uid)")
+                    
+                    userDetailRef.observeSingleEvent(of: .value, with: { (snapshot) in
+                        for item in snapshot.children{
+                            
+                            let child = (item as! DataSnapshot)
+                            let childkey = (item as! DataSnapshot).key
+                    
+                            
+                        }
+                        
+                    })
+                    
+                    
+                    self.performSegue(withIdentifier: "patientLoginSegue", sender: self)
                     
                 } else {
                     if let error = error {
@@ -129,7 +145,7 @@ class LoginController: UIViewController, UITextFieldDelegate {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        if segue.identifier == "loginSegue"{
+        if segue.identifier == "patientLoginSegue"{
             if user != nil {
                 let tabBarController = segue.destination as! UITabBarController
                 let homeCtrl = tabBarController.viewControllers![0] as! HomeController

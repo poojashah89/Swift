@@ -79,6 +79,7 @@ class RegisterController: UIViewController {
                         })
                             
                         }
+                        self.performSegue(withIdentifier: "patientDashboardSegue", sender: self)
                     } else {
                         let usersReference = Database.database().reference(withPath: "userlist")
                         let lists = usersReference.child((user?.uid)!)
@@ -86,9 +87,12 @@ class RegisterController: UIViewController {
                         lists.child("userName").setValue(self.usernameText.text)
                         lists.child("phone").setValue(self.phoneNo.text)
                         lists.child("userType").setValue(self.loginType)
+                        
+                        self.performSegue(withIdentifier: "docRegisterDetailsSegue", sender: self)
+                        
                     }
                     print("User is registered successfully for \(String(describing: user?.email))")
-                    self.performSegue(withIdentifier: "loginSegue", sender: self)
+                    
                     
                 } else {
                     

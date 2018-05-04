@@ -10,7 +10,7 @@ import Foundation
 
 import UIKit
 
-class AppointmentModel: NSObject {
+class PatientAppointmentModel: NSObject {
     
     var docName: String?
     var date: String?

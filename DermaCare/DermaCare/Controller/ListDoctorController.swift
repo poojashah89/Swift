@@ -47,7 +47,7 @@ class ListDoctorController: UIViewController,UITableViewDelegate,UITableViewData
                         let spec = doc_details["specialization"] as! String
                         let experience = doc_details["experience"] as! String
                         let hours = doc_details["hours"] as! String
-                        let fees = doc_details["fees"] as! Int
+                        let fees = doc_details["fees"] as! String
                         let doctorItem = DoctorModel(id: key, name: user_name,spec: spec, exp: experience, hours: hours, fees: fees)
                         self.docList.append(doctorItem)
                         

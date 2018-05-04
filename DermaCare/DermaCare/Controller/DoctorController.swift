@@ -36,7 +36,7 @@ class DoctorController: UIViewController {
         docName.text = doctorDetails.docName
         docAge.text = "32 years"
         docHours.text = doctorDetails.hours
-        docFees.text = "\(doctorDetails.fees)"
+        docFees.text = doctorDetails.fees
         docMedicalPractise.text = doctorDetails.experience
         docSpec.text = doctorDetails.specialization
         
