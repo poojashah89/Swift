@@ -18,7 +18,8 @@ class AddAlarmViewController: UIViewController, UNUserNotificationCenterDelegate
     
     @IBOutlet weak var descriptionField: UITextField!
     
-    @IBOutlet weak var saveButton: UIBarButtonItem!
+    @IBOutlet weak var saveButton: UIButton!
+    // @IBOutlet weak var saveButton: UIBarButtonItem!
     
     //@IBOutlet weak var saveButton: UIButton!
     
@@ -44,7 +45,7 @@ class AddAlarmViewController: UIViewController, UNUserNotificationCenterDelegate
         super.prepare(for: segue, sender: sender)
         
         // Configure the destination view controller only when the save button is pressed.
-        guard let button = sender as? UIBarButtonItem, button === saveButton else {
+        guard let button = sender as? UIButton, button === saveButton else {
             os_log("The save button was not pressed, cancelling", log: OSLog.default, type: .debug)
             print("save button error")
             return
