@@ -7,6 +7,8 @@ Install Tensorflow
 Follow the steps to create a model using inception
 https://www.tensorflow.org/tutorials/image_retraining
 
+pip install -U tfcoreml
+
 <b>STEPS to CONVERT to mlmodel</b>
   1. Create classes as flower_class txt
   2. Install tf-coreml
