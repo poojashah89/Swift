@@ -9,8 +9,10 @@
 import UIKit
 
 class DoctorAppointmentModel: NSObject {
-
+    
+    var patientId: String?
     var patientName: String?
+    var patientPhone: String?
     var date: String?
     
     override init()
@@ -18,9 +20,11 @@ class DoctorAppointmentModel: NSObject {
         
     }
     
-    init(patName: String, date: String)
+    init(patId:String, patName:String, patPhone:String, date: String)
     {
+        self.patientId = patId
         self.patientName = patName
+        self.patientPhone = patPhone
         self.date = date
     }
 }

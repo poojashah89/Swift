@@ -50,18 +50,16 @@ class LoginController: UIViewController, UITextFieldDelegate {
                     let userDetailRef = database.child("userlist/\(user.uid)")
                     
                     userDetailRef.observeSingleEvent(of: .value, with: { (snapshot) in
-                        for item in snapshot.children{
-                            
-                            let child = (item as! DataSnapshot)
-                            let childkey = (item as! DataSnapshot).key
-                    
-                            
+                        if let value = snapshot.value as? [String: Any] {
+                            let userType = value["userType"] as? String ?? ""
+                            if(userType == "Doctor"){
+                                self.performSegue(withIdentifier: "doctorLoginSegue", sender: self)
+                            }else if(userType == "Patient"){
+                                self.performSegue(withIdentifier: "patientLoginSegue", sender: self)
+                            }
                         }
                         
                     })
-                    
-                    
-                    self.performSegue(withIdentifier: "patientLoginSegue", sender: self)
                     
                 } else {
                     if let error = error {

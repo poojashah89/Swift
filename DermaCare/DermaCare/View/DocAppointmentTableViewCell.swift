@@ -12,6 +12,7 @@ class DocAppointmentTableViewCell: UITableViewCell {
 
     @IBOutlet weak var patientName: UILabel!
     @IBOutlet weak var appmtDate: UILabel!
+    @IBOutlet weak var patientPhone: UILabel!
     
     
     override func awakeFromNib() {

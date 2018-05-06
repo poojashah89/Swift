@@ -22,7 +22,11 @@ class DoctorViewAppointmentController: UIViewController,UITableViewDelegate,UITa
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        docAppointmentTableView.delegate = self
+        docAppointmentTableView.dataSource = self
         // Do any additional setup after loading the view.
+        
+        fetchDoctorAppointmentData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,18 +37,28 @@ class DoctorViewAppointmentController: UIViewController,UITableViewDelegate,UITa
 
     func fetchDoctorAppointmentData(){
         let rootRef = Database.database().reference()
-        let refuser = rootRef.child("userlist")
         let userID: String = (Auth.auth().currentUser?.uid)!
-        refuser.child(userID).child("appointments").observe(.value, with: {(snapshot) in
+        let refuser = rootRef.child("userlist").child(userID)
+        
+        
+        refuser.child("appointments").observe(.value, with: {(snapshot) in
             if let users = snapshot.value as? [String:AnyObject] {
                 for (key, user) in users {
-                    let patient  = user["patient"] as? String
-                    let patItem = DoctorAppointmentModel(patName: patient!, date: key)
-                
+                    
+                    let patient_uid  = user["patient"] as? String
+                    let patient_name = user["userName"] as? String
+                    let patient_phone = user["phone"] as? String
+                    //var patientName = String()
+                    //patientName = self.getPatientName(patId: patient_uid!)
+                    
+                    let patItem = DoctorAppointmentModel(patId: patient_uid!, patName:patient_name!, patPhone:patient_phone!, date: key)
+                    
                     self.docAppointmentList.append(patItem)
+                    
                     DispatchQueue.main.async(execute: {
                         self.docAppointmentTableView.reloadData()
                     })
+                    
                 }
             }
         })
@@ -81,6 +95,7 @@ class DoctorViewAppointmentController: UIViewController,UITableViewDelegate,UITa
         
         cell.patientName.text = docAppointmentList[indexPath.row].patientName
         cell.appmtDate.text = docAppointmentList[indexPath.row].date
+        cell.patientPhone.text = docAppointmentList[indexPath.row].patientPhone
         return cell;
     }
 

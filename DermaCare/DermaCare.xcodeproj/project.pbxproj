@@ -61,6 +61,7 @@
 		FE026326209BE02F00758CF9 /* DoctorViewAppointmentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE026325209BE02F00758CF9 /* DoctorViewAppointmentController.swift */; };
 		FE02632A209C11FD00758CF9 /* DoctorAppointmentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE026329209C11FD00758CF9 /* DoctorAppointmentModel.swift */; };
 		FE02632C209C152F00758CF9 /* DocAppointmentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE02632B209C152F00758CF9 /* DocAppointmentTableViewCell.swift */; };
+		FEEBE16F209EBB3500BC3CFB /* DoctorAccountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEBE16E209EBB3500BC3CFB /* DoctorAccountController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -148,6 +149,7 @@
 		FE026325209BE02F00758CF9 /* DoctorViewAppointmentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorViewAppointmentController.swift; sourceTree = "<group>"; };
 		FE026329209C11FD00758CF9 /* DoctorAppointmentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorAppointmentModel.swift; sourceTree = "<group>"; };
 		FE02632B209C152F00758CF9 /* DocAppointmentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocAppointmentTableViewCell.swift; sourceTree = "<group>"; };
+		FEEBE16E209EBB3500BC3CFB /* DoctorAccountController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorAccountController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -315,6 +317,7 @@
 				204C1B1B209C4AF2009B52F5 /* PillReminderTableViewController.swift */,
 				204C1B27209C4C83009B52F5 /* AddAlarmViewController.swift */,
 				204C1B2D209E812F009B52F5 /* CoreMlViewController.swift */,
+				FEEBE16E209EBB3500BC3CFB /* DoctorAccountController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -583,6 +586,7 @@
 				20AAB1D320874575008FD056 /* HistoryTableViewCell.swift in Sources */,
 				726DB4712093A1280033B6B8 /* PharmacyViewCell.swift in Sources */,
 				726DB4732093A15F0033B6B8 /* PharmacyModel.swift in Sources */,
+				FEEBE16F209EBB3500BC3CFB /* DoctorAccountController.swift in Sources */,
 				204C1B1C209C4AF2009B52F5 /* PillReminderTableViewController.swift in Sources */,
 				FE02632A209C11FD00758CF9 /* DoctorAppointmentModel.swift in Sources */,
 				FE026324209A84C100758CF9 /* DoctorRegisterDetailsController.swift in Sources */,

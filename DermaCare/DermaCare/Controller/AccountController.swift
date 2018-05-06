@@ -65,13 +65,15 @@ class AccountController: UIViewController, UINavigationControllerDelegate, UIIma
             // Get user value
             let value = snapshot.value as? NSDictionary
                 
-                let age = value?["age"] as? String ?? "N/A"
+                let age = value?["age"] as? String ?? ""
                 let wt = value?["weight"] as? String ?? "N/A"
                 let ht = value?["height"] as? String ?? "N/A"
-                let gender = value?["sex"] as? String ?? "N/A"
+                let gender = value?["sex"] as? String ?? ""
                 let bp = value?["bloodType"] as? String ?? "N/A"
                 
-                self.ageText.text = "\(age) Years Old"
+                if(age != ""){
+                    self.ageText.text = "\(age) Years"
+                }
                 self.bpText.text = bp
                 self.weightText.text = wt
                 self.heightText.text = ht
