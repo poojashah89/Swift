@@ -99,7 +99,7 @@ class ResultController: UIViewController, UINavigationControllerDelegate, UIImag
      * Step 2. Consult Doctor screen
      */
     
-    
+
     
     
     @IBAction func emailDoctor(_ sender: Any) {

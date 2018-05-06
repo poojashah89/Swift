@@ -9,6 +9,8 @@
 import Foundation
 import UIKit
 import SwiftyJSON
+import Vision
+import CoreML
 
 class DiagnoseController: UIViewController,UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
     
@@ -16,9 +18,17 @@ class DiagnoseController: UIViewController,UITableViewDelegate, UITableViewDataS
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet var textInput: UITextField!
     @IBOutlet var bottomBarConstraint: NSLayoutConstraint!
+    
+    //var result =  [VNClassificationObservation]
    
+    var result : [VNClassificationObservation] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let topResult = self.result.first
+        print(topResult?.confidence)
+        
         // Do any additional setup after loading the view, typically from a nib.
         tableView.delegate = self
         tableView.dataSource = self
