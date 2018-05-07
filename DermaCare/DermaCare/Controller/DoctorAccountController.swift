@@ -21,11 +21,16 @@ class DoctorAccountController: UIViewController, UINavigationControllerDelegate,
     @IBOutlet weak var specialityLabel: UILabel!
     
     
+    @IBOutlet weak var address: UILabel!
+    
     @IBOutlet weak var profileImage: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.profileImage.clipsToBounds = true
+        self.profileImage.layer.cornerRadius = self.profileImage.frame.size.width / 2
+        self.profileImage.layer.cornerRadius = 18;
         // Do any additional setup after loading the view.
         fetchDoctorProfileData()
     }
@@ -50,6 +55,7 @@ class DoctorAccountController: UIViewController, UINavigationControllerDelegate,
             self.experienceLabel.text = doc_details["experience"] as? String ?? ""
             self.hoursLabel.text = doc_details["hours"] as? String ?? ""
             self.feesLabel.text = doc_details["fees"] as? String ?? ""
+            self.address.text = doc_details["address"] as? String ?? ""
             
             let doc_health = value!["health"] as! [String : AnyObject]
             let age = doc_health["age"] as? String ?? ""
@@ -59,6 +65,18 @@ class DoctorAccountController: UIViewController, UINavigationControllerDelegate,
             
             self.docGenderLabel.text = doc_health["sex"] as? String ?? ""
             
+            let photoURL = value?["userphoto"] as? String ?? "Error"
+            if let imageURL = URL(string: photoURL) {
+                URLSession.shared.dataTask(with: imageURL, completionHandler: {(data,response,error) in
+                    if error != nil{
+                        print(error)
+                        return
+                    }
+                    DispatchQueue.main.async {
+                        self.profileImage.image = UIImage(data: data!)
+                    }
+                }).resume()
+            }
         })
         
     }
@@ -102,7 +120,7 @@ class DoctorAccountController: UIViewController, UINavigationControllerDelegate,
                 //refUser.setValue(nil)
                 refUser.updateChildValues(["userphoto" : imageURL!])
                 
-                let alert = UIAlertController(title: "Alert", message: "Photo saved Successfully", preferredStyle: UIAlertControllerStyle.alert)
+                let alert = UIAlertController(title: "Update Profile", message: "Photo saved Successfully", preferredStyle: UIAlertControllerStyle.alert)
                 alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
                 self.present(alert, animated: true, completion: nil)
             }else {

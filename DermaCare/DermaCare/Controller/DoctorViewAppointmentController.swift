@@ -21,7 +21,6 @@ class DoctorViewAppointmentController: UIViewController,UITableViewDelegate,UITa
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         docAppointmentTableView.delegate = self
         docAppointmentTableView.dataSource = self
         // Do any additional setup after loading the view.
@@ -29,6 +28,11 @@ class DoctorViewAppointmentController: UIViewController,UITableViewDelegate,UITa
         fetchDoctorAppointmentData()
     }
 
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
+    {
+        return 100.0;//Choose your custom row height
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -89,6 +93,9 @@ class DoctorViewAppointmentController: UIViewController,UITableViewDelegate,UITa
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+       
+        
         guard let cell = docAppointmentTableView.dequeueReusableCell(withIdentifier: "DocAppointmentTableViewCell") as? DocAppointmentTableViewCell else {
             return UITableViewCell()
         }
@@ -96,6 +103,14 @@ class DoctorViewAppointmentController: UIViewController,UITableViewDelegate,UITa
         cell.patientName.text = docAppointmentList[indexPath.row].patientName
         cell.appmtDate.text = docAppointmentList[indexPath.row].date
         cell.patientPhone.text = docAppointmentList[indexPath.row].patientPhone
+        
+        cell.layer.masksToBounds = true
+        cell.layer.cornerRadius = 1
+        cell.layer.borderWidth = 1
+        cell.layer.shadowOffset = CGSize(width: -1, height: 1)
+        let borderColor: UIColor = .gray
+        cell.layer.borderColor = borderColor.cgColor
+
         return cell;
     }
 
