@@ -11,7 +11,7 @@ import UIKit
 import SwiftyJSON
 import Vision
 import CoreML
-
+import Firebase
 class DiagnoseController: UIViewController,UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
     
     var chatData = [[String:Any]]()
@@ -19,12 +19,15 @@ class DiagnoseController: UIViewController,UITableViewDelegate, UITableViewDataS
     @IBOutlet var textInput: UITextField!
     @IBOutlet var bottomBarConstraint: NSLayoutConstraint!
     
-    //var result =  [VNClassificationObservation]
-   
+    var ref = Database.database().reference(withPath: "userlist")
+    private var databaseHandle: DatabaseHandle!
     var result : [VNClassificationObservation] = []
+    
+    var username: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        startObservingDatabase ()
         
         let topResult = self.result.first
         print(topResult?.confidence)
@@ -33,11 +36,7 @@ class DiagnoseController: UIViewController,UITableViewDelegate, UITableViewDataS
         tableView.delegate = self
         tableView.dataSource = self
         tableView.backgroundView = UIImageView(image: UIImage(named: "chat"))
-        let message = "hi"
-        ChatModel.getChatString(message: message) { (json) in
-            print(json.message!)
-            self.displayMessage(message: json.message!, from: "server", time: json.time!)
-        }
+       
         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:))))
         
     }
@@ -126,6 +125,30 @@ class DiagnoseController: UIViewController,UITableViewDelegate, UITableViewDataS
         cell?.setMessage(data:messageData)
         
         return cell!
+    }
+    
+    
+    func startObservingDatabase () {
+        let userID = Auth.auth().currentUser?.uid
+        
+        ref.child(userID!).observeSingleEvent(of: .value, with: { (snapshot) in
+            // Get user value
+            let value = snapshot.value as? NSDictionary
+            self.username = value!["userName"] as? String
+            let startmessage = "Hello \(self.username ?? " ") How are you doing today?"
+            let date = Date()
+            let calendar = Calendar.current
+            let hour = calendar.component(.hour, from: date)
+            let minute = calendar.component(.minute, from: date)
+            let time = String(format: "%d : %d",hour,minute)
+            
+            self.displayMessage(message: startmessage, from: "server", time: time)
+        }) { (error) in
+            print(error.localizedDescription)
+        }
+        
+      
+        
     }
     
     

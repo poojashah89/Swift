@@ -17,14 +17,15 @@ class DoctorModel: NSObject {
     var fees: String?
     var id: String?
     var address: String?
-     var userphoto: String?
-    
+    var userphoto: String?
+    var age: String?
+    var gender: String?
     override init()
     {
         
     }
     
-    init(id: String, name: String, spec: String,exp: String,hours:String,fees:String, address:String, userphoto: String)
+    init(id: String, name: String, spec: String,exp: String,hours:String,fees:String, address:String, userphoto: String, age: String, gender: String)
         {
             self.docName = name
             self.specialization = spec
@@ -34,6 +35,8 @@ class DoctorModel: NSObject {
             self.id = id
             self.address = address
             self.userphoto = userphoto
+            self.age = age
+            self.gender = gender
         }
     
 }

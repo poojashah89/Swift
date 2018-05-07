@@ -44,7 +44,14 @@ class ViewAppointmentController: UIViewController, UITableViewDelegate, UITableV
             if let users = snapshot.value as? [String:AnyObject] {
                 for (key, user) in users {
                     let doc  = user["doctor"] as? String
-                    let doctorItem = PatientAppointmentModel(docName: doc!, date: key)
+                    let doctorGender  = user["doctorGender"] as? String
+                    let doctorPhoto  = user["doctorPhoto"] as? String
+                    let doctorExperience  = user["doctorExperience"] as? String
+                    let doctorSpecialization  = user["doctorSpecialization"] as? String
+                    let doctorAddress  = user["doctorAddress"] as? String
+                    
+                    let doctorItem = PatientAppointmentModel(docName: doc!, date: key, doctorGender: doctorGender!, doctorPhoto: doctorPhoto!, doctorExperience:doctorExperience!, doctorSpecialization:doctorSpecialization!, doctorAddress:doctorAddress!)
+                    
                     self.docList.append(doctorItem)
                     DispatchQueue.main.async(execute: {
                         self.apptTableView.reloadData()
@@ -73,8 +80,27 @@ class ViewAppointmentController: UIViewController, UITableViewDelegate, UITableV
         guard let cell = apptTableView.dequeueReusableCell(withIdentifier: "ViewAppointmentCell") as? ViewAppointmentCell else {
             return UITableViewCell()
         }
-        cell.docImage.image = UIImage(named: "doc.png")
+        //cell.docImage.image = UIImage(named: "doc.png")
         cell.docName.text = docList[indexPath.row].docName
+        cell.address.text = docList[indexPath.row].doctorAddress
+        cell.gender.text = docList[indexPath.row].doctorGender!
+        cell.exprience.text = docList[indexPath.row].doctorExperience! + " of Experience"
+        
+        
+        let photoURL = docList[indexPath.row].doctorPhoto
+        if let imageURL = URL(string: photoURL!) {
+            URLSession.shared.dataTask(with: imageURL, completionHandler: {(data,response,error) in
+                if error != nil{
+                    print(error)
+                    return
+                }
+                DispatchQueue.main.async {
+                    cell.docImage.image = UIImage(data: data!)
+                }
+            }).resume()
+        }
+        
+        
         cell.date.text = docList[indexPath.row].date
         return cell;
     }

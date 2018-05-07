@@ -34,12 +34,12 @@ class AccountController: UIViewController, UINavigationControllerDelegate, UIIma
     
     @IBOutlet weak var healthSyncButton: UISwitch!
     
-    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var accountImageView: UIImageView!
     
     let imagePicker = UIImagePickerController()
     var ref = Database.database().reference(withPath: "userlist")
     private var databaseHandle: DatabaseHandle!
-
+    
     var HealthModelItems = [HealthModel]()
     
     @IBAction func healthKitSyncSwitch(_ sender: Any) {
@@ -59,11 +59,11 @@ class AccountController: UIViewController, UINavigationControllerDelegate, UIIma
                 print("sleep for 2 seconds.")
                 sleep(2) // working
             }
-             print("if sync \(dataModel.ifHealthSyc )")
+            print("if sync \(dataModel.ifHealthSyc )")
             lists.child("isHealthSync").setValue(true)
             lists.child("health").observeSingleEvent(of: .value, with: { (snapshot) in
-            // Get user value
-            let value = snapshot.value as? NSDictionary
+                // Get user value
+                let value = snapshot.value as? NSDictionary
                 
                 let age = value?["age"] as? String ?? ""
                 let wt = value?["weight"] as? String ?? "N/A"
@@ -82,7 +82,7 @@ class AccountController: UIViewController, UINavigationControllerDelegate, UIIma
             }) { (error) in
                 print(error.localizedDescription)
             }
-        
+            
         } else {
             //remove health data
             lists.child("isHealthSync").setValue(false)
@@ -91,15 +91,12 @@ class AccountController: UIViewController, UINavigationControllerDelegate, UIIma
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        
         //let healthTree = Database.database().reference(withPath: "patientlist").child(uid!).child("health")
-       
-        self.imageView.clipsToBounds = true
-        self.imageView.layer.cornerRadius = self.imageView.frame.size.width / 2
-        self.imageView.layer.cornerRadius = 18;
+        
         startObservingDatabase()
     }
-   
+    
     
     @IBAction func savePhoto(_ sender: Any) {
         let database = Database.database().reference()
@@ -111,7 +108,7 @@ class AccountController: UIViewController, UINavigationControllerDelegate, UIIma
         let metaData = StorageMetadata()
         metaData.contentType = "image/jpeg"
         
-        tempImageRef.putData(UIImageJPEGRepresentation(imageView.image!, 0.8)!, metadata: metaData){ (metaData, error) in
+        tempImageRef.putData(UIImageJPEGRepresentation(accountImageView.image!, 0.8)!, metadata: metaData){ (metaData, error) in
             if error == nil {
                 print ("upload successful")
                 let imageURL = metaData!.downloadURL()?.absoluteString
@@ -119,7 +116,7 @@ class AccountController: UIViewController, UINavigationControllerDelegate, UIIma
                 //refUser.setValue(nil)
                 refUser.updateChildValues(["userphoto" : imageURL!])
                 
-                let alert = UIAlertController(title: "Update Profile", message: "Photo saved Successfully", preferredStyle: UIAlertControllerStyle.alert)
+                let alert = UIAlertController(title: "Alert", message: "Photo saved Successfully", preferredStyle: UIAlertControllerStyle.alert)
                 alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
                 self.present(alert, animated: true, completion: nil)
             }else {
@@ -132,7 +129,7 @@ class AccountController: UIViewController, UINavigationControllerDelegate, UIIma
     @IBAction func addPhoto(_ sender: Any) {
         
         let image = UIImagePickerController()
-        image.delegate = self as! UIImagePickerControllerDelegate & UINavigationControllerDelegate
+        image.delegate = self as UIImagePickerControllerDelegate & UINavigationControllerDelegate
         image.sourceType = UIImagePickerControllerSourceType.photoLibrary
         
         image.allowsEditing = false
@@ -142,6 +139,9 @@ class AccountController: UIViewController, UINavigationControllerDelegate, UIIma
             
         }
         
+        self.accountImageView.clipsToBounds = true
+        self.accountImageView.layer.cornerRadius = self.accountImageView.frame.size.width / 2
+        self.accountImageView.layer.cornerRadius = 18;
         
     }
     
@@ -175,7 +175,7 @@ class AccountController: UIViewController, UINavigationControllerDelegate, UIIma
                         return
                     }
                     DispatchQueue.main.async {
-                        self.imageView.image = UIImage(data: data!)
+                        self.accountImageView.image = UIImage(data: data!)
                     }
                 }).resume()
             }
@@ -183,7 +183,7 @@ class AccountController: UIViewController, UINavigationControllerDelegate, UIIma
         }) { (error) in
             print(error.localizedDescription)
         }
-       
+        
         ref.child(userID!).child("health").observeSingleEvent(of: .value, with: { (snapshot) in
             // Get user value
             let value = snapshot.value as? NSDictionary
@@ -212,8 +212,8 @@ class AccountController: UIViewController, UINavigationControllerDelegate, UIIma
     func imagePickerController(_ _picker: UIImagePickerController,didFinishPickingMediaWithInfo info:[String : Any]){
         
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage{
-            //imageView.contentMode = .scaleToFill
-            imageView.image = pickedImage
+            accountImageView.contentMode = .scaleToFill
+            accountImageView.image = pickedImage
             
         }
         _picker.dismiss(animated: true, completion: nil)
@@ -225,7 +225,7 @@ class AccountController: UIViewController, UINavigationControllerDelegate, UIIma
     func imagePickerController(_ picker: UIImagePickerController, didFinisjPickingMediaWithInfo info: [String : Any]) {
         
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
-            imageView.image = image
+            accountImageView.image = image
         } else{
             print("Error in importing image")
         }
@@ -233,8 +233,8 @@ class AccountController: UIViewController, UINavigationControllerDelegate, UIIma
     }
     
     /*deinit {
-        ref.child(self.user.uid).child("health").removeObserver(withHandle: databaseHandle)
-    }*/
+     ref.child(self.user.uid).child("health").removeObserver(withHandle: databaseHandle)
+     }*/
 }
 
 
@@ -245,6 +245,7 @@ extension AccountController: HKManagerDelegate {
     }
     
 }
+
 
 
 

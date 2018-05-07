@@ -22,6 +22,9 @@ class DoctorController: UIViewController {
     @IBOutlet weak var docMedicalPractise: UILabel!
     @IBOutlet weak var docSpec: UILabel!
     
+    @IBOutlet weak var gender: UILabel!
+    @IBOutlet weak var address: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -31,14 +34,26 @@ class DoctorController: UIViewController {
     
     func loadViews(){
         
-        let img = UIImage(named: "doc.png")
-        docImage.image = img
         docName.text = doctorDetails.docName
-        docAge.text = "32 years"
+        docAge.text = doctorDetails.age! + " Years Old"
         docHours.text = doctorDetails.hours
         docFees.text = doctorDetails.fees
-        docMedicalPractise.text = doctorDetails.experience
+        docMedicalPractise.text = doctorDetails.experience! + " of Experience"
         docSpec.text = doctorDetails.specialization
+        address.text = doctorDetails.address
+        gender.text  = doctorDetails.gender
+        let photoURL = doctorDetails.userphoto
+        if let imageURL = URL(string: photoURL!) {
+            URLSession.shared.dataTask(with: imageURL, completionHandler: {(data,response,error) in
+                if error != nil{
+                    print(error)
+                    return
+                }
+                DispatchQueue.main.async {
+                    self.docImage.image = UIImage(data: data!)
+                }
+            }).resume()
+        }
         
     }
     

@@ -17,12 +17,13 @@ class BookAppointmentController: UIViewController, UICollectionViewDelegate, UIC
     
     @IBOutlet weak var noHistoryData: UILabel!
     
-    @IBOutlet weak var docAge: UILabel!
-    
+    @IBOutlet weak var gender: UILabel!
     
     @IBOutlet weak var experience: UILabel!
     
     @IBOutlet weak var hours: UILabel!
+    
+    @IBOutlet weak var fees: UILabel!
     
     let width = UIScreen.main.bounds.width
     let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
@@ -38,6 +39,9 @@ class BookAppointmentController: UIViewController, UICollectionViewDelegate, UIC
     
     @IBOutlet weak var docname: UILabel!
     
+    @IBOutlet weak var imageView: UIImageView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.delegate = self
@@ -45,9 +49,22 @@ class BookAppointmentController: UIViewController, UICollectionViewDelegate, UIC
         collectionView.allowsMultipleSelection=true
         
         docname.text = selectedDoctor.docName
-        docAge.text = selectedDoctor.experience
-        experience.text = selectedDoctor.experience
+        gender.text = selectedDoctor.gender
+        experience.text = selectedDoctor.experience! + " of Experience"
         hours.text = selectedDoctor.hours
+        fees.text = selectedDoctor.fees
+        let photoURL = selectedDoctor.userphoto
+        if let imageURL = URL(string: photoURL!) {
+            URLSession.shared.dataTask(with: imageURL, completionHandler: {(data,response,error) in
+                if error != nil{
+                    print(error)
+                    return
+                }
+                DispatchQueue.main.async {
+                    self.imageView.image = UIImage(data: data!)
+                }
+            }).resume()
+        }
         
         if(isInternetAvailable()) { // Validate network connectivity
             loadHistoryData()
@@ -210,6 +227,11 @@ class BookAppointmentController: UIViewController, UICollectionViewDelegate, UIC
                 self.showAlert("You already have an Appointment")
             }else{
                 lists.child("doctor").setValue(self.selectedDoctor.docName)
+                lists.child("doctorGender").setValue(self.selectedDoctor.gender)
+                lists.child("doctorPhoto").setValue(self.selectedDoctor.userphoto)
+                lists.child("doctorExperience").setValue(self.selectedDoctor.experience)
+                lists.child("doctorSpecialization").setValue(self.selectedDoctor.specialization)
+                lists.child("doctorAddress").setValue(self.selectedDoctor.address)
                 let details = lists.child("details")
                 for img in self.selectedHistoryModel {
                     details.child("url").setValue(img.url)
