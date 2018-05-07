@@ -212,7 +212,7 @@ class AccountController: UIViewController, UINavigationControllerDelegate, UIIma
     func imagePickerController(_ _picker: UIImagePickerController,didFinishPickingMediaWithInfo info:[String : Any]){
         
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage{
-            imageView.contentMode = .scaleToFill
+            //imageView.contentMode = .scaleToFill
             imageView.image = pickedImage
             
         }

@@ -17,6 +17,11 @@ class DoctorTableViewCell: UITableViewCell {
     
     @IBOutlet weak var docSpec: UILabel!
     
+    @IBOutlet weak var address: UILabel!
+    
+    
+    @IBOutlet weak var hours: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

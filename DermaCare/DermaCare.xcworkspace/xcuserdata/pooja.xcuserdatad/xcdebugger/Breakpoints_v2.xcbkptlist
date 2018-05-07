@@ -90,7 +90,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DermaCare/Controller/AccountController.swift"
-            timestampString = "547357481.048926"
+            timestampString = "547376439.1180969"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "203"
@@ -138,7 +138,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DermaCare/Controller/AccountController.swift"
-            timestampString = "547357481.0490251"
+            timestampString = "547376439.118153"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "203"
@@ -170,7 +170,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DermaCare/Controller/RegisterController.swift"
-            timestampString = "547372660.039917"
+            timestampString = "547376439.118211"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "65"
@@ -346,7 +346,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DermaCare/Controller/RegisterController.swift"
-            timestampString = "547372660.040044"
+            timestampString = "547376439.118317"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "76"
@@ -362,7 +362,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DermaCare/Controller/RegisterController.swift"
-            timestampString = "547372660.040089"
+            timestampString = "547376439.1183569"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "75"
@@ -426,7 +426,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DermaCare/Controller/DiagnoseController.swift"
-            timestampString = "547372660.040184"
+            timestampString = "547373546.15482"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "120"
@@ -458,7 +458,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DermaCare/Controller/DiagnoseController.swift"
-            timestampString = "547372660.040249"
+            timestampString = "547373546.154881"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "118"
@@ -474,7 +474,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DermaCare/Controller/DiagnoseController.swift"
-            timestampString = "547372660.040314"
+            timestampString = "547373546.154925"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "113"
@@ -490,7 +490,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DermaCare/Controller/DiagnoseController.swift"
-            timestampString = "547372660.040361"
+            timestampString = "547373546.154966"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "82"
@@ -506,7 +506,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DermaCare/Controller/DiagnoseController.swift"
-            timestampString = "547372660.040398"
+            timestampString = "547373546.155007"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "39"
@@ -616,7 +616,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DermaCare/Controller/AccountController.swift"
-            timestampString = "547357481.049481"
+            timestampString = "547376439.118539"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "166"
@@ -686,6 +686,38 @@
             startingLineNumber = "190"
             endingLineNumber = "190"
             landmarkName = "authorizeHealthKit(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DermaCare/Controller/ListDoctorController.swift"
+            timestampString = "547376439.118615"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "112"
+            endingLineNumber = "112"
+            landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DermaCare/Controller/ListDoctorController.swift"
+            timestampString = "547376465.77152"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "125"
+            endingLineNumber = "125"
+            landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
