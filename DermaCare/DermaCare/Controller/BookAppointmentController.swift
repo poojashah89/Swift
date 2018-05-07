@@ -19,6 +19,9 @@ class BookAppointmentController: UIViewController, UICollectionViewDelegate, UIC
     
     @IBOutlet weak var docAge: UILabel!
     
+    
+    @IBOutlet weak var experience: UILabel!
+    
     @IBOutlet weak var hours: UILabel!
     
     let width = UIScreen.main.bounds.width
@@ -43,6 +46,7 @@ class BookAppointmentController: UIViewController, UICollectionViewDelegate, UIC
         
         docname.text = selectedDoctor.docName
         docAge.text = selectedDoctor.experience
+        experience.text = selectedDoctor.experience
         hours.text = selectedDoctor.hours
         
         if(isInternetAvailable()) { // Validate network connectivity

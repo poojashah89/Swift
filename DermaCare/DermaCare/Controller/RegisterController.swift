@@ -87,6 +87,15 @@ class RegisterController: UIViewController {
                         lists.child("userName").setValue(self.usernameText.text)
                         lists.child("phone").setValue(self.phoneNo.text)
                         lists.child("userType").setValue(self.loginType)
+                        lists.child("isHealthSync").setValue(self.healthDataConnectSwitch.isOn)
+                        
+                        //Import healhkit data
+                        if(self.healthDataConnectSwitch.isOn) {
+                            self.dataModel.delegate = self
+                            self.dataModel.requestData(user: user!, callback: { (isHealthSync: Bool) -> Void in
+                            })
+                            
+                        }
                         
                         self.performSegue(withIdentifier: "docRegisterDetailsSegue", sender: self)
                         

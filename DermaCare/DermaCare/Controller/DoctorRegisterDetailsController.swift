@@ -18,10 +18,12 @@ class DoctorRegisterDetailsController: UIViewController {
     @IBOutlet weak var consultationFeeTxtField: UITextField!
     
     
+    @IBOutlet weak var address: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:))))
         
         
     }
@@ -48,7 +50,7 @@ class DoctorRegisterDetailsController: UIViewController {
         let database = Database.database().reference()
         let userID :String = (Auth.auth().currentUser?.uid)!
         let userDetailRef = database.child("userlist/\(userID)").child("details")
-        userDetailRef.updateChildValues(["experience":String(expTxtField.text!),"fees":String(consultationFeeTxtField.text!),"hours":String(hoursTxtField.text!),"specialization":String(specTxtField.text!)])
+        userDetailRef.updateChildValues(["experience":String(expTxtField.text!),"fees":String(consultationFeeTxtField.text!),"hours":String(hoursTxtField.text!),"specialization":String(specTxtField.text!), "address":String(address.text!) ])
         
         self.performSegue(withIdentifier: "docDashboardSegue", sender: self)
         
