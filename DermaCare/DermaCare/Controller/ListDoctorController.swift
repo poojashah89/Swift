@@ -51,7 +51,11 @@ class ListDoctorController: UIViewController,UITableViewDelegate,UITableViewData
                         let fees = doc_details["fees"] as! String
                         let address = doc_details["address"] as! String
                         
-                        let doctorItem = DoctorModel(id: key, name: user_name,spec: spec, exp: experience, hours: hours, fees: fees, address: address, userphoto: userphoto)
+                        let doc_health = user["health"] as! [String : AnyObject]
+                        let age = doc_health["age"] as? String ?? ""
+                        let gender = doc_health["sex"] as? String ?? ""
+                        
+                        let doctorItem = DoctorModel(id: key, name: user_name,spec: spec, exp: experience, hours: hours, fees: fees, address: address, userphoto: userphoto, age: age, gender: gender)
                         self.docList.append(doctorItem)
                         
                         DispatchQueue.main.async(execute: {
@@ -92,7 +96,7 @@ class ListDoctorController: UIViewController,UITableViewDelegate,UITableViewData
         guard let cell = doctorTableView.dequeueReusableCell(withIdentifier: "DoctorTableViewCell") as?DoctorTableViewCell else {
             return UITableViewCell()
         }
-        cell.docImage.image = UIImage(named: "doc.png")
+        cell.docImage.image = UIImage()//named: "doc.png")
         cell.docName.text = docList[indexPath.row].docName
         cell.docSpec.text = docList[indexPath.row].specialization
         cell.hours.text = docList[indexPath.row].hours
@@ -105,11 +109,10 @@ class ListDoctorController: UIViewController,UITableViewDelegate,UITableViewData
         let borderColor: UIColor = .gray
         cell.layer.borderColor = borderColor.cgColor
 
-        
         let imageNameLocal = docList[indexPath.row].userphoto
-        let docid = docList[indexPath.row].id
-        
-        /*let storage = Storage.storage().reference(forURL: "gs://dermacare-b1017.appspot.com/UserPhotos/\(docid)")
+
+        /*let docid = docList[indexPath.row].id
+        let storage = Storage.storage().reference(forURL: "gs://dermacare-b1017.appspot.com/UserPhotos/\(docid)")
         
         storage.getMetadata { metadata, error in
             if let error = error {

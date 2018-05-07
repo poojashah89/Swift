@@ -23,9 +23,13 @@ class ChatModel: NSObject {
     }
     
     class func getChatString(message: String, callback: @escaping (ChatModel) -> ()) {
-        let path = "http://18.236.185.72:5000/chat?chat='\(message)'"
+        var path = "http://18.236.156.71:5000/chat?chat='\(message)'"
+        
+        path = path.addingPercentEncoding(
+            withAllowedCharacters: CharacterSet.urlQueryAllowed)!
         
         let url = URL(string: path)
+        print(url?.absoluteString)
         let session = URLSession.shared
         let task = session.dataTask(with: url! as URL, completionHandler: {jsonData, response, error -> Void in
             if(error != nil) {
@@ -35,7 +39,7 @@ class ChatModel: NSObject {
             }
             do {
                 if let json = try JSONSerialization.jsonObject(with: jsonData!, options:.allowFragments) as? [String:Any] {
-                    
+                    print(json)
                     let chatMessage = json as NSDictionary
                     let chatm = ChatModel(dictionary: chatMessage)
                     callback(chatm)

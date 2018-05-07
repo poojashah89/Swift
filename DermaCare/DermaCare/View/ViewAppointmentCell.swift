@@ -18,6 +18,12 @@ class ViewAppointmentCell: UITableViewCell {
     
     @IBOutlet weak var date: UILabel!
     
+    @IBOutlet weak var exprience: UILabel!
+    
+    @IBOutlet weak var gender: UILabel!
+    
+    @IBOutlet weak var address: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
