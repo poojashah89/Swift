@@ -23,7 +23,7 @@ class ChatModel: NSObject {
     }
     
     class func getChatString(message: String, callback: @escaping (ChatModel) -> ()) {
-        let path = "http://18.236.185.72:5000/chat?chat='\(message)'"
+        let path = "http://18.236.156.71:5000/chat?chat='\(message)'"
         
         let url = URL(string: path)
         let session = URLSession.shared
