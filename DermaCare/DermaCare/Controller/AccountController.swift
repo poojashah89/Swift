@@ -94,6 +94,9 @@ class AccountController: UIViewController, UINavigationControllerDelegate, UIIma
        
         //let healthTree = Database.database().reference(withPath: "patientlist").child(uid!).child("health")
        
+        self.imageView.clipsToBounds = true
+        self.imageView.layer.cornerRadius = self.imageView.frame.size.width / 2
+        self.imageView.layer.cornerRadius = 18;
         startObservingDatabase()
     }
    
@@ -116,7 +119,7 @@ class AccountController: UIViewController, UINavigationControllerDelegate, UIIma
                 //refUser.setValue(nil)
                 refUser.updateChildValues(["userphoto" : imageURL!])
                 
-                let alert = UIAlertController(title: "Alert", message: "Photo saved Successfully", preferredStyle: UIAlertControllerStyle.alert)
+                let alert = UIAlertController(title: "Update Profile", message: "Photo saved Successfully", preferredStyle: UIAlertControllerStyle.alert)
                 alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
                 self.present(alert, animated: true, completion: nil)
             }else {
@@ -139,9 +142,6 @@ class AccountController: UIViewController, UINavigationControllerDelegate, UIIma
             
         }
         
-        self.imageView.clipsToBounds = true
-        self.imageView.layer.cornerRadius = self.imageView.frame.size.width / 2
-        self.imageView.layer.cornerRadius = 18;
         
     }
     
@@ -212,7 +212,7 @@ class AccountController: UIViewController, UINavigationControllerDelegate, UIIma
     func imagePickerController(_ _picker: UIImagePickerController,didFinishPickingMediaWithInfo info:[String : Any]){
         
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage{
-            imageView.contentMode = .scaleToFill
+            //imageView.contentMode = .scaleToFill
             imageView.image = pickedImage
             
         }

@@ -43,12 +43,15 @@ class ListDoctorController: UIViewController,UITableViewDelegate,UITableViewData
                     let userType  = user["userType"] as? String
                     if(userType == "Doctor"){
                         let user_name = user["userName"] as! String
+                        let userphoto = user["userphoto"] as! String
                         let doc_details = user["details"] as! [String : AnyObject]
                         let spec = doc_details["specialization"] as! String
                         let experience = doc_details["experience"] as! String
                         let hours = doc_details["hours"] as! String
                         let fees = doc_details["fees"] as! String
-                        let doctorItem = DoctorModel(id: key, name: user_name,spec: spec, exp: experience, hours: hours, fees: fees)
+                        let address = doc_details["address"] as! String
+                        
+                        let doctorItem = DoctorModel(id: key, name: user_name,spec: spec, exp: experience, hours: hours, fees: fees, address: address, userphoto: userphoto)
                         self.docList.append(doctorItem)
                         
                         DispatchQueue.main.async(execute: {
@@ -92,10 +95,56 @@ class ListDoctorController: UIViewController,UITableViewDelegate,UITableViewData
         cell.docImage.image = UIImage(named: "doc.png")
         cell.docName.text = docList[indexPath.row].docName
         cell.docSpec.text = docList[indexPath.row].specialization
+        cell.hours.text = docList[indexPath.row].hours
+        cell.address.text = docList[indexPath.row].address
+        
+        cell.layer.masksToBounds = true
+        cell.layer.cornerRadius = 1
+        cell.layer.borderWidth = 1
+        cell.layer.shadowOffset = CGSize(width: -1, height: 1)
+        let borderColor: UIColor = .gray
+        cell.layer.borderColor = borderColor.cgColor
 
+        
+        let imageNameLocal = docList[indexPath.row].userphoto
+        let docid = docList[indexPath.row].id
+        
+        /*let storage = Storage.storage().reference(forURL: "gs://dermacare-b1017.appspot.com/UserPhotos/\(docid)")
+        
+        storage.getMetadata { metadata, error in
+            if let error = error {
+                print("error occurred", error)
+            }else{
+                let date = metadata?.timeCreated
+                //print("date", date )
+                let formatter = DateFormatter()
+                formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+            }
+        }*/
+        
+        if let imageURL = URL(string: imageNameLocal!) {
+            URLSession.shared.dataTask(with: imageURL, completionHandler: {(data,response,error) in
+                
+                if error != nil{
+                    print(error)
+                    return
+                }
+                
+                DispatchQueue.main.async {
+                    cell.imageView?.image = UIImage(data: data!)
+                    
+                }
+            }).resume()
+        }
         return cell;
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
+    {
+        return 100.0;//Choose your custom row height
+    }
+    
+   
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         super.prepare(for: segue, sender: sender)
