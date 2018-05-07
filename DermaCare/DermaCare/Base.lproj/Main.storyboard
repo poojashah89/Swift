@@ -283,8 +283,8 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="wj6-yD-qdI" kind="relationship" relationship="viewControllers" id="dl6-y7-lIN"/>
                         <segue destination="pmA-ws-E4D" kind="relationship" relationship="viewControllers" id="tx5-G3-o2l"/>
+                        <segue destination="wj6-yD-qdI" kind="relationship" relationship="viewControllers" id="dl6-y7-lIN"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XH3-5K-Uaj" userLabel="First Responder" sceneMemberID="firstResponder"/>
