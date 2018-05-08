@@ -1,55 +1,47 @@
 {"intents": [
         {"tag": "greeting",
          "patterns": ["Hi", "How are you", "Is anyone there?", "Hello", "Good day"],
-         "responses": ["Hello, thanks for visiting", "Good to see you again", "Hi there, how can I help?"]
+         "responses": ["Hello, thanks for visiting", "Good to see you again", "Hi there, how can I help?"],
+         "context_set": ""
         },
-        {"tag": "bye",
+        {"tag": "goodbye",
          "patterns": ["Bye", "See you later", "Goodbye"],
          "responses": ["See you later, thanks for visiting", "Have a nice day", "Bye! Come back again soon."]
         },
-        {"tag": "thank_you",
+        {"tag": "thanks",
          "patterns": ["Thanks", "Thank you", "That's helpful"],
          "responses": ["Happy to help!", "Any time!", "My pleasure"]
         },
-        {"tag": "itchy",
-         "patterns": ["I would like to diagnose my skin rash","analyse my skin rash"],
-         "responses": ["Is it itchy?","is the rash itching?"],
-         "context_set": "itchy_filter"
+        {"tag": "hours",
+         "patterns": ["What hours are you open?", "What are your hours?", "When are you open?" ],
+         "responses": ["We're open every day 9am-9pm", "Our hours are 9am-9pm every day"]
         },
-        {"tag": "itchy_resp",
-         "patterns":["yes, it is itching","no it is not itching","no it does not itch"],
-          "responses": ["Were you exposed to sun?"],
-          "context_filter":"itchy_filter"
+        {"tag": "mopeds",
+         "patterns": ["Which mopeds do you have?", "What kinds of mopeds are there?", "What do you rent?" ],
+         "responses": ["We rent Yamaha, Piaggio and Vespa mopeds", "We have Piaggio, Vespa and Yamaha mopeds"]
         },
-        {"tag": "exposed_1",
-         "patterns":["yes"],
-          "responses": ["Which part of the body is the rash?\nChoose an option\n(1).Head&Neck\n(2).Legs\n(3).Back\n(4).Others"],
-          "context_set":"spread_filter"
+        {"tag": "payments",
+         "patterns": ["Do you take credit cards?", "Do you accept Mastercard?", "Are you cash only?" ],
+         "responses": ["We accept VISA, Mastercard and AMEX", "We accept most major credit cards"]
         },
-        {"tag": "exposed_2",
-         "patterns":["no"],
-          "responses": ["is it spreading?","does the rash spread?"],
-          "context_set":"spread_filter"
+        {"tag": "opentoday",
+         "patterns": ["Are you open today?", "When do you open today?", "What are your hours today?"],
+         "responses": ["We're open every day from 9am-9pm", "Our hours are 9am-9pm every day"]
         },
-        {"tag": "exposed_resp_1",
-         "patterns":["1"],
-          "responses": ["result:Carcinoma"],
-          "context_set":"spread_filter"
+        {"tag": "rental",
+         "patterns": ["Can we rent a moped?", "I'd like to rent a moped", "How does this work?" ],
+         "responses": ["Are you looking to rent today or later this week?"],
+         "context_set": "rentalday"
         },
-        {"tag": "exposed_resp_2",
-         "patterns":["2","3","4"],
-          "responses": ["result:Melonoma,Carcinoma"],
-          "context_set":"spread_filter"
+        {"tag": "today",
+         "patterns": ["today"],
+         "responses": ["For rentals today please call 1-800-MYMOPED", "Same-day rentals please call 1-800-MYMOPED"],
+         "context_filter": "rentalday"
         },
-        {"tag": "spread_resp",
-         "patterns":["no it is not spreading"],
-          "responses": ["result:Melonama,Carcinoma"],
-          "context_filter":"spread_filter"
-        },
-        {"tag": "spread_resp",
-         "patterns":["yes it is spreading","yes it spreads"],
-          "responses": ["result:Melonama"],
-          "context_filter":"spread_filter"
+        {"tag": "appointment",
+         "patterns": ["I need to make an apoointment", "Can you book an appointment?", "appt", "doctor ishita"],
+         "responses": ["Yes Sure", "What day?"],
+         "context_set": "setappointment"
         }
    ]
 }
