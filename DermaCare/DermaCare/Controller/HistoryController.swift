@@ -93,6 +93,7 @@ class HistoryController: UIViewController, UITableViewDelegate, UITableViewDataS
     }
     
     
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         guard let cell = tableview.dequeueReusableCell(withIdentifier: "HistoryTableViewCell") as?HistoryTableViewCell else {
@@ -178,6 +179,14 @@ class HistoryController: UIViewController, UITableViewDelegate, UITableViewDataS
         }
         tableView.layer.borderColor = UIColor.gray.cgColor
         tableView.layer.borderWidth = 1.0
+        
+        cell.layer.masksToBounds = true
+        cell.layer.cornerRadius = 1
+        cell.layer.borderWidth = 1
+        cell.layer.shadowOffset = CGSize(width: -1, height: 1)
+        let borderColor: UIColor = .gray
+        cell.layer.borderColor = borderColor.cgColor
+
         return cell
     }
     
