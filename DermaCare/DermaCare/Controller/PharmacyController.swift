@@ -105,14 +105,6 @@ class PharmacyController: UIViewController, UITableViewDataSource, UITableViewDe
         return cell
     }
     
-    
-    /*func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //TODO
-        print(indexPath.row);
-        indexOfSelectedDoctor = indexPath.row
-        print("Selected val \(indexOfSelectedDoctor) \(businesses[indexOfSelectedDoctor].name as Any)");
-    }*/
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //TODO
         
@@ -121,9 +113,6 @@ class PharmacyController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func openMapForPlace(searchResult : PharmacyModel) {
-        
-        //let latitude: CLLocationDegrees = 37.334293
-       // let longitude: CLLocationDegrees = -121.886368
         print("\(lat) \(long)")
         let regionDistance:CLLocationDistance = 10000
         let coordinates = CLLocationCoordinate2DMake(lat, long)

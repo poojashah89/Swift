@@ -59,19 +59,19 @@ class CoreMlViewController: UIViewController, UIImagePickerControllerDelegate, U
                    /* self.navigationItem.title = "Rash!"
                     self.navigationController?.navigationBar.barTintColor = UIColor.green
                     self.navigationController?.navigationBar.isTranslucent = false */
-                    self.resultLabel.text = "Melanoma"
+                    self.resultLabel.text = "This might be Melanoma"
                     
                 }
             } else if ((topResult.identifier.contains("Basal")) && (topResult.confidence > 0.90)){
                 DispatchQueue.main.async {
                    
-                    self.resultLabel.text = "Basal Carcinoma"
+                    self.resultLabel.text = "This might be Basal Carcinoma"
                     
                 }
             }
             else {
                 DispatchQueue.main.async {
-                    self.resultLabel.text = "Not A Rash"
+                    self.resultLabel.text = "This might not be any serious problem"
                     
                 }
             }
@@ -183,8 +183,6 @@ class CoreMlViewController: UIViewController, UIImagePickerControllerDelegate, U
         if segue.identifier == "result" {
             let resultcontroller = segue.destination as! DiagnoseController
             resultcontroller.result = self.coremlresult
-            
-            
         }
     }
     

@@ -33,6 +33,7 @@
 		727EC1402092E308005008CE /* PharmacyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727EC13F2092E308005008CE /* PharmacyController.swift */; };
 		72C4D88B203B92C0004FEA2E /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C4D88A203B92C0004FEA2E /* UserModel.swift */; };
 		72C4D88D203BACE1004FEA2E /* HealthModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C4D88C203BACE1004FEA2E /* HealthModel.swift */; };
+		72DC3BE720A274D600836E8D /* FinalResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72DC3BE620A274D600836E8D /* FinalResultController.swift */; };
 		72EBDBE4204FC8EF004ABAA4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 72EBDBE3204FC8EF004ABAA4 /* GoogleService-Info.plist */; };
 		72FB9A432023D752009E4373 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FB9A422023D752009E4373 /* AppDelegate.swift */; };
 		72FB9A452023D752009E4373 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FB9A442023D752009E4373 /* ViewController.swift */; };
@@ -110,6 +111,7 @@
 		727EC13F2092E308005008CE /* PharmacyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PharmacyController.swift; sourceTree = "<group>"; };
 		72C4D88A203B92C0004FEA2E /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		72C4D88C203BACE1004FEA2E /* HealthModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthModel.swift; sourceTree = "<group>"; };
+		72DC3BE620A274D600836E8D /* FinalResultController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalResultController.swift; sourceTree = "<group>"; };
 		72EBDBE3204FC8EF004ABAA4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		72FB9A3F2023D752009E4373 /* DermaCare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DermaCare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		72FB9A422023D752009E4373 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -318,6 +320,7 @@
 				204C1B27209C4C83009B52F5 /* AddAlarmViewController.swift */,
 				204C1B2D209E812F009B52F5 /* CoreMlViewController.swift */,
 				FEEBE16E209EBB3500BC3CFB /* DoctorAccountController.swift */,
+				72DC3BE620A274D600836E8D /* FinalResultController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -571,6 +574,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				72C4D88D203BACE1004FEA2E /* HealthModel.swift in Sources */,
+				72DC3BE720A274D600836E8D /* FinalResultController.swift in Sources */,
 				722FB3B4208D18CC0088A7EE /* RootTabController.swift in Sources */,
 				72FB9A7D20243A54009E4373 /* AccountController.swift in Sources */,
 				FE02632020969E5A00758CF9 /* DoctorTableViewCell.swift in Sources */,

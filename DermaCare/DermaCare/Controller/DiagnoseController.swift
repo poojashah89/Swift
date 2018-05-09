@@ -23,20 +23,22 @@ class DiagnoseController: UIViewController,UITableViewDelegate, UITableViewDataS
     private var databaseHandle: DatabaseHandle!
     var result : [VNClassificationObservation] = []
     
+    var finalResultString =  String()
+    var chatbotresult : String?
     var username: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         startObservingDatabase ()
         
-        let topResult = self.result.first
-        print(topResult?.confidence)
-        
         // Do any additional setup after loading the view, typically from a nib.
         tableView.delegate = self
         tableView.dataSource = self
         tableView.backgroundView = UIImageView(image: UIImage(named: "chat"))
        
+        //let topResult = self.result.first!
+        //print(topResult.confidence)
+        
         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:))))
         
     }
@@ -71,9 +73,69 @@ class DiagnoseController: UIViewController,UITableViewDelegate, UITableViewDataS
             textInput.text = ""
             
             ChatModel.getChatString(message: value!) { (json) in
-                print(json.message!)
-                self.displayMessage(message: json.message!, from: "server", time: json.time!)
+                //print(json.message!)
+                var responseMessage = json.message!
+                if(json.message!.contains("result:")) {
+                    
+                    responseMessage = "Please click on Next to view the final result"
+                    //self.displayMessage(message: responseMessage, from: "server", time: json.time!)
+                    
+                    let arr = json.message!.components(separatedBy: ":")
+                    self.chatbotresult = arr[1]
+                    print(arr[1])
+                    
+                    let topResult = self.result.first!
+                    
+                    let chatbotres = self.chatbotresult ?? " "
+                    
+                    self.finalResultString = "Based on our analysis, \n"
+                    
+                    
+                    if(chatbotres == "Melonama,Carcinoma") {
+                        self.finalResultString.append("\nYou could be suffering from : ")
+                        if ((topResult.identifier.contains("Melanoma")) && (topResult.confidence > 0.90)) {
+                            self.finalResultString.append("Melanoma")
+                        } else if ((topResult.identifier.contains("Basal")) && (topResult.confidence > 0.90)){
+                            self.finalResultString.append("Basal Carcinoma")
+                        } else {
+                            self.finalResultString.append("Melonama or Carcinoma")
+                        }
+                    }
+                    else if(chatbotres == "Carcinoma") {
+                        self.finalResultString.append("You could be suffering from")
+                        if ((topResult.identifier.contains("Melanoma")) && (topResult.confidence > 0.90)) {
+                            self.finalResultString.append("Melanoma or Carcinoma")
+                        } else {
+                            self.finalResultString.append("Carcinoma")
+                        }
+                    }
+                        
+                    else if(chatbotres == "Melanoma") {
+                        self.finalResultString.append("You could be suffering from")
+                        if ((topResult.identifier.contains("Basal")) && (topResult.confidence > 0.90)){
+                            self.finalResultString.append("Melanoma or Carcinoma")
+                        } else {
+                            self.finalResultString.append("Melanoma")
+                        }
+                    } else if(chatbotres == "notrash"){
+                        self.finalResultString.append("You are not suffering from any Skin Cancer!")
+                    }
+                     self.finalResultString.append("\n\nPlease contact our doctor immediately!")
+                    
+                } else {
+                    //continue
+                }
+                
+                self.displayMessage(message: responseMessage, from: "server", time: json.time!)
             }
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "finalresult" {
+            let resultcontroller = segue.destination as! FinalResultController
+            resultcontroller.resultmessage = self.finalResultString
         }
     }
     
@@ -146,11 +208,12 @@ class DiagnoseController: UIViewController,UITableViewDelegate, UITableViewDataS
         }) { (error) in
             print(error.localizedDescription)
         }
-        
-      
-        
     }
     
+    
+    @IBAction func finalNextButton(_ sender: Any) {
+        self.performSegue(withIdentifier: "finalresult", sender: self)
+    }
     
 }
 

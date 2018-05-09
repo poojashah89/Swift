@@ -189,7 +189,6 @@ class BookAppointmentController: UIViewController, UICollectionViewDelegate, UIC
     @IBAction func bookAppointment(_ sender: Any) {
         
         var urls = Array<String>()
-        
         for lists in selectedHistoryModel {
             urls.append(lists.url!)
         }

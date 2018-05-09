@@ -29,7 +29,7 @@ class ChatModel: NSObject {
             withAllowedCharacters: CharacterSet.urlQueryAllowed)!
         
         let url = URL(string: path)
-        print(url?.absoluteString)
+        print(url?.absoluteString as Any)
         let session = URLSession.shared
         let task = session.dataTask(with: url! as URL, completionHandler: {jsonData, response, error -> Void in
             if(error != nil) {
