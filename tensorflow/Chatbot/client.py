@@ -2,6 +2,7 @@ from flask import Flask, request, jsonify
 import Pyro4
 import sys
 from datetime import datetime
+import urllib
 
 app = Flask(__name__)
 
@@ -10,9 +11,10 @@ def chat():
     get = Pyro4.Proxy("PYRONAME:example.bot")
 
     question = request.args.get('chat')
-    name = get.get_response(question)
+    decodeurl = urllib.unquote(question).decode('utf8')
+    print("received response : ", decodeurl)
+    name = get.get_response(decodeurl)
     dtime = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-    print(dtime)
     return jsonify(message = name, time=str(dtime))
 
 if __name__ == "__main__":
