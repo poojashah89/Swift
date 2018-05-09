@@ -9,8 +9,13 @@
          "context_set": "itchy_filter"
         },
         {"tag": "itchy_resp",
-         "patterns":["yes it is itching","no it is not itching","not very itchy","yeah itches sometimes rarely"],
+         "patterns":["yes it is itching","yeah itches sometimes rarely"],
           "responses": ["Were you exposed to sun?"],
+          "context_filter":"itchy_filter"
+        },
+        {"tag": "itchy_resp1",
+         "patterns":["not itchy","no it is not itching","it does not itch"],
+          "responses": ["result:notrash"],
           "context_filter":"itchy_filter"
         },
         {"tag": "exposed_1",
