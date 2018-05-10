@@ -65,7 +65,7 @@ class CoreMlViewController: UIViewController, UIImagePickerControllerDelegate, U
             } else if ((topResult.identifier.contains("Basal")) && (topResult.confidence > 0.90)){
                 DispatchQueue.main.async {
                    
-                    self.resultLabel.text = "This might be Basal Carcinoma"
+                    self.resultLabel.text = "This might be Carcinoma"
                     
                 }
             }
