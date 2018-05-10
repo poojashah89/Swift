@@ -27,12 +27,18 @@ class FinalResultController: UIViewController {
         print("result : \( resultmessage ?? " ")")
         resultText.text = resultmessage
         
+        let borderColor : UIColor = UIColor(red: 0.85, green: 0.85, blue: 0.85, alpha: 1.0)
+        resultText.layer.borderWidth = 0.5
+        resultText.layer.borderColor = borderColor.cgColor
+        resultText.layer.cornerRadius = 5.0
+        
     }
     override func viewWillAppear(_ animated: Bool) {
         //tableView.separatorStyle = .none
         
         
     }
+    
     
     func startObservingDatabase () {
         let userID = Auth.auth().currentUser?.uid
@@ -41,7 +47,7 @@ class FinalResultController: UIViewController {
             // Get user value
             let value = snapshot.value as? NSDictionary
             let uname = value!["userName"] as? String
-            let startmessage = "Hello \(uname ?? " ") \n Thanks for trying DermaCare Diagnosis for your skin care"
+            let startmessage = "Hello \(uname ?? " ")"
             self.username.text = startmessage
             
         }) { (error) in
