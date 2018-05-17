@@ -52,16 +52,27 @@ class DoctorViewAppointmentController: UIViewController,UITableViewDelegate,UITa
                     let patient_uid  = user["patient"] as? String
                     let patient_name = user["userName"] as? String
                     let patient_phone = user["phone"] as? String
-                    //var patientName = String()
-                    //patientName = self.getPatientName(patId: patient_uid!)
+                    var result = ""
+                    var url = ""
+                
+                    refuser.child("appointments").child(key).child("details").observeSingleEvent(of: .value, with: { (snapshot) in
+                        // Get user value
+                        let value = snapshot.value as? NSDictionary
+                        result = value?["result"] as? String ?? ""
+                        url = value?["url"] as? String ?? ""
+                        
+                        let patItem = DoctorAppointmentModel(patId: patient_uid!, patName:patient_name!, patPhone:patient_phone!, date: key, result: result, url: url)
+                        
+                        self.docAppointmentList.append(patItem)
+                        
+                        DispatchQueue.main.async(execute: {
+                            self.docAppointmentTableView.reloadData()
+                        })
+                    }) { (error) in
+                        print(error.localizedDescription)
+                    }
                     
-                    let patItem = DoctorAppointmentModel(patId: patient_uid!, patName:patient_name!, patPhone:patient_phone!, date: key)
-                    
-                    self.docAppointmentList.append(patItem)
-                    
-                    DispatchQueue.main.async(execute: {
-                        self.docAppointmentTableView.reloadData()
-                    })
+                   
                     
                 }
             }
@@ -94,8 +105,6 @@ class DoctorViewAppointmentController: UIViewController,UITableViewDelegate,UITa
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-       
-        
         guard let cell = docAppointmentTableView.dequeueReusableCell(withIdentifier: "DocAppointmentTableViewCell") as? DocAppointmentTableViewCell else {
             return UITableViewCell()
         }
@@ -113,5 +122,26 @@ class DoctorViewAppointmentController: UIViewController,UITableViewDelegate,UITa
 
         return cell;
     }
-
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        super.prepare(for: segue, sender: sender)
+        
+        if(segue.identifier == "showPatientDetail"){
+            let doctorDetailView = segue.destination as? DetailResultAnalysisController
+            
+            guard let selectedTableCell = sender as? DocAppointmentTableViewCell else {
+                fatalError("Unexpected sender: \(sender)")
+            }
+            
+            guard let indexPath = docAppointmentTableView.indexPath(for: selectedTableCell) else {
+                fatalError("The selected cell is not being displayed by the table")
+            }
+            
+            let selectedDoctor = docAppointmentList[indexPath.row]
+            
+            doctorDetailView?.detailView = selectedDoctor
+            
+        }
+    }
 }

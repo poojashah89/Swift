@@ -33,6 +33,7 @@
 		727EC1402092E308005008CE /* PharmacyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727EC13F2092E308005008CE /* PharmacyController.swift */; };
 		72C4D88B203B92C0004FEA2E /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C4D88A203B92C0004FEA2E /* UserModel.swift */; };
 		72C4D88D203BACE1004FEA2E /* HealthModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C4D88C203BACE1004FEA2E /* HealthModel.swift */; };
+		72D6C64C20ACF5CA00FEF96B /* DetailResultAnalysisController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D6C64B20ACF5CA00FEF96B /* DetailResultAnalysisController.swift */; };
 		72DC3BE720A274D600836E8D /* FinalResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72DC3BE620A274D600836E8D /* FinalResultController.swift */; };
 		72EBDBE4204FC8EF004ABAA4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 72EBDBE3204FC8EF004ABAA4 /* GoogleService-Info.plist */; };
 		72FB9A432023D752009E4373 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FB9A422023D752009E4373 /* AppDelegate.swift */; };
@@ -111,6 +112,7 @@
 		727EC13F2092E308005008CE /* PharmacyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PharmacyController.swift; sourceTree = "<group>"; };
 		72C4D88A203B92C0004FEA2E /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		72C4D88C203BACE1004FEA2E /* HealthModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthModel.swift; sourceTree = "<group>"; };
+		72D6C64B20ACF5CA00FEF96B /* DetailResultAnalysisController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailResultAnalysisController.swift; sourceTree = "<group>"; };
 		72DC3BE620A274D600836E8D /* FinalResultController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalResultController.swift; sourceTree = "<group>"; };
 		72EBDBE3204FC8EF004ABAA4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		72FB9A3F2023D752009E4373 /* DermaCare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DermaCare.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -321,6 +323,7 @@
 				204C1B2D209E812F009B52F5 /* CoreMlViewController.swift */,
 				FEEBE16E209EBB3500BC3CFB /* DoctorAccountController.swift */,
 				72DC3BE620A274D600836E8D /* FinalResultController.swift */,
+				72D6C64B20ACF5CA00FEF96B /* DetailResultAnalysisController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -588,6 +591,7 @@
 				FE0263222096FAE500758CF9 /* DoctorModel.swift in Sources */,
 				72FB9A8B202444FC009E4373 /* DiagnoseController.swift in Sources */,
 				20AAB1D320874575008FD056 /* HistoryTableViewCell.swift in Sources */,
+				72D6C64C20ACF5CA00FEF96B /* DetailResultAnalysisController.swift in Sources */,
 				726DB4712093A1280033B6B8 /* PharmacyViewCell.swift in Sources */,
 				726DB4732093A15F0033B6B8 /* PharmacyModel.swift in Sources */,
 				FEEBE16F209EBB3500BC3CFB /* DoctorAccountController.swift in Sources */,

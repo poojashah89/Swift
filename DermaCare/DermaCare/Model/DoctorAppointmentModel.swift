@@ -14,17 +14,21 @@ class DoctorAppointmentModel: NSObject {
     var patientName: String?
     var patientPhone: String?
     var date: String?
+    var result: String?
+    var url: String?
     
     override init()
     {
         
     }
     
-    init(patId:String, patName:String, patPhone:String, date: String)
+    init(patId:String, patName:String, patPhone:String, date: String, result: String, url: String)
     {
         self.patientId = patId
         self.patientName = patName
         self.patientPhone = patPhone
         self.date = date
+        self.result = result
+        self.url = url
     }
 }
