@@ -32,6 +32,8 @@ class AccountController: UIViewController, UINavigationControllerDelegate, UIIma
     
     @IBOutlet weak var heightText: UILabel!
     
+    @IBOutlet weak var respRate: UILabel!
+    
     @IBOutlet weak var healthSyncButton: UISwitch!
     
     @IBOutlet weak var accountImageView: UIImageView!
@@ -65,11 +67,14 @@ class AccountController: UIViewController, UINavigationControllerDelegate, UIIma
                 // Get user value
                 let value = snapshot.value as? NSDictionary
                 
-                let age = value?["age"] as? String ?? ""
-                let wt = value?["weight"] as? String ?? "N/A"
-                let ht = value?["height"] as? String ?? "N/A"
-                let gender = value?["sex"] as? String ?? ""
-                let bp = value?["bloodType"] as? String ?? "N/A"
+                let age = value?["age"] as? String ?? "No Data"
+                let wt = value?["weight"] as? String ?? "No Data"
+                let ht = value?["height"] as? String ?? "No Data"
+                let gender = value?["sex"] as? String ?? "No Data"
+                let bp = value?["bloodType"] as? String ?? "No Data"
+                let heartrate = value?["heartrate"] as? String ?? "No Data"
+                let bodytemperature = value?["bodyTemperature"] as? String ?? "No Data"
+                let respRate = value?["respiratoryRate"] as? String ?? "No Data"
                 
                 if(age != ""){
                     self.ageText.text = "\(age) Years"
@@ -78,6 +83,9 @@ class AccountController: UIViewController, UINavigationControllerDelegate, UIIma
                 self.weightText.text = wt
                 self.heightText.text = ht
                 self.genderText.text = gender
+                self.heartrateText.text = heartrate
+                self.temperatureText.text = bodytemperature
+                 self.respRate.text = respRate
                 
             }) { (error) in
                 print(error.localizedDescription)
@@ -116,7 +124,7 @@ class AccountController: UIViewController, UINavigationControllerDelegate, UIIma
                 //refUser.setValue(nil)
                 refUser.updateChildValues(["userphoto" : imageURL!])
                 
-                let alert = UIAlertController(title: "Alert", message: "Photo saved Successfully", preferredStyle: UIAlertControllerStyle.alert)
+                let alert = UIAlertController(title: "Message", message: "Photo saved Successfully", preferredStyle: UIAlertControllerStyle.alert)
                 alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
                 self.present(alert, animated: true, completion: nil)
             }else {
@@ -188,18 +196,23 @@ class AccountController: UIViewController, UINavigationControllerDelegate, UIIma
             // Get user value
             let value = snapshot.value as? NSDictionary
             
-            let age = value?["age"] as? String ?? "N/A"
-            let wt = value?["weight"] as? String ?? "N/A"
-            let ht = value?["height"] as? String ?? "N/A"
-            let gender = value?["sex"] as? String ?? "N/A"
-            let bp = value?["bloodType"] as? String ?? "N/A"
+            let age = value?["age"] as? String ?? "No Data"
+            let wt = value?["weight"] as? String ?? "No Data"
+            let ht = value?["height"] as? String ?? "No Data"
+            let gender = value?["sex"] as? String ?? "No Data"
+            let bp = value?["bloodType"] as? String ?? "No Data"
+            let heartrate = value?["heartrate"] as? String ?? "No Data"
+            let bodytemperature = value?["bodyTemperature"] as? String ?? "No Data"
+            let respRate = value?["respiratoryRate"] as? String ?? "No Data"
             
             self.ageText.text = "\(age) Years Old"
             self.bpText.text = bp
             self.weightText.text = wt
             self.heightText.text = ht
             self.genderText.text = gender
-            
+            self.heartrateText.text = heartrate
+            self.temperatureText.text = bodytemperature
+            self.respRate.text = respRate
         }) { (error) in
             print(error.localizedDescription)
         }

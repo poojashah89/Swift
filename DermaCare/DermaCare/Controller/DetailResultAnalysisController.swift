@@ -78,7 +78,7 @@ class DetailResultAnalysisController: UIViewController{
                 // Get user value
                 let value = snapshot.value as? NSDictionary
                 let photoURL  = value?["userphoto"] as? String ?? "N/A"
-                let patient_name = value?["userName"] as? String ?? "N/A"
+                let patient_name = value?["userName"] as? String ?? "No Data"
                 self.patientName.text = patient_name
             
                 if let imageURL = URL(string: photoURL) {
@@ -100,18 +100,23 @@ class DetailResultAnalysisController: UIViewController{
             // Get user value
             let value = snapshot.value as? NSDictionary
             
-            let age = value?["age"] as? String ?? "N/A"
-            let wt = value?["weight"] as? String ?? "N/A"
-            let ht = value?["height"] as? String ?? "N/A"
-            let gender = value?["sex"] as? String ?? "N/A"
-            let bp = value?["bloodType"] as? String ?? "N/A"
+            let age = value?["age"] as? String ?? "No Data"
+            let wt = value?["weight"] as? String ?? "No Data"
+            let ht = value?["height"] as? String ?? "No Data"
+            let gender = value?["sex"] as? String ?? "No Data"
+            let bp = value?["bloodType"] as? String ?? "No Data"
+            let heartrate = value?["heartrate"] as? String ?? "No Data"
+            let bodytemperature = value?["bodyTemperature"] as? String ?? "No Data"
+            let respRate = value?["respiratoryRate"] as? String ?? "No Data"
             
             self.patientAge.text = "\(age) Years Old"
             self.bptext.text = bp
             self.wtText.text = wt
             self.heightText.text = ht
             self.patientGender.text = gender
-            
+            self.heartRateText.text = heartrate
+            self.bodyText.text = bodytemperature
+            self.respRate.text = respRate
         }) { (error) in
             print(error.localizedDescription)
         }

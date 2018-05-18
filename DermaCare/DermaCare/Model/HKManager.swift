@@ -108,41 +108,7 @@ class HKManager {
         
     }
     
-    
-    /*
-     Get Blood Type text from defined parameters
-     */
-    func bloodTypeLiteral(_ bloodType:HKBloodType?)->String
-    {
-        
-        var bloodTypeText = "Unknown";
-        if bloodType != nil {
-            
-            switch( bloodType! ) {
-            case .aPositive:
-                bloodTypeText = "A+"
-            case .aNegative:
-                bloodTypeText = "A-"
-            case .bPositive:
-                bloodTypeText = "B+"
-            case .bNegative:
-                bloodTypeText = "B-"
-            case .abPositive:
-                bloodTypeText = "AB+"
-            case .abNegative:
-                bloodTypeText = "AB-"
-            case .oPositive:
-                bloodTypeText = "O+"
-            case .oNegative:
-                bloodTypeText = "O-"
-            default:
-                break;
-            }
-            
-        }
-        return bloodTypeText;
-    }
-    
+   
     func authorizeHealthKit(_ completion: ((_ success: Bool, _ error: String?) -> Void)!) {
         if !HKHealthStore.isHealthDataAvailable() {
             
@@ -157,6 +123,7 @@ class HKManager {
         let healthKitTypesToRead = Set([
             HKObjectType.characteristicType(forIdentifier: HKCharacteristicTypeIdentifier.dateOfBirth)! as HKCharacteristicType,
             HKObjectType.characteristicType(forIdentifier: HKCharacteristicTypeIdentifier.biologicalSex)! as HKCharacteristicType,
+            HKObjectType.characteristicType(forIdentifier: .bloodType)! as HKCharacteristicType,
             HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.heartRate)! as HKQuantityType,
             HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.respiratoryRate)! as HKQuantityType,
             HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.bodyMass)! as HKQuantityType,
@@ -187,7 +154,6 @@ class HKManager {
                     //3. Get Blood Type, Gender, Age, DOB
                     self.readProfile()
                     
-                    self.getHeartData()
                     self.ifHealthSyc = true
                 })
                 
@@ -274,13 +240,55 @@ class HKManager {
         /** BLOOD TYPE **/
         var typeStr:String = "Unknown"
         let bloodType:HKBloodTypeObject? = try? healthKitStore.bloodType()
+        
         if bloodType?.bloodType == HKBloodType.notSet {
             typeStr = "Not Set"
         } else{
-            typeStr = String(describing: bloodType?.bloodType)
+            //typeStr = String(describing: bloodType?.bloodType)
+            typeStr = self.bloodTypeLiteral(bloodType?.bloodType)
         }
         self.healthTree?.child("bloodType").setValue(String(typeStr))
     
+        fetchLatestHeartRateSample()
+        
+        
+        self.healthTree?.child("respiratoryRate").setValue("No Data")
+        self.healthTree?.child("bodyTemperature").setValue("No Data")
+        
+    }
+    
+    /*
+     Get Blood Type text from defined parameters
+     */
+    func bloodTypeLiteral(_ bloodType:HKBloodType?)->String
+    {
+        
+        var bloodTypeText = "Unknown";
+        if bloodType != nil {
+            
+            switch( bloodType! ) {
+            case .aPositive:
+                bloodTypeText = "A+"
+            case .aNegative:
+                bloodTypeText = "A-"
+            case .bPositive:
+                bloodTypeText = "B+"
+            case .bNegative:
+                bloodTypeText = "B-"
+            case .abPositive:
+                bloodTypeText = "AB+"
+            case .abNegative:
+                bloodTypeText = "AB-"
+            case .oPositive:
+                bloodTypeText = "O+"
+            case .oNegative:
+                bloodTypeText = "O-"
+            default:
+                break;
+            }
+            
+        }
+        return bloodTypeText;
     }
 
     /*
@@ -306,54 +314,53 @@ class HKManager {
         return biologicalSexText;
     }
 
-    func getHeartData() {
+   
+    public func fetchLatestHeartRateSample() {
         let heartRateUnit:HKUnit = HKUnit(from: "count/min")
-        //let heartRateType:HKQuantityType   = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.heartRate)!
+        /// Create sample type for the heart rate
+        guard let sampleType = HKObjectType
+            .quantityType(forIdentifier: .heartRate) else {
+                //completion(nil)
+                return
+        }
         
-        // 1. Create a heart rate BPM Sample
-        let heartRateType = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.heartRate)!
-        let heartRateQuantity = HKQuantity(unit: HKUnit(from: "count/min"),
-                                           doubleValue: Double(arc4random_uniform(80) + 100))
-        let heartSample = HKQuantitySample(type: heartRateType, quantity: heartRateQuantity, start: NSDate() as Date, end: NSDate() as Date)
+        /// Predicate for specifiying start and end dates for the query
+        let predicate = HKQuery
+            .predicateForSamples(
+                withStart: Date.distantPast,
+                end: Date(),
+                options: .strictEndDate)
         
-       
-        //predicate
-        let calendar = NSCalendar.current
-        let now = NSDate()
+        /// Set sorting by date.
+        let sortDescriptor = NSSortDescriptor(
+            key: HKSampleSortIdentifierStartDate,
+            ascending: false)
         
-        let unitFlags = Set<Calendar.Component>([.day, .month, .year, .hour])
-        var componentsNow = calendar.dateComponents([.year, .month, .day, .hour, .minute], from: now as Date)
+        /// Create the query
+        let query = HKSampleQuery(
+            sampleType: sampleType,
+            predicate: predicate,
+            limit: Int(HKObjectQueryNoLimit),
+            sortDescriptors: [sortDescriptor]) { (_, results, error) in
+                
+                guard error == nil else {
+                    print("Error: \(error!.localizedDescription)")
+                    return
+                }
+                
+                let cnt = (results?.count)! - 1
+                //latest
+                guard let currData1:HKQuantitySample = results![cnt] as? HKQuantitySample else { return }
+                
+                let heartrateval = currData1.quantity.doubleValue(for: heartRateUnit)
+                print("Heart Rate: \(heartrateval)")
+                self.healthTree?.child("heartrate").setValue("\(heartrateval)")
+                
+        }
         
-        let startDate:NSDate = calendar.date(from: componentsNow)! as NSDate
-        //let endDate:NSDate? = calendar.date(byAdding: .day, value: 1, to: startDate)
-        let endDate = startDate.addingTimeInterval(5.0 * 60.0)
-        
-        let predicate = HKQuery.predicateForSamples(withStart: startDate as Date, end: endDate as Date, options: [])
-        
-        // 2. descriptor
-        let sortDescriptors = [
-            NSSortDescriptor(key: HKSampleSortIdentifierEndDate, ascending: false)
-        ]
-        
-        // 3. we want to limit the number of samples returned by the query to just 1 (the most recent)
-        let limit = 1
-        var typeStr:String = "Unknown"
-        
-        let sampleQuery = HKSampleQuery(sampleType: heartRateType, predicate: predicate, limit: limit, sortDescriptors: sortDescriptors) { (sampleQuery, results, error ) -> Void in
-            
-        guard error == nil else { print("error"); return }
-            
-        let mostRecentSample = results?.first as? HKQuantitySample
-            if let ht = mostRecentSample?.quantity.doubleValue(for: heartRateUnit) {
-                typeStr = String(ht)
-                print(typeStr)
-            }
-            
-        
-        self.healthKitStore.execute(sampleQuery)
-        self.healthTree?.child("heartRate").setValue(String(typeStr))
+        healthKitStore.execute(query)
     }
-    }
+    
     func startObservingDatabase (user: User) {
         databaseHandle = healthTree?.observe(.value, with: { (snapshot) in
             var newItems = [HealthModel]()
