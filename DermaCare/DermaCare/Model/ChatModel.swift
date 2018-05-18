@@ -23,7 +23,7 @@ class ChatModel: NSObject {
     }
     
     class func getChatString(message: String, callback: @escaping (ChatModel) -> ()) {
-        var path = "http://18.236.156.71:5000/chat?chat='\(message)'"
+        var path = "http://34.219.47.153:5000/chat?chat=\(message)"
         
         path = path.addingPercentEncoding(
             withAllowedCharacters: CharacterSet.urlQueryAllowed)!
