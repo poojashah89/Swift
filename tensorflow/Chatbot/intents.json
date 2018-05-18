@@ -19,12 +19,12 @@
           "context_filter":"itchy_filter"
         },
         {"tag": "exposed_1",
-         "patterns":["yes", "yes I was exposed to sun"],
+         "patterns":["yes I was exposed to sun", "yeah I was exposed"],
           "responses": ["Which part of the body is the rash?\nChoose an option\n(1).Head&Neck\n(2).Legs\n(3).Back\n(4).Others"],
           "context_set":"spread_filter"
         },
         {"tag": "exposed_2",
-         "patterns":["no", "no i was not exposed to sun"],
+         "patterns":["nah I was not exposed", "no i was not exposed to sun"],
           "responses": ["is it spreading?","does the rash spread?"],
           "context_set":"spread_filter"
         },
