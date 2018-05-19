@@ -31,12 +31,12 @@
         {"tag": "exposed_resp_1",
          "patterns":["1", "head", "neck"],
           "responses": ["result:Carcinoma"],
-          "context_set":"spread_filter"
+          "context_filter":"spread_filter"
         },
         {"tag": "exposed_resp_2",
          "patterns":["2","3","4", "leg", "back"],
           "responses": ["result:Melonoma,Carcinoma"],
-          "context_set":"spread_filter"
+          "context_filter":"spread_filter"
         },
         {"tag": "spread_resp",
          "patterns":["no it is not spreading", "no it does not spread"],
