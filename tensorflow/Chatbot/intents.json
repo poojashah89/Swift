@@ -35,7 +35,7 @@
         },
         {"tag": "exposed_resp_2",
          "patterns":["2","3","4", "leg", "back"],
-          "responses": ["result:Melonoma,Carcinoma"],
+          "responses": ["result:Melonama,Carcinoma"],
           "context_filter":"spread_filter"
         },
         {"tag": "spread_resp",
