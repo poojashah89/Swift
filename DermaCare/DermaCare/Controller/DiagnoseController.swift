@@ -89,11 +89,11 @@ class DiagnoseController: UIViewController,UITableViewDelegate, UITableViewDataS
                     let chatbotres = self.chatbotresult ?? " "
                     
                    
-                    let melanomaResultString = "You could be suffering from : Melanoma \n Please contact our doctor immediately. \n\nYou can find more details about the Melanoma here : \n\nhttps://www.mayoclinic.org/diseases-conditions/melanoma/symptoms-causes/syc-20374884"
+                    let melanomaResultString = "You could be suffering from : Melanoma \n Please contact our doctor immediately. \n\nYou can find more details about the Melanoma here : \nhttps://www.mayoclinic.org/diseases-conditions/melanoma/symptoms-causes/syc-20374884"
                     
-                     let carcinomaResultString = "You could be suffering from : Melanoma \n Please contact our doctor immediately. \n\nYou can find more details about the Carcinoma here : \n\nhttps://www.mayoclinic.org/diseases-conditions/basal-cell-carcinoma/symptoms-causes/syc-20354187"
+                     let carcinomaResultString = "You could be suffering from : Carcinoma \n Please contact our doctor immediately. \n\nYou can find more details about the Carcinoma here : \nhttps://www.mayoclinic.org/diseases-conditions/basal-cell-carcinoma/symptoms-causes/syc-20354187"
                     
-                    let bothResultString =  "You could be suffering from : Melanoma or Carcinoma \n\n Please contact our doctor immediately. \n\nYou can find more details about the Melanoma here : https://www.mayoclinic.org/diseases-conditions/basal-cell-carcinoma/symptoms-causes/syc-20354187 \n"
+                    let bothResultString =  "You could be suffering from : Melanoma or Carcinoma \n\n Please contact our doctor immediately. \n\nYou can find more details about the Melanoma here : \nhttps://www.mayoclinic.org/diseases-conditions/melanoma/symptoms-causes/syc-20374884 \n\nYou can find more details about the Carcinoma here : \nhttps://www.mayoclinic.org/diseases-conditions/basal-cell-carcinoma/symptoms-causes/syc-20354187 \n"
                     
                     if(chatbotres == "Melonama,Carcinoma") {
                         if ((topResult.identifier.contains("Melanoma")) && (topResult.confidence > 0.90)) {
@@ -119,10 +119,9 @@ class DiagnoseController: UIViewController,UITableViewDelegate, UITableViewDataS
                             self.finalResultString.append(melanomaResultString)
                         }
                     } else if(chatbotres == "notrash"){
-                        self.finalResultString.append("You are not suffering from any Skin Cancer! Please see some nearby pharmacy and apply some ointment")
+                        self.finalResultString.append("You are not suffering from any Skin Cancer! Please see some nearby pharmacy and apply an ointment")
                     }
-                   //  self.finalResultString.append("\n\nPlease contact our doctor immediately!")
-            
+                  
                 } else {
                     //continue
                 }

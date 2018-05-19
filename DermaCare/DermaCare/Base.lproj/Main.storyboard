@@ -1073,7 +1073,7 @@
                         <viewLayoutGuide key="safeArea" id="ny2-Mx-gMX"/>
                     </view>
                     <navigationItem key="navigationItem" title="Find Doctors" id="PpI-XT-T1q">
-                        <barButtonItem key="rightBarButtonItem" title="Next" id="QZy-QS-fYk"/>
+                        <barButtonItem key="rightBarButtonItem" id="QZy-QS-fYk"/>
                     </navigationItem>
                     <connections>
                         <outlet property="doctorTableView" destination="4rP-J2-oXc" id="RSX-ak-nhR"/>
@@ -2819,7 +2819,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jVf-OJ-HHI">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jVf-OJ-HHI">
                                 <rect key="frame" x="16" y="227" width="343" height="317"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -3163,7 +3163,7 @@
         <image name="send button" width="18" height="18"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="cww-Mc-OTB"/>
+        <segue reference="Vli-TU-uLH"/>
         <segue reference="H8S-nk-Lua"/>
         <segue reference="02c-VV-vhf"/>
         <segue reference="zZD-cK-02k"/>
