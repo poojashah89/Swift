@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BLEScanner/ConnectingViewController.swift"
+            timestampString = "532674517.171823"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "ConnectingViewController"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BLEScanner/PeripheralConnectedViewController.swift"
+            timestampString = "535442413.608945"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "8"
+            endingLineNumber = "8"
+            landmarkName = "unknown"
+            landmarkType = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BLEScanner/DeviceTableViewCell.swift"
+            timestampString = "532674517.172324"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "connectButtonPressed(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BLEScanner/PeripheralConnectedViewController.swift"
+            timestampString = "535442413.609518"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
+            landmarkName = "didNotifyonnect(_:serviceName:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BLEScanner/PeripheralConnectedViewController.swift"
+            timestampString = "535442413.609776"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "61"
+            endingLineNumber = "61"
+            landmarkName = "didNotifyonnect(_:serviceName:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BLEScanner/ServiceTableViewCell.swift"
+            timestampString = "532674517.172949"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "13"
+            endingLineNumber = "13"
+            landmarkName = "ServiceCellDelegate"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BLEScanner.ServiceTableViewCell.__deallocating_deinit"
+                  moduleName = "BLEScanner"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/poojashah/Downloads/BLE_Scanner_iOS-master/BLEScanner/BLEScanner/ServiceTableViewCell.swift"
+                  timestampString = "532669485.897185"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BLEScanner.ServiceTableViewCell.__allocating_init(style: __C.UITableViewCellStyle, reuseIdentifier: Swift.Optional&lt;Swift.String&gt;) -&gt; BLEScanner.ServiceTableViewCell"
+                  moduleName = "BLEScanner"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/poojashah/Downloads/BLE_Scanner_iOS-master/BLEScanner/BLEScanner/ServiceTableViewCell.swift"
+                  timestampString = "532669485.898643"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BLEScanner.ServiceTableViewCell.init(style: __C.UITableViewCellStyle, reuseIdentifier: Swift.Optional&lt;Swift.String&gt;) -&gt; BLEScanner.ServiceTableViewCell"
+                  moduleName = "BLEScanner"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/poojashah/Downloads/BLE_Scanner_iOS-master/BLEScanner/BLEScanner/ServiceTableViewCell.swift"
+                  timestampString = "532669485.90017"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "72">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BLEScanner.ServiceTableViewCell.__allocating_init(coder: __ObjC.NSCoder) -&gt; Swift.Optional&lt;BLEScanner.ServiceTableViewCell&gt;"
+                  moduleName = "BLEScanner"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/poojashah/Downloads/BLE_Scanner_iOS-master/BLEScanner/BLEScanner/ServiceTableViewCell.swift"
+                  timestampString = "532669485.901608"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BLEScanner.ServiceTableViewCell.init(coder: __ObjC.NSCoder) -&gt; Swift.Optional&lt;BLEScanner.ServiceTableViewCell&gt;"
+                  moduleName = "BLEScanner"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/poojashah/Downloads/BLE_Scanner_iOS-master/BLEScanner/BLEScanner/ServiceTableViewCell.swift"
+                  timestampString = "532669485.903036"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "52">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BLEScanner/ServiceTableViewCell.swift"
+            timestampString = "532674517.173009"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "12"
+            endingLineNumber = "12"
+            landmarkName = "ServiceCellDelegate"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BLEScanner.ServiceTableViewCell.__deallocating_deinit"
+                  moduleName = "BLEScanner"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/poojashah/Downloads/BLE_Scanner_iOS-master/BLEScanner/BLEScanner/ServiceTableViewCell.swift"
+                  timestampString = "532665844.873164"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BLEScanner.ServiceTableViewCell.__allocating_init(style: __C.UITableViewCellStyle, reuseIdentifier: Swift.Optional&lt;Swift.String&gt;) -&gt; BLEScanner.ServiceTableViewCell"
+                  moduleName = "BLEScanner"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/poojashah/Downloads/BLE_Scanner_iOS-master/BLEScanner/BLEScanner/ServiceTableViewCell.swift"
+                  timestampString = "532665844.876269"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BLEScanner.ServiceTableViewCell.init(style: __C.UITableViewCellStyle, reuseIdentifier: Swift.Optional&lt;Swift.String&gt;) -&gt; BLEScanner.ServiceTableViewCell"
+                  moduleName = "BLEScanner"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/poojashah/Downloads/BLE_Scanner_iOS-master/BLEScanner/BLEScanner/ServiceTableViewCell.swift"
+                  timestampString = "532665844.877836"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "72">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BLEScanner.ServiceTableViewCell.__allocating_init(coder: __ObjC.NSCoder) -&gt; Swift.Optional&lt;BLEScanner.ServiceTableViewCell&gt;"
+                  moduleName = "BLEScanner"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/poojashah/Downloads/BLE_Scanner_iOS-master/BLEScanner/BLEScanner/ServiceTableViewCell.swift"
+                  timestampString = "532665844.879327"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BLEScanner.ServiceTableViewCell.init(coder: __ObjC.NSCoder) -&gt; Swift.Optional&lt;BLEScanner.ServiceTableViewCell&gt;"
+                  moduleName = "BLEScanner"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/poojashah/Downloads/BLE_Scanner_iOS-master/BLEScanner/BLEScanner/ServiceTableViewCell.swift"
+                  timestampString = "532665844.88076"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "52">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BLEScanner/PeripheralViewController.swift"
+            timestampString = "535437131.369047"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "192"
+            endingLineNumber = "192"
+            landmarkName = "didTapConnect(_:peripheral:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BLEScanner/DeviceTableViewCell.swift"
+            timestampString = "532674517.173111"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "13"
+            endingLineNumber = "13"
+            landmarkName = "DeviceCellDelegate"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BLEScanner.DeviceTableViewCell.__deallocating_deinit"
+                  moduleName = "BLEScanner"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/poojashah/Downloads/BLE_Scanner_iOS-master/BLEScanner/BLEScanner/DeviceTableViewCell.swift"
+                  timestampString = "532667513.308685"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BLEScanner.DeviceTableViewCell.__allocating_init(style: __C.UITableViewCellStyle, reuseIdentifier: Swift.Optional&lt;Swift.String&gt;) -&gt; BLEScanner.DeviceTableViewCell"
+                  moduleName = "BLEScanner"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/poojashah/Downloads/BLE_Scanner_iOS-master/BLEScanner/BLEScanner/DeviceTableViewCell.swift"
+                  timestampString = "532667513.310137"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BLEScanner.DeviceTableViewCell.init(style: __C.UITableViewCellStyle, reuseIdentifier: Swift.Optional&lt;Swift.String&gt;) -&gt; BLEScanner.DeviceTableViewCell"
+                  moduleName = "BLEScanner"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/poojashah/Downloads/BLE_Scanner_iOS-master/BLEScanner/BLEScanner/DeviceTableViewCell.swift"
+                  timestampString = "532667513.311544"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "72">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BLEScanner.DeviceTableViewCell.__allocating_init(coder: __ObjC.NSCoder) -&gt; Swift.Optional&lt;BLEScanner.DeviceTableViewCell&gt;"
+                  moduleName = "BLEScanner"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/poojashah/Downloads/BLE_Scanner_iOS-master/BLEScanner/BLEScanner/DeviceTableViewCell.swift"
+                  timestampString = "532667513.31303"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BLEScanner.DeviceTableViewCell.init(coder: __ObjC.NSCoder) -&gt; Swift.Optional&lt;BLEScanner.DeviceTableViewCell&gt;"
+                  moduleName = "BLEScanner"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/poojashah/Downloads/BLE_Scanner_iOS-master/BLEScanner/BLEScanner/DeviceTableViewCell.swift"
+                  timestampString = "532667513.314505"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "52">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BLEScanner/PeripheralViewController.swift"
+            timestampString = "535437131.369413"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "191"
+            endingLineNumber = "191"
+            landmarkName = "didTapConnect(_:peripheral:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
